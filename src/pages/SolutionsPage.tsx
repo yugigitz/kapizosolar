@@ -54,7 +54,7 @@ export default function SolutionsPage() {
                     <h2 className="font-display text-2xl font-extrabold text-kapizo-navy">
                       {sol.title}
                     </h2>
-                    <p className="mt-1.5 text-sm font-semibold text-kapizo-orange">{sol.audience}</p>
+                    <p className="mt-1.5 text-sm font-semibold text-kapizo-orange-deep">{sol.audience}</p>
                     <p className="mt-4 text-base leading-relaxed text-slate-600">{sol.summary}</p>
                     <p className="mt-3 text-sm font-medium text-slate-500">{sol.typicalUse}</p>
 

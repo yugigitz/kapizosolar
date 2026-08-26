@@ -70,18 +70,18 @@ export default function Footer() {
                 href={telHref(phones.primary)}
                 className="flex items-center gap-2 text-sm font-semibold text-kapizo-navy hover:text-kapizo-green"
               >
-                <PhoneIcon className="h-4 w-4 text-kapizo-orange" />
+                <PhoneIcon className="h-4 w-4 text-kapizo-orange-deep" />
                 {phones.primary}
               </a>
               <a
                 href={telHref(phones.secondary)}
                 className="flex items-center gap-2 text-sm font-semibold text-kapizo-navy hover:text-kapizo-green"
               >
-                <PhoneIcon className="h-4 w-4 text-kapizo-orange" />
+                <PhoneIcon className="h-4 w-4 text-kapizo-orange-deep" />
                 {phones.secondary}
               </a>
               <div className="flex gap-2 pt-1 text-sm leading-relaxed text-slate-600">
-                <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-kapizo-orange" />
+                <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-kapizo-orange-deep" />
                 <span>
                   {business.address.line1}
                   <br />

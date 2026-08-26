@@ -12,7 +12,7 @@ export default function MobileCTA() {
           onClick={() => trackEvent('phone_click', { context: 'mobile_bar' })}
           className="flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-bold text-kapizo-navy"
         >
-          <PhoneIcon className="h-5 w-5 text-kapizo-orange" />
+          <PhoneIcon className="h-5 w-5 text-kapizo-orange-deep" />
           Call
         </a>
         <a

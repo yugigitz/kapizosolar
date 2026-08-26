@@ -21,7 +21,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
       )}
 
       <h3 className="font-display text-xl font-extrabold text-kapizo-navy">{plan.name}</h3>
-      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-kapizo-orange">
+      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-kapizo-orange-deep">
         {plan.audienceLabel}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-slate-600">{plan.positioning}</p>
@@ -75,7 +75,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
             onClick={() => trackEvent('phone_click', { context: 'plan_card', plan: plan.id })}
             className="btn-outline !px-3 !py-2.5 text-xs"
           >
-            <PhoneIcon className="h-4 w-4 text-kapizo-orange" />
+            <PhoneIcon className="h-4 w-4 text-kapizo-orange-deep" />
             Call
           </a>
         </div>

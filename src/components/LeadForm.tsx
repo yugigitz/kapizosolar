@@ -40,13 +40,20 @@ const emptyForm: FormState = {
 }
 
 /**
- * V1 has no backend. On submit the enquiry is composed into a WhatsApp message
- * so the lead reaches Kapizo immediately. `submitLead` is the single place to
- * add an API/email call later without touching the form UI.
+ * LEAD DELIVERY STATUS: functional UI, NOT connected to a backend.
+ *
+ * Nothing is transmitted anywhere when the form is submitted. The form
+ * validates input and composes the enquiry into a WhatsApp message, but the
+ * lead only reaches Kapizo if the customer taps through to WhatsApp or calls.
+ * The confirmation screen states this plainly so no one believes an enquiry
+ * was delivered when it was not.
+ *
+ * `submitLead` is the single seam for adding real delivery later — a POST to a
+ * form service, a serverless function or an email API. Wiring it up here is the
+ * only change needed; no component or UI change is required.
  */
-async function submitLead(data: FormState): Promise<void> {
-  // Intentionally a no-op in V1. Replace with a POST to your endpoint when a
-  // backend or email service is added.
+async function submitLead(_data: FormState): Promise<void> {
+  // No-op. See LEAD DELIVERY STATUS above.
   return Promise.resolve()
 }
 
@@ -115,11 +122,12 @@ export default function LeadForm({
           <CheckIcon className="h-6 w-6" />
         </span>
         <h3 className="mt-4 font-display text-xl font-bold text-kapizo-navy">
-          Thank you, {form.name.split(' ')[0]}
+          One last step, {form.name.split(' ')[0]}
         </h3>
         <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-slate-600">
-          Your enquiry details are ready. Send them to us on WhatsApp for the fastest response, or
-          call us directly — we will discuss your requirement and arrange a site assessment.
+          Your enquiry is ready but has <strong>not been sent yet</strong>. Tap the WhatsApp button
+          below to send it to us, or call us directly — we will discuss your requirement and arrange
+          a site assessment.
         </p>
         <div className="mx-auto mt-6 flex max-w-sm flex-col gap-2.5 sm:flex-row">
           <a
@@ -163,7 +171,7 @@ export default function LeadForm({
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="lf-name" className="field-label">
-            Name <span className="text-kapizo-orange">*</span>
+            Name <span className="text-kapizo-orange-deep">*</span>
           </label>
           <input
             id="lf-name"
@@ -183,7 +191,7 @@ export default function LeadForm({
 
         <div>
           <label htmlFor="lf-phone" className="field-label">
-            Mobile number <span className="text-kapizo-orange">*</span>
+            Mobile number <span className="text-kapizo-orange-deep">*</span>
           </label>
           <input
             id="lf-phone"
@@ -205,7 +213,7 @@ export default function LeadForm({
 
         <div>
           <label htmlFor="lf-city" className="field-label">
-            City / town <span className="text-kapizo-orange">*</span>
+            City / town <span className="text-kapizo-orange-deep">*</span>
           </label>
           <input
             id="lf-city"

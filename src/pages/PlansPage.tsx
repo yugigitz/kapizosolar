@@ -20,7 +20,7 @@ const planFaqs = [
   },
   {
     q: 'Do the plans include the government subsidy?',
-    a: 'Residential grid-connected systems may be eligible for central financial assistance under PM Surya Ghar, subject to prevailing government guidelines and your DISCOM process. Subsidy is applied to the applicant through the official portal rather than being a discount we control. We assist with the documentation and explain what applies to your specific case.',
+    a: 'No plan price includes or depends on a subsidy. Residential grid-connected systems may be eligible for central financial assistance under PM Surya Ghar, subject to prevailing government guidelines and your DISCOM process, but that assistance goes to the applicant through the official portal — it is not a discount we control or can promise. The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so confirm the vendor requirements on the official portal before committing if the assistance route is central to your decision.',
   },
   {
     q: 'Why are prices not shown on the plan pages?',
@@ -61,8 +61,11 @@ export default function PlansPage() {
         breadcrumbs={crumbs}
       />
 
-      <section className="section bg-white">
+      <section className="section bg-white" aria-labelledby="plans-heading">
         <div className="container-kapizo">
+          <h2 id="plans-heading" className="sr-only">
+            The three Kapizo Solar plans
+          </h2>
           <div className="grid gap-5 lg:grid-cols-3">
             {plans.map((plan) => (
               <PlanCard key={plan.id} plan={plan} />

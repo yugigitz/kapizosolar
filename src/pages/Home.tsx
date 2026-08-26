@@ -14,11 +14,8 @@ import FAQ from '@/components/FAQ'
 import CTASection from '@/components/CTASection'
 import PlanCard from '@/components/plans/PlanCard'
 import { plans } from '@/data/plans'
-import { faqs } from '@/data/faqs'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import {
-  faqSchema,
-  localBusinessSchema,
   organizationSchema,
   webPageSchema,
   websiteSchema,
@@ -36,13 +33,14 @@ export default function Home() {
     [
       organizationSchema,
       websiteSchema,
-      localBusinessSchema,
       webPageSchema(
         'Kapizo Solar — Rooftop Solar EPC in Mancherial & Telangana',
         'Rooftop solar design, installation and commissioning across Telangana.',
         '/',
       ),
-      faqSchema(faqs.slice(0, 8)),
+      // No FAQPage schema here: the homepage shows only an excerpt of the FAQs,
+      // and /faq is the canonical location for that content. Declaring it in
+      // both places would duplicate the entity and overstate what this page shows.
     ],
   )
 

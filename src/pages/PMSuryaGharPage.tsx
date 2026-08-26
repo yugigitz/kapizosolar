@@ -58,8 +58,12 @@ const schemeFaqs = [
     a: 'It is intended for residential electricity consumers who own the property or have the right to install on the roof, hold a valid electricity connection in their own name, and do not already have a subsidised solar system on the same connection. Commercial, industrial and institutional consumers are generally outside the residential subsidy component, though they can still install rooftop solar under normal net metering rules.',
   },
   {
-    q: 'How does the rooftop solar subsidy work?',
-    a: 'The assistance is structured per kilowatt of installed capacity, with the per-kW amount reducing as capacity increases and an overall ceiling above a certain size. It is not a discount applied by the installer — it is credited to the applicant\'s bank account after the system is installed, inspected and commissioned, and after bank details are submitted on the portal. Because the amounts and conditions are set by the government and can be revised, confirm the current figures on the official portal.',
+    q: 'How much subsidy is available under PM Surya Ghar?',
+    a: 'Under the residential Central Financial Assistance component, assistance is 60% of the system cost at government benchmark prices for systems up to 2 kW, plus 40% of the additional cost for capacity between 2 kW and 3 kW, capped at the 3 kW level. At published benchmark prices this works out to approximately ₹30,000 for 1 kW, ₹60,000 for 2 kW and ₹78,000 for 3 kW and above. These figures are subject to current government guidelines and may be revised, so verify them on pmsuryaghar.gov.in before making a financial decision.',
+  },
+  {
+    q: 'How does the rooftop solar subsidy actually reach me?',
+    a: 'It is not a discount applied by the installer. Under the scheme, the consumer pays the balance amount to an empanelled vendor after successful installation and DISCOM verification, and the assistance is released after the DISCOM inspection and document verification, credited directly to the applicant\'s bank account. Eligibility and release are determined by the government and your DISCOM under the applicable scheme rules — contacting any installer, including us, does not secure or guarantee assistance.',
   },
   {
     q: 'Does the subsidy cover battery or hybrid systems?',
@@ -71,7 +75,7 @@ const schemeFaqs = [
   },
   {
     q: 'Is Kapizo Solar an empanelled or authorised vendor for the scheme?',
-    a: 'We do not claim empanelment or authorised vendor status. Where a scheme requires a registered or empanelled vendor for a particular step, we will tell you plainly what the requirement is and what it means for your application. We assist with the documentation and the technical side of the installation.',
+    a: 'No, and we are not claiming to be. This matters to you: under the scheme\'s operational guidelines the consumer pays the balance amount to an empanelled vendor after installation and DISCOM verification. If the Central Financial Assistance route is important to your decision, confirm the current vendor requirements on the official portal and with your DISCOM before committing to any installer, including us. Rooftop solar still reduces your bill and still qualifies for net metering outside the assistance route, but that is a different calculation and you should make it with accurate information.',
   },
 ]
 
@@ -173,17 +177,103 @@ export default function PMSuryaGharPage() {
                 How the subsidy is structured
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                Assistance is calculated per kilowatt of installed capacity. The per-kW amount is
-                higher for the initial kilowatts and reduces for additional capacity, with an overall
-                ceiling once the system passes a certain size. This design deliberately favours
-                smaller residential systems.
+                Under the scheme's Central Financial Assistance component for residential consumers,
+                assistance is calculated as a share of the system cost at government benchmark
+                prices: 60% of the cost for systems up to 2 kW, plus 40% of the additional cost for
+                capacity between 2 kW and 3 kW. Assistance is capped at the 3 kW level, so larger
+                systems receive the same maximum amount.
               </p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                We have deliberately not printed specific rupee figures on this page. The amounts and
-                conditions are set by the government and have been revised before. Rather than
-                publish a number that may be out of date by the time you read it, we will confirm the
-                figures applicable to your case at the time of your enquiry, and you should
-                cross-check them on the official portal.
+                At the benchmark prices published for the scheme, that structure works out as
+                follows.
+              </p>
+
+              <div className="mt-5 overflow-x-auto">
+                <table className="w-full min-w-[380px] border-collapse text-sm">
+                  <caption className="sr-only">
+                    PM Surya Ghar central financial assistance by system capacity at government
+                    benchmark prices
+                  </caption>
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th scope="col" className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                        System capacity
+                      </th>
+                      <th scope="col" className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                        Central financial assistance
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-100">
+                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">1 kW</th>
+                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹30,000</td>
+                    </tr>
+                    <tr className="border-b border-slate-100">
+                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">2 kW</th>
+                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹60,000</td>
+                    </tr>
+                    <tr className="border-b border-slate-100">
+                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">
+                        3 kW and above
+                      </th>
+                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹78,000 (maximum)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="disclaimer mt-5">
+                <strong>Important qualifications on these figures.</strong>
+                <ul className="mt-2 space-y-1.5">
+                  <li>
+                    • These amounts reflect the scheme's published structure at government benchmark
+                    prices and are <strong>subject to current government guidelines</strong>, which
+                    may be revised at any time.
+                  </li>
+                  <li>
+                    • <strong>Eligibility is determined under the applicable scheme rules</strong> by
+                    the government and your DISCOM — not by us, and not by the fact that you
+                    installed a system.
+                  </li>
+                  <li>
+                    • <strong>Contacting Kapizo Solar does not secure or guarantee any subsidy.</strong>{' '}
+                    We can explain the process and assist with documentation; we cannot approve,
+                    influence or promise assistance.
+                  </li>
+                  <li>
+                    • Actual subsidy processing depends on the national portal, your DISCOM's
+                    feasibility approval, the installation meeting the applicable technical
+                    specifications, physical inspection, and document verification before release.
+                  </li>
+                  <li>
+                    • Verify the current position on the official portal before making any financial
+                    decision.
+                  </li>
+                </ul>
+              </div>
+
+              <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
+                About empanelled vendors — please read
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
+                Under the scheme's operational guidelines, the consumer pays the balance amount —
+                the system cost less the assistance — to the bank account of an{' '}
+                <strong>empanelled vendor</strong>, after successful installation and verification by
+                the DISCOM.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
+                <strong>Kapizo Solar is not currently claiming empanelment under this scheme.</strong>{' '}
+                We are telling you this plainly because it affects you: if the central financial
+                assistance route matters to your decision, confirm the vendor requirements on the
+                official portal and with your DISCOM before you commit to any installer, including
+                us. We would rather lose an enquiry than have you discover this after signing.
+              </p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
+                Rooftop solar remains worth installing outside the assistance route — it still
+                reduces your bill and still qualifies for net metering under the normal DISCOM
+                process. But that is a different calculation, and you should make it with accurate
+                information.
               </p>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
@@ -226,7 +316,7 @@ export default function PMSuryaGharPage() {
                 Always confirm current eligibility, amounts and process on the official government
                 sources rather than on any installer's website, including ours:
               </p>
-              <ul className="mt-4 space-y-2 text-base">
+              <ul className="mt-4 space-y-3 text-base">
                 <li>
                   <a
                     href="https://pmsuryaghar.gov.in"
@@ -235,23 +325,59 @@ export default function PMSuryaGharPage() {
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
                   >
                     pmsuryaghar.gov.in
-                  </a>{' '}
-                  <span className="text-slate-500">— the official national portal for the scheme</span>
+                  </a>
+                  <span className="block text-sm text-slate-500">
+                    The official national portal — registration, application status and current
+                    scheme terms.
+                  </span>
                 </li>
                 <li>
                   <a
-                    href="https://mnre.gov.in"
+                    href="https://mnre.gov.in/en/notice/operational-guidelines-for-implementation-of-the-component-central-financial-assistance-to-residential-consumers-of-pm-surya-ghar-muft-bijli-yojana/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
                   >
-                    mnre.gov.in
-                  </a>{' '}
-                  <span className="text-slate-500">
-                    — Ministry of New and Renewable Energy
+                    MNRE — Operational Guidelines: Central Financial Assistance to Residential
+                    Consumers
+                  </a>
+                  <span className="block text-sm text-slate-500">
+                    The operational guidelines governing the residential CFA component.
+                  </span>
+                </li>
+                <li>
+                  <a
+                    href="https://mnre.gov.in/en/notice/guidelines-for-pm-surya-ghar-muft-bijli-yojana/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
+                  >
+                    MNRE — Guidelines for PM-Surya Ghar: Muft Bijli Yojana
+                  </a>
+                  <span className="block text-sm text-slate-500">
+                    Ministry of New and Renewable Energy scheme guidelines.
+                  </span>
+                </li>
+                <li>
+                  <a
+                    href="https://mnre.gov.in/en/grid-connected-solar-rooftop-programme/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
+                  >
+                    MNRE — Grid Connected Rooftop Solar Programme
+                  </a>
+                  <span className="block text-sm text-slate-500">
+                    Programme background and related notices.
                   </span>
                 </li>
               </ul>
+              <p className="mt-4 text-sm leading-relaxed text-slate-500">
+                Where this page states figures, they reflect the scheme structure published by the
+                Ministry of New and Renewable Energy and Government of India press releases. We
+                summarise in our own words rather than reproducing government text. If anything on
+                this page conflicts with the official sources above, the official sources govern.
+              </p>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 Common questions

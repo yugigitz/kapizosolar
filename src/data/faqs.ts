@@ -58,7 +58,7 @@ export const faqs: Faq[] = [
   {
     category: 'scheme',
     q: 'How does the government subsidy work?',
-    a: 'Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers can receive central financial assistance for a grid-connected rooftop system, applied through the national portal and processed with the involvement of your distribution company. The subsidy is credited to the applicant after installation and inspection, subject to the conditions in force. Eligibility rules, applicable amounts, capacity limits and procedural requirements are set by the government and can change, so verify the current position on the official portal before making a decision.',
+    a: 'Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers can receive central financial assistance for a grid-connected system: 60% of the cost at government benchmark prices for up to 2 kW, plus 40% of the additional cost between 2 kW and 3 kW, capped at the 3 kW level — approximately ₹30,000, ₹60,000 and ₹78,000 for 1 kW, 2 kW and 3 kW-and-above respectively. It is applied for through the national portal, and released after DISCOM inspection and document verification. Note that the scheme routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment. Amounts and rules are set by the government and can change, so verify the current position on pmsuryaghar.gov.in before deciding.',
   },
   {
     category: 'commercial',

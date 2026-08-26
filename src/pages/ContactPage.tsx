@@ -55,7 +55,7 @@ export default function ContactPage() {
               <div className="mt-8 space-y-5">
                 {business.founders.map((f) => (
                   <div key={f.name} className="card p-5">
-                    <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange">
+                    <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange-deep">
                       {f.role}
                     </p>
                     <p className="mt-1 font-display text-lg font-bold text-kapizo-navy">{f.name}</p>
@@ -85,7 +85,7 @@ export default function ContactPage() {
 
               <div className="card mt-5 p-5">
                 <div className="flex gap-3">
-                  <MapPinIcon className="mt-0.5 h-5 w-5 shrink-0 text-kapizo-orange" />
+                  <MapPinIcon className="mt-0.5 h-5 w-5 shrink-0 text-kapizo-orange-deep" />
                   <div>
                     <h3 className="font-display text-base font-bold text-kapizo-navy">Office</h3>
                     <address className="mt-2 text-sm not-italic leading-relaxed text-slate-600">

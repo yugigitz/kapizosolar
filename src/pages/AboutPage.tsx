@@ -100,7 +100,7 @@ export default function AboutPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {business.founders.map((f) => (
                 <div key={f.name} className="card p-6">
-                  <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange">
+                  <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange-deep">
                     {f.role}
                   </p>
                   <h3 className="mt-1.5 font-display text-lg font-extrabold text-kapizo-navy">

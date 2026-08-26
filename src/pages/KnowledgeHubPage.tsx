@@ -43,7 +43,7 @@ export default function KnowledgeHubPage() {
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
               <article key={article.slug} className="card card-hover flex flex-col p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-kapizo-orange">
+                <p className="text-xs font-semibold uppercase tracking-wide text-kapizo-orange-deep">
                   {article.readMinutes} min read
                 </p>
                 <h2 className="mt-2 font-display text-lg font-bold leading-snug text-kapizo-navy">

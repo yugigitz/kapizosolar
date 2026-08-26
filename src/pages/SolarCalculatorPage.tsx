@@ -67,8 +67,11 @@ export default function SolarCalculatorPage() {
         breadcrumbs={crumbs}
       />
 
-      <section className="section bg-white">
+      <section className="section bg-white" aria-labelledby="calc-heading">
         <div className="container-kapizo">
+          <h2 id="calc-heading" className="sr-only">
+            Rooftop solar savings calculator
+          </h2>
           <SolarCalculator />
         </div>
       </section>

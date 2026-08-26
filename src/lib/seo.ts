@@ -69,23 +69,43 @@ export function applyJsonLd(schemas: object[]) {
   document.head.appendChild(script)
 }
 
+const postalAddress = {
+  '@type': 'PostalAddress',
+  streetAddress: `${business.address.line1}, ${business.address.line2}`,
+  addressLocality: business.address.city,
+  addressRegion: business.address.state,
+  postalCode: business.address.postalCode,
+  addressCountry: business.address.country,
+}
+
+const areaServed = [
+  { '@type': 'AdministrativeArea', name: 'Telangana' },
+  { '@type': 'City', name: 'Mancherial' },
+]
+
+/**
+ * One business entity, typed as both Organization and LocalBusiness rather than
+ * emitted as two nodes — they describe the same company, and duplicate nodes
+ * with different @ids would misrepresent that as two entities.
+ *
+ * Deliberately omitted, because none of it is verified: aggregateRating,
+ * review, award, hasCredential, foundingDate, numberOfEmployees, priceRange,
+ * openingHours and geo coordinates.
+ */
 export const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'LocalBusiness'],
   '@id': `${SITE_URL}/#organization`,
   name: business.name,
   url: SITE_URL,
   logo: `${SITE_URL}/kapizo-logo.png`,
+  image: `${SITE_URL}/kapizo-logo.png`,
   description: business.description,
   slogan: business.tagline,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: `${business.address.line1}, ${business.address.line2}`,
-    addressLocality: business.address.city,
-    addressRegion: business.address.state,
-    postalCode: business.address.postalCode,
-    addressCountry: business.address.country,
-  },
+  telephone: `+91${phones.primary}`,
+  address: postalAddress,
+  areaServed,
+  knowsAbout: serviceList,
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -105,29 +125,12 @@ export const organizationSchema = {
   founder: business.founders.map((f) => ({ '@type': 'Person', name: f.name, jobTitle: f.role })),
 }
 
-export const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': `${SITE_URL}/#localbusiness`,
-  name: business.name,
-  image: `${SITE_URL}/kapizo-logo.png`,
-  url: SITE_URL,
-  telephone: `+91${phones.primary}`,
-  description: business.description,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: `${business.address.line1}, ${business.address.line2}`,
-    addressLocality: business.address.city,
-    addressRegion: business.address.state,
-    postalCode: business.address.postalCode,
-    addressCountry: business.address.country,
-  },
-  areaServed: [
-    { '@type': 'AdministrativeArea', name: 'Telangana' },
-    { '@type': 'City', name: 'Mancherial' },
-  ],
-  knowsAbout: serviceList,
-}
+/**
+ * Kept as a named export so pages can reference the business entity explicitly.
+ * It is the same node as `organizationSchema`; emitting both on one page is a
+ * no-op because they share an @id.
+ */
+export const localBusinessSchema = organizationSchema
 
 export const websiteSchema = {
   '@context': 'https://schema.org',

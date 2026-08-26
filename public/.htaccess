@@ -1,16 +1,23 @@
 # SPA routing for Apache / Hostinger shared hosting.
 # Serves index.html for client-side routes so deep links work on refresh.
 
+DirectoryIndex index.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Do not rewrite existing files or directories.
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # Serve existing files as-is (assets, robots.txt, sitemap.xml, llms.txt).
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # Everything else goes to the SPA entry point.
+  # Serve the prerendered static HTML for a route when one exists.
+  # The build writes dist/<route>/index.html for every known route, so
+  # crawlers and link-preview scrapers get real content without running JS.
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*)$ /$1/index.html [L]
+
+  # Unknown routes fall back to the SPA shell, which renders the 404 page.
   RewriteRule . /index.html [L]
 </IfModule>
 

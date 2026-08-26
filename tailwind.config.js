@@ -14,8 +14,15 @@ export default {
           green: '#146c2e',
           'green-dark': '#0c4a1f',
           'green-light': '#4caf3f',
+          // Brand orange. Use for decorative fills, icons and elements on dark
+          // backgrounds. It is only 2.6:1 against white, so it must NOT carry
+          // small text on light backgrounds or sit behind white button text.
           orange: '#f5820c',
           'orange-light': '#ffa53d',
+          // Accessible orange: 5.05:1 against white in both directions.
+          // Use for text on light backgrounds and for button fills under white text.
+          'orange-deep': '#b35309',
+          'orange-deep-hover': '#8f4207',
           amber: '#ffb300',
         },
       },

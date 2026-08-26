@@ -94,7 +94,7 @@ export default function PlanDetailPage() {
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 System overview
               </h2>
-              <p className="mt-3 text-sm font-semibold text-kapizo-orange">{plan.capacityOptions}</p>
+              <p className="mt-3 text-sm font-semibold text-kapizo-orange-deep">{plan.capacityOptions}</p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">{plan.expectedOutcome}</p>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">

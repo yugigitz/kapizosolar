@@ -33,7 +33,7 @@ export default function Solutions() {
                   <Icon className="h-5.5 w-5.5" />
                 </span>
                 <h3 className="mt-4 font-display text-lg font-bold text-kapizo-navy">{sol.title}</h3>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-kapizo-orange">
+                <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-kapizo-orange-deep">
                   {sol.audience}
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{sol.summary}</p>

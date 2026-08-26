@@ -7,7 +7,7 @@ export default function ProjectsComingSoon() {
     <section className="section bg-slate-50" id="projects">
       <div className="container-kapizo">
         <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-8 text-center sm:p-12">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange">
+          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange-deep">
             <PanelIcon className="h-7 w-7" />
           </span>
           <h2 className="mt-5 font-display text-2xl font-extrabold text-kapizo-navy sm:text-3xl">

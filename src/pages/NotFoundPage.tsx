@@ -22,7 +22,7 @@ export default function NotFoundPage() {
     <section className="section bg-white">
       <div className="container-kapizo">
         <div className="mx-auto max-w-lg py-10 text-center">
-          <p className="font-display text-6xl font-extrabold text-kapizo-orange">404</p>
+          <p className="font-display text-6xl font-extrabold text-kapizo-orange-deep">404</p>
           <h1 className="mt-4 font-display text-2xl font-extrabold text-kapizo-navy sm:text-3xl">
             We could not find that page
           </h1>

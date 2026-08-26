@@ -49,7 +49,7 @@ export default function SystemTypes() {
           >
             <div>
               <h3 className="font-display text-xl font-bold text-kapizo-navy">{current.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-kapizo-orange">{current.bestFor}</p>
+              <p className="mt-1 text-sm font-semibold text-kapizo-orange-deep">{current.bestFor}</p>
               <p className="mt-4 text-sm leading-relaxed text-slate-600">{current.explanation}</p>
 
               <ul className="mt-5 space-y-2.5">
@@ -72,7 +72,7 @@ export default function SystemTypes() {
                   return (
                     <li key={node}>
                       <div className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-4 py-3">
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kapizo-orange/10 text-kapizo-orange">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kapizo-orange/10 text-kapizo-orange-deep">
                           <Icon className="h-4.5 w-4.5" />
                         </span>
                         <span className="text-sm font-semibold text-kapizo-navy">{node}</span>
