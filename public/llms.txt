@@ -1,0 +1,89 @@
+# Kapizo Solar
+
+> A solar EPC company based in Mancherial, Telangana, India. Kapizo Solar designs,
+> supplies, installs and commissions rooftop solar systems for residential,
+> commercial, industrial and agricultural customers across Telangana.
+
+Official website: https://kapizosolar.in
+
+## Business identity
+
+- Name: Kapizo Solar
+- Tagline: Powering a Sustainable Tomorrow
+- Type: Solar EPC (engineering, procurement and construction) company
+- Founder: Yugandhar Jadi
+- Co-Founder: Thoutam Ramakrishna
+- Location: #18-225, Padmashali Colony, Near Panchamukhi Hanuman Temple, Mancherial, Telangana 504208, India
+- Service area: Mancherial and across Telangana
+- Contact: +91 7799049801, +91 9652398338
+
+Note: Kapizo Solar is a new company and has not yet completed its first customer
+projects. The website does not display project galleries, testimonials, customer
+counts or certifications, because none would be genuine at this stage.
+
+## Services
+
+- Residential rooftop solar
+- Commercial solar EPC
+- Industrial solar solutions
+- Agricultural solar solutions
+- On-grid solar systems
+- Hybrid solar systems
+- Solar with battery energy storage
+- Solar system design and engineering
+- Rooftop site assessment
+- Installation and commissioning
+- Net metering assistance
+- Government scheme documentation assistance
+- Electrical and balance-of-system solutions
+- Solar maintenance and after-sales support
+
+## Plans
+
+Three specification tiers. Pricing is not published because cost depends on
+capacity, roof type, structure height, cable runs and component selection,
+confirmed after site assessment.
+
+- Budget Plan (https://kapizosolar.in/plans/budget) — on-grid, essential protection, lowest entry cost
+- Standard Plan (https://kapizosolar.in/plans/standard) — higher-efficiency modules, monitoring, full surge protection; recommended
+- Premium Plan (https://kapizosolar.in/plans/premium) — premium components, hybrid capability, optional battery backup
+
+## Key pages
+
+- Home: https://kapizosolar.in/
+- Solar Calculator: https://kapizosolar.in/solar-calculator
+- Solar Solutions: https://kapizosolar.in/solutions
+- Plans: https://kapizosolar.in/plans
+- PM Surya Ghar scheme explained: https://kapizosolar.in/pm-surya-ghar
+- Solar Knowledge Hub: https://kapizosolar.in/solar-knowledge
+- About: https://kapizosolar.in/about
+- FAQs: https://kapizosolar.in/faq
+- Contact: https://kapizosolar.in/contact
+
+## Solar calculator
+
+The calculator at https://kapizosolar.in/solar-calculator estimates recommended
+system capacity, monthly and annual generation, annual bill offset, estimated
+annual savings, indicative payback period, rooftop area required and CO2 avoided.
+
+Assumptions used: approximately 4.2 units per kW per day as an annual average for
+Telangana conditions, and approximately 90 sq ft of shadow-free area per kW.
+Outputs are labelled as indicative estimates, not quotations or guarantees.
+
+## Government scheme information
+
+The PM Surya Ghar page explains the rooftop solar scheme in Kapizo Solar's own
+words as customer guidance. It deliberately does not publish specific subsidy
+rupee figures, because those are set by the government and can be revised.
+Readers are directed to pmsuryaghar.gov.in and mnre.gov.in to verify current
+eligibility, amounts and process.
+
+Kapizo Solar does not claim empanelled or authorised vendor status under any
+government scheme.
+
+## Content principles
+
+All content on this website avoids fabricated claims. There are no customer
+counts, testimonials, ratings, awards, certifications, project statistics or
+years-of-experience claims, because the company is new and none would be
+verifiable. Technical figures are presented with their assumptions stated.

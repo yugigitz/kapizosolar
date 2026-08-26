@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* `clip` prevents a horizontal scroll container forming at all, unlike
+       `hidden`, which still allows programmatic sideways scrolling. */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-white text-kapizo-navy font-sans antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-kapizo-orange ring-offset-2 ring-offset-white rounded;
+  }
+}
+
+@layer components {
+  .container-kapizo {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-kapizo-green;
+  }
+
+  .h-section {
+    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold leading-[1.1] text-kapizo-navy;
+  }
+
+  .lede {
+    @apply text-base sm:text-lg leading-relaxed text-slate-600;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-card transition-shadow duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:border-slate-300;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold
+           transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-kapizo-orange text-white hover:bg-kapizo-orange-light
+           shadow-[0_2px_8px_rgba(245,130,12,0.28)] hover:shadow-[0_4px_16px_rgba(245,130,12,0.36)];
+  }
+
+  .btn-navy {
+    @apply btn bg-kapizo-navy text-white hover:bg-kapizo-navy-light;
+  }
+
+  .btn-green {
+    @apply btn bg-kapizo-green text-white hover:bg-kapizo-green-dark;
+  }
+
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-kapizo-navy hover:border-kapizo-navy hover:bg-slate-50;
+  }
+
+  .btn-ghost-light {
+    @apply btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20;
+  }
+
+  .field-label {
+    @apply block text-sm font-semibold text-kapizo-navy mb-1.5;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-kapizo-navy
+           placeholder:text-slate-400 transition-colors
+           focus:border-kapizo-green focus:outline-none focus:ring-2 focus:ring-kapizo-green/20;
+  }
+
+  .disclaimer {
+    @apply rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900;
+  }
+
+  .prose-kapizo {
+    @apply text-slate-600 leading-relaxed;
+  }
+
+  .prose-kapizo h2 {
+    @apply text-2xl font-bold text-kapizo-navy mt-10 mb-3;
+  }
+
+  .prose-kapizo h3 {
+    @apply text-lg font-bold text-kapizo-navy mt-7 mb-2;
+  }
+
+  .prose-kapizo p {
+    @apply mb-4;
+  }
+
+  .prose-kapizo ul {
+    @apply mb-4 space-y-2 pl-5 list-disc marker:text-kapizo-green;
+  }
+
+  .prose-kapizo a {
+    @apply text-kapizo-green font-semibold underline underline-offset-2 hover:text-kapizo-green-dark;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

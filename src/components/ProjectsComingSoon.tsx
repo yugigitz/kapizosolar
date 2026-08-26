@@ -1,0 +1,37 @@
+import { waMessages } from '@/data/business'
+import { WhatsAppButton } from './ui/CTAButtons'
+import { PanelIcon } from './ui/Icons'
+
+export default function ProjectsComingSoon() {
+  return (
+    <section className="section bg-slate-50" id="projects">
+      <div className="container-kapizo">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-8 text-center sm:p-12">
+          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange">
+            <PanelIcon className="h-7 w-7" />
+          </span>
+          <h2 className="mt-5 font-display text-2xl font-extrabold text-kapizo-navy sm:text-3xl">
+            Kapizo Projects — Coming Soon
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            We are a new solar EPC company and are currently onboarding our first customer projects.
+            Rather than fill this page with stock photographs, we will publish real installation
+            galleries with system details as our projects are commissioned.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
+            If you are considering rooftop solar now, you will get direct attention from the founders
+            and a fully documented installation.
+          </p>
+          <div className="mt-7 flex justify-center">
+            <WhatsAppButton
+              message={waMessages.consultation}
+              label="Be One of Our First Solar Customers"
+              className="btn-primary"
+              context="projects_coming_soon"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
