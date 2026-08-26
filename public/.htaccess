@@ -3,9 +3,25 @@
 
 DirectoryIndex index.html
 
+# Never serve environment files, the lead store, or version control data,
+# even if one is accidentally uploaded into the web root.
+<FilesMatch "^\.env|\.(jsonl|log|ini|sh|bak)$|^\.git">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # The lead intake endpoint is a real PHP file — let Apache handle it directly
+  # so it is never swallowed by the SPA fallback below.
+  RewriteRule ^api/ - [L]
 
   # Serve existing files as-is (assets, robots.txt, sitemap.xml, llms.txt).
   RewriteCond %{REQUEST_FILENAME} -f

@@ -5,3 +5,12 @@ dist-ssr
 .DS_Store
 npm-debug.log*
 tsconfig.tsbuildinfo
+
+# Environment / secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Lead store (contains customer personal data)
+storage/
+*.jsonl
