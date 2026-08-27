@@ -129,7 +129,7 @@ export default function SolutionDetailPage() {
                   <span>
                     Compare the{' '}
                     <Link to="/plans" className="font-semibold text-kapizo-green hover:underline">
-                      Budget, Standard and Premium plans
+                      Essential, Recommended and High Performance options
                     </Link>{' '}
                     to decide on specification.
                   </span>

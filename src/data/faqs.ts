@@ -1,3 +1,6 @@
+import { SUBSIDY_HEADLINE, SUBSIDY_SLABS, SUBSIDY_STRUCTURE } from './scheme'
+import { WARRANTY_TERMS_NOTE, WORKMANSHIP_WARRANTY_NAME } from './warranty'
+
 export type Faq = {
   q: string
   a: string
@@ -53,12 +56,12 @@ export const faqs: Faq[] = [
   {
     category: 'commercial',
     q: 'What warranty do I get?',
-    a: 'Your warranties come from the manufacturers of each component, not from us as the installer, and they differ from part to part. Solar modules typically carry a product warranty and a separate long-term performance warranty; inverters carry their own manufacturer warranty with an option to extend on many models; batteries, structures and balance-of-system components each have their own terms. The exact warranty applicable to your system is stated in your proposal, based on the components actually selected for your project.',
+    a: `There are four separate warranties, and it is worth knowing the difference because the market usually blurs them. On the solar modules you get two: a product warranty covering manufacturing and material defects, typically 10–12 years, and a performance warranty covering guaranteed power output, typically 25–30 years. These are not the same thing — when a company advertises a "25-year panel warranty", they mean the performance one, not cover on the panel itself. The inverter carries its own manufacturer warranty, typically 5–10 years depending on the model, often extendable. And we provide the ${WORKMANSHIP_WARRANTY_NAME}, covering installation workmanship attributable to us. An optional AMC is available separately for preventive maintenance and cleaning. ${WARRANTY_TERMS_NOTE}`,
   },
   {
     category: 'scheme',
     q: 'How does the government solar subsidy actually work?',
-    a: 'Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers can receive central financial assistance for a grid-connected system: 60% of the cost at government benchmark prices for up to 2 kW, plus 40% of the additional cost between 2 kW and 3 kW, capped at the 3 kW level — approximately ₹30,000, ₹60,000 and ₹78,000 for 1 kW, 2 kW and 3 kW-and-above respectively. It is applied for through the national portal, and released after DISCOM inspection and document verification. Note that the scheme routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment. Amounts and rules are set by the government and can change, so verify the current position on pmsuryaghar.gov.in before deciding.',
+    a: `Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers may receive central financial assistance for a grid-connected system: ${SUBSIDY_STRUCTURE} At benchmark prices that is roughly ${SUBSIDY_SLABS.map((s) => `${s.amount} for ${s.capacity}`).join(', ')}. It is applied for through the national portal and released after DISCOM inspection and document verification. Not every customer receives the maximum — ${SUBSIDY_HEADLINE} The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so verify the current position on pmsuryaghar.gov.in before deciding.`,
   },
   {
     category: 'commercial',
@@ -82,7 +85,7 @@ export const faqs: Faq[] = [
   },
   {
     category: 'commercial',
-    q: 'Which plan should I choose — Budget, Standard or Premium?',
-    a: 'Most homes end up on Standard, so start there. Budget covers the essentials properly at the lowest entry cost and makes sense if your only goal is cutting the bill. Standard adds better panels, monitoring you can actually check on your phone, and full surge protection — the upgrades that matter most over fifteen years. Premium is for you if you need backup during power cuts, or you want the highest specification available. The honest deciding question is whether power cuts bother you enough to pay for a battery.',
+    q: 'Which option should I choose — Essential, Recommended or High Performance?',
+    a: 'Most homes start with Recommended. Essential covers the fundamentals properly and makes sense if cutting the bill is the whole goal. Recommended adds better component selection, a more efficient design, stronger protection and monitoring you can actually check on your phone — the things that matter most across fifteen years. High Performance is for you if you need power during cuts or want the strongest configuration we offer. The honest deciding question is whether power cuts bother you enough to pay for a battery. None of these are fixed packages — the final system is designed around your usage and your roof.'
   },
 ]

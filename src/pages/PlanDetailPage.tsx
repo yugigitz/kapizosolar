@@ -7,10 +7,19 @@ import {
   CONFIGURABLE_PLACEHOLDER,
   getPlan,
   isConfigured,
+  PRICING_STATEMENT,
+  COMPONENT_SELECTION_NOTE,
   planWhatsAppMessage,
   plans,
   specValue,
 } from '@/data/plans'
+import {
+  AMC_NAME,
+  AMC_SUMMARY,
+  WARRANTY_KEY_DISTINCTION,
+  WARRANTY_LAYERS,
+  WARRANTY_TERMS_NOTE,
+} from '@/data/warranty'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { breadcrumbSchema, serviceSchema, webPageSchema } from '@/lib/seo'
 import { trackEvent } from '@/lib/analytics'
@@ -100,6 +109,9 @@ export default function PlanDetailPage() {
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 Specification
               </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                {COMPONENT_SELECTION_NOTE}
+              </p>
               <dl className="mt-4 divide-y divide-slate-100 border-y border-slate-200">
                 {Object.values(plan.specs).map((spec) => (
                   <div key={spec.label} className="flex flex-col gap-1 py-3.5 sm:flex-row sm:gap-6">
@@ -158,25 +170,39 @@ export default function PlanDetailPage() {
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 Warranty
               </h2>
-              <dl className="mt-4 grid gap-3 sm:grid-cols-2">
-                {plan.warranty.map((w) => (
-                  <div key={w.label} className="rounded-lg border border-slate-200 p-4">
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      {w.label}
+              <p className="mt-3 rounded-lg border border-kapizo-navy/15 bg-kapizo-navy/[0.03] px-4 py-3 text-sm leading-relaxed text-kapizo-navy">
+                <strong>Worth knowing: </strong>
+                {WARRANTY_KEY_DISTINCTION}
+              </p>
+
+              <dl className="mt-4 space-y-3">
+                {WARRANTY_LAYERS.map((w) => (
+                  <div key={w.id} className="rounded-lg border border-slate-200 p-4">
+                    <dt className="flex flex-wrap items-baseline justify-between gap-2">
+                      <span className="text-sm font-bold text-kapizo-navy">{w.layer}</span>
+                      <span className="text-sm font-semibold text-kapizo-green">{w.typical}</span>
                     </dt>
-                    <dd
-                      className={`mt-1 text-sm font-semibold ${
-                        isConfigured(w.value) ? 'text-kapizo-navy' : 'italic text-slate-400'
-                      }`}
-                    >
-                      {w.value ?? CONFIGURABLE_PLACEHOLDER}
+                    <dd className="mt-1.5 text-sm leading-relaxed text-slate-600">
+                      <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                        Provided by {w.provider}
+                      </span>
+                      <br />
+                      {w.covers}
+                      {w.note && (
+                        <span className="mt-1.5 block text-xs italic text-slate-500">{w.note}</span>
+                      )}
                     </dd>
                   </div>
                 ))}
+                <div className="rounded-lg border border-dashed border-slate-300 p-4">
+                  <dt className="text-sm font-bold text-kapizo-navy">{AMC_NAME}</dt>
+                  <dd className="mt-1.5 text-sm leading-relaxed text-slate-600">{AMC_SUMMARY}</dd>
+                </div>
               </dl>
+
               <p className="mt-3 text-xs leading-relaxed text-slate-500">
-                Warranties are provided by the component manufacturers and differ by make and model.
-                The exact warranty applicable to your system is stated in your written proposal.
+                Typical ranges only — the actual terms depend on the components selected for your
+                project. {WARRANTY_TERMS_NOTE}
               </p>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
@@ -190,7 +216,11 @@ export default function PlanDetailPage() {
                   <p className="mt-1 text-sm text-slate-600">
                     {isConfigured(plan.indicativePriceNote)
                       ? plan.indicativePriceNote
-                      : 'Confirmed in your written proposal after site assessment. Cost depends on capacity, roof type, structure height, cable runs and component selection.'}
+                      : PRICING_STATEMENT}
+                  </p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500">
+                    Cost depends on capacity, roof type, structure height, cable runs and component
+                    selection, so we quote against your actual site rather than publishing a rate.
                   </p>
                 </div>
                 {isConfigured(plan.subsidyNote) && (

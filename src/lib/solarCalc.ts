@@ -1,3 +1,5 @@
+import type { PlanId } from '@/data/plans'
+
 export type ConsumerType = 'residential' | 'commercial' | 'industrial' | 'agricultural'
 
 export type CalcInput = {
@@ -19,10 +21,15 @@ export type CalcResult = {
   annualOffsetUnits: number
   offsetPercent: number
   annualSavings: number
-  paybackYears: number
+  /** null until verified system pricing is configured. */
+  paybackYears: number | null
   requiredAreaSqft: number
   co2TonnesPerYear: number
-  suggestedPlan: 'Budget' | 'Standard' | 'Premium'
+  /**
+   * Which of the three options to suggest. A PlanId rather than a display
+   * name, so renaming an option in plans.ts does not require a change here.
+   */
+  suggestedPlan: PlanId
 }
 
 /**
@@ -41,11 +48,21 @@ export const DEFAULT_TARIFFS: Record<ConsumerType, number> = {
 export const SPECIFIC_YIELD_PER_KW_PER_DAY = 4.2
 
 /** Indicative installed cost per kW (INR), used only for a rough payback range. */
-const INDICATIVE_COST_PER_KW: Record<ConsumerType, number> = {
-  residential: 62000,
-  commercial: 55000,
-  industrial: 50000,
-  agricultural: 60000,
+/**
+ * Installed cost per kW, used ONLY to derive a payback period.
+ *
+ * Deliberately unset. Publishing a payback figure requires assuming a system
+ * price, and Kapizo has not issued verified commercial pricing — an assumed
+ * rate here would put an invented price per kW in front of customers.
+ *
+ * Set the real rates here and the payback output appears automatically
+ * everywhere, with no component changes.
+ */
+const SYSTEM_COST_PER_KW: Record<ConsumerType, number | null> = {
+  residential: null,
+  commercial: null,
+  industrial: null,
+  agricultural: null,
 }
 
 /** Indicative shadow-free area required per kW (sq ft). */
@@ -109,17 +126,21 @@ export function calculateSolar(input: CalcInput): CalcResult {
 
   const preferenceMultiplier = input.systemPreference === 'hybrid' ? 1.35 : 1
   const indicativeCost =
-    recommendedKw * INDICATIVE_COST_PER_KW[input.consumerType] * preferenceMultiplier
-  const paybackYears = annualSavings > 0 ? indicativeCost / annualSavings : 0
+    recommendedKw * (SYSTEM_COST_PER_KW[input.consumerType] ?? 0) * preferenceMultiplier
+  // null until verified pricing exists, so no payback figure is published.
+  const costPerKw = SYSTEM_COST_PER_KW[input.consumerType]
+  const paybackYears =
+    costPerKw !== null && annualSavings > 0 ? indicativeCost / annualSavings : null
 
   const requiredAreaSqft = Math.round(recommendedKw * AREA_SQFT_PER_KW)
   const co2TonnesPerYear = annualGenerationUnits * CO2_TONNES_PER_UNIT
 
-  let suggestedPlan: CalcResult['suggestedPlan'] = 'Standard'
+  // Selection thresholds unchanged; only the returned identifier changed.
+  let suggestedPlan: PlanId = 'standard'
   if (input.systemPreference === 'hybrid' || recommendedKw >= 8) {
-    suggestedPlan = 'Premium'
+    suggestedPlan = 'premium'
   } else if (recommendedKw <= 2) {
-    suggestedPlan = 'Budget'
+    suggestedPlan = 'budget'
   }
 
   return {
@@ -132,7 +153,7 @@ export function calculateSolar(input: CalcInput): CalcResult {
     annualOffsetUnits: Math.round(annualOffsetUnits),
     offsetPercent: Math.round(offsetPercent),
     annualSavings: Math.round(annualSavings),
-    paybackYears: Math.round(paybackYears * 10) / 10,
+    paybackYears: paybackYears === null ? null : Math.round(paybackYears * 10) / 10,
     requiredAreaSqft,
     co2TonnesPerYear: Math.round(co2TonnesPerYear * 10) / 10,
     suggestedPlan,

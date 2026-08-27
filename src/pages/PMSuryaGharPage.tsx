@@ -5,6 +5,13 @@ import CTASection from '@/components/CTASection'
 import LeadForm from '@/components/LeadForm'
 import { waMessages, whatsappHref } from '@/data/business'
 import { usePageMeta } from '@/hooks/usePageMeta'
+import {
+  OFFICIAL_LINKS,
+  SUBSIDY_HEADLINE,
+  SUBSIDY_LIMITATIONS,
+  SUBSIDY_SLABS,
+  SUBSIDY_STRUCTURE,
+} from '@/data/scheme'
 import { breadcrumbSchema, faqSchema, webPageSchema } from '@/lib/seo'
 import { trackEvent } from '@/lib/analytics'
 import { ArrowRightIcon, WhatsAppIcon } from '@/components/ui/Icons'
@@ -59,7 +66,7 @@ const schemeFaqs = [
   },
   {
     q: 'How much subsidy is available under PM Surya Ghar?',
-    a: 'Under the residential Central Financial Assistance component, assistance is 60% of the system cost at government benchmark prices for systems up to 2 kW, plus 40% of the additional cost for capacity between 2 kW and 3 kW, capped at the 3 kW level. At published benchmark prices this works out to approximately ₹30,000 for 1 kW, ₹60,000 for 2 kW and ₹78,000 for 3 kW and above. These figures are subject to current government guidelines and may be revised, so verify them on pmsuryaghar.gov.in before making a financial decision.',
+    a: `Under the residential Central Financial Assistance component, assistance is ${SUBSIDY_STRUCTURE} At published benchmark prices that works out to approximately ${SUBSIDY_SLABS.map((s) => `${s.amount} for ${s.capacity}`).join(', ')}. ${SUBSIDY_HEADLINE} Verify the current position on the official portal before making a financial decision.`,
   },
   {
     q: 'How does the rooftop solar subsidy actually reach me?',
@@ -177,11 +184,9 @@ export default function PMSuryaGharPage() {
                 How the subsidy is structured
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                Under the scheme's Central Financial Assistance component for residential consumers,
-                assistance is calculated as a share of the system cost at government benchmark
-                prices: 60% of the cost for systems up to 2 kW, plus 40% of the additional cost for
-                capacity between 2 kW and 3 kW. Assistance is capped at the 3 kW level, so larger
-                systems receive the same maximum amount.
+                Under the scheme's Central Financial Assistance component for residential
+                consumers, assistance is calculated as a share of the system cost at government
+                benchmark prices: {SUBSIDY_STRUCTURE}
               </p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
                 At the benchmark prices published for the scheme, that structure works out as
@@ -205,51 +210,28 @@ export default function PMSuryaGharPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-slate-100">
-                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">1 kW</th>
-                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹30,000</td>
-                    </tr>
-                    <tr className="border-b border-slate-100">
-                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">2 kW</th>
-                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹60,000</td>
-                    </tr>
-                    <tr className="border-b border-slate-100">
-                      <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">
-                        3 kW and above
-                      </th>
-                      <td className="px-4 py-3.5 font-semibold text-kapizo-green">₹78,000 (maximum)</td>
-                    </tr>
+                    {SUBSIDY_SLABS.map((slab) => (
+                      <tr key={slab.capacity} className="border-b border-slate-100">
+                        <th scope="row" className="px-4 py-3.5 text-left font-semibold text-kapizo-navy">
+                          {slab.capacity}
+                        </th>
+                        <td className="px-4 py-3.5 font-semibold text-kapizo-green">
+                          {slab.amount}
+                          {'isMaximum' in slab && slab.isMaximum ? ' (maximum)' : ''}
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
 
               <div className="disclaimer mt-5">
                 <strong>Important qualifications on these figures.</strong>
+                <p className="mt-2">{SUBSIDY_HEADLINE}</p>
                 <ul className="mt-2 space-y-1.5">
-                  <li>
-                    • These amounts reflect the scheme's published structure at government benchmark
-                    prices and are <strong>subject to current government guidelines</strong>, which
-                    may be revised at any time.
-                  </li>
-                  <li>
-                    • <strong>Eligibility is determined under the applicable scheme rules</strong> by
-                    the government and your DISCOM — not by us, and not by the fact that you
-                    installed a system.
-                  </li>
-                  <li>
-                    • <strong>Contacting Kapizo Solar does not secure or guarantee any subsidy.</strong>{' '}
-                    We can explain the process and assist with documentation; we cannot approve,
-                    influence or promise assistance.
-                  </li>
-                  <li>
-                    • Actual subsidy processing depends on the national portal, your DISCOM's
-                    feasibility approval, the installation meeting the applicable technical
-                    specifications, physical inspection, and document verification before release.
-                  </li>
-                  <li>
-                    • Verify the current position on the official portal before making any financial
-                    decision.
-                  </li>
+                  {SUBSIDY_LIMITATIONS.map((line) => (
+                    <li key={line}>• {line}</li>
+                  ))}
                 </ul>
               </div>
 

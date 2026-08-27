@@ -9,7 +9,7 @@ export default function PlanComparison() {
       <div className="hidden overflow-x-auto md:block">
         <table className="w-full min-w-[640px] border-collapse text-sm">
           <caption className="sr-only">
-            Comparison of Kapizo Solar Budget, Standard and Premium plans
+            Comparison of the Kapizo Solar Essential, Recommended and High Performance options
           </caption>
           <thead>
             <tr>

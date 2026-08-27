@@ -157,7 +157,7 @@ export const articles: Article[] = [
     ],
     relatedLinks: [
       { label: 'Compare system types', to: '/solutions#system-types' },
-      { label: 'Premium plan with battery option', to: '/plans/premium' },
+      { label: 'High Performance option with battery backup', to: '/plans/premium' },
       { label: 'Calculate your system size', to: '/solar-calculator' },
     ],
     seo: {

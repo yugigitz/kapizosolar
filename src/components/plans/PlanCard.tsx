@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { phones, telHref } from '@/data/business'
-import { planWhatsAppMessage, specValue, type Plan } from '@/data/plans'
+import { PRICING_STATEMENT, planWhatsAppMessage, specValue, type Plan } from '@/data/plans'
 import { whatsappHref } from '@/data/business'
 import { trackEvent } from '@/lib/analytics'
 import { ArrowRightIcon, CheckIcon, PhoneIcon, WhatsAppIcon } from '../ui/Icons'
@@ -8,19 +8,29 @@ import { ArrowRightIcon, CheckIcon, PhoneIcon, WhatsAppIcon } from '../ui/Icons'
 export default function PlanCard({ plan }: { plan: Plan }) {
   return (
     <article
-      className={`relative flex flex-col rounded-xl border bg-white p-6 transition-shadow duration-300 ${
+      className={`relative flex flex-col rounded-xl border bg-white transition-shadow duration-300 ${
         plan.recommended
-          ? 'border-kapizo-green shadow-card-hover ring-1 ring-kapizo-green/20'
-          : 'border-slate-200 shadow-card hover:shadow-card-hover'
+          ? // The default option, so it is lifted out of the row rather than
+            // sitting level with the other two.
+            'border-2 border-kapizo-green p-6 shadow-card-hover ring-4 ring-kapizo-green/10 lg:-my-3 lg:py-9'
+          : 'border-slate-200 p-6 shadow-card hover:shadow-card-hover'
       }`}
     >
       {plan.recommended && (
-        <span className="absolute -top-3 left-6 rounded-full bg-kapizo-green px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-          Recommended
+        <span className="absolute -top-3.5 left-6 inline-flex items-center gap-1.5 rounded-full bg-kapizo-green px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
+          <span aria-hidden="true">⭐</span>
+          Most customers start here
         </span>
       )}
 
-      <h3 className="font-display text-xl font-extrabold text-kapizo-navy">{plan.name}</h3>
+      <h3 className="font-display text-xl font-extrabold text-kapizo-navy">
+        {plan.name}
+        {plan.recommended && (
+          <span className="ml-1.5 text-base" aria-hidden="true">
+            ⭐
+          </span>
+        )}
+      </h3>
       <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-kapizo-orange-deep">
         {plan.audienceLabel}
       </p>
@@ -28,7 +38,7 @@ export default function PlanCard({ plan }: { plan: Plan }) {
 
       <dl className="mt-5 space-y-2 border-y border-slate-100 py-4 text-sm">
         <div className="flex justify-between gap-3">
-          <dt className="text-slate-500">Capacity</dt>
+          <dt className="text-slate-500">System size</dt>
           <dd className="text-right font-semibold text-kapizo-navy">{plan.capacityOptions}</dd>
         </div>
         <div className="flex justify-between gap-3">
@@ -50,7 +60,9 @@ export default function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
 
-      <div className="mt-6 space-y-2.5">
+      <p className="mt-4 text-xs leading-relaxed text-slate-500">{PRICING_STATEMENT}</p>
+
+      <div className="mt-5 space-y-2.5">
         <Link
           to={`/plans/${plan.slug}`}
           onClick={() => trackEvent('plan_select', { plan: plan.id, action: 'view_details' })}

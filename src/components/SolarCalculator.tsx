@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { waMessages, whatsappHref } from '@/data/business'
+import { CONFIGURABLE_PLACEHOLDER, PRICING_STATEMENT, plans } from '@/data/plans'
 import { trackEvent } from '@/lib/analytics'
 import {
   DEFAULT_TARIFFS,
@@ -62,6 +63,8 @@ export default function SolarCalculator({ compact = false }: { compact?: boolean
     }, 60)
   }
 
+  const suggested = plans.find((p) => p.id === result.suggestedPlan)
+
   const quoteMessage = `Hello Kapizo Solar, I used the solar calculator on your website and would like a detailed quote.
 
 Monthly bill: ₹${formatNumber(monthlyBill)}
@@ -84,7 +87,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
     { icon: SunIcon, label: 'Annual generation', value: `${formatNumber(result.annualGenerationUnits)} units` },
     { icon: BoltIcon, label: 'Annual bill offset', value: `${result.offsetPercent}% of usage` },
     { icon: BoltIcon, label: 'Estimated annual savings', value: formatINR(result.annualSavings), accent: true },
-    { icon: CalculatorIcon, label: 'Indicative payback', value: `~${result.paybackYears} years` },
+    // Payback is shown only once verified system pricing is configured; it
+    // cannot be derived without assuming a price per kW.
+    ...(result.paybackYears !== null
+      ? [{ icon: CalculatorIcon, label: 'Indicative payback', value: `~${result.paybackYears} years` }]
+      : []),
     { icon: PanelIcon, label: 'Rooftop area needed', value: `~${formatNumber(result.requiredAreaSqft)} sq ft` },
     { icon: LeafIcon, label: 'CO₂ avoided per year', value: `~${result.co2TonnesPerYear} tonnes` },
   ]
@@ -300,19 +307,27 @@ Please share the recommended system size, cost and subsidy eligibility.`
 
               <div className="mt-4 rounded-xl border border-kapizo-navy/15 bg-kapizo-navy/[0.03] p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Suggested Kapizo plan
+                  Suggested starting point
                 </p>
                 <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
                   <p className="font-display text-lg font-extrabold text-kapizo-navy">
-                    {result.suggestedPlan} Plan
+                    {suggested?.name ?? CONFIGURABLE_PLACEHOLDER}
+                    {suggested?.recommended && (
+                      <span className="ml-1.5 text-base" aria-hidden="true">
+                        ⭐
+                      </span>
+                    )}
                   </p>
-                  <Link
-                    to={`/plans/${result.suggestedPlan.toLowerCase()}`}
-                    className="text-sm font-semibold text-kapizo-green hover:underline"
-                  >
-                    View plan details →
-                  </Link>
+                  {suggested && (
+                    <Link
+                      to={`/plans/${suggested.slug}`}
+                      className="text-sm font-semibold text-kapizo-green hover:underline"
+                    >
+                      View plan details →
+                    </Link>
+                  )}
                 </div>
+                <p className="mt-2 text-xs leading-relaxed text-slate-500">{PRICING_STATEMENT}</p>
               </div>
 
               {result.cappedByRoof && (

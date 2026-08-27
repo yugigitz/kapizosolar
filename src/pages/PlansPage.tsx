@@ -11,20 +11,20 @@ import { ArrowRightIcon } from '@/components/ui/Icons'
 
 const planFaqs = [
   {
-    q: 'What is the difference between the Budget, Standard and Premium solar plans?',
-    a: 'The three plans differ in module and inverter specification, mounting structure, protection scheme, monitoring, documentation support and whether battery storage is included. Budget is an on-grid system with essential protection at the lowest entry cost. Standard adds higher-efficiency modules, app-based monitoring and full surge protection. Premium adds premium-tier components, a hybrid or hybrid-ready inverter with a battery option, an enhanced structure and priority support.',
+    q: 'What is the difference between the Essential, Recommended and High Performance options?',
+    a: 'They differ in component selection, system design, protection scheme, monitoring and whether battery storage is included. Essential is a straightforward on-grid system with reliable components and essential protection, for customers focused on reducing the bill. Recommended adds better component selection, a more efficient design, stronger protection including surge protection, and proper monitoring. High Performance adds enhanced components where the site justifies them, an enhanced protection scheme, advanced monitoring where available, and battery storage as an option. All three include the same engineering approach to sizing and safety, net metering and subsidy assistance, and the 1-Year Kapizo Installation Workmanship Warranty.'
   },
   {
-    q: 'Which Kapizo solar plan should I choose?',
-    a: 'Choose Budget if your only goal is reducing the bill and you do not need backup. Choose Standard if you want better components and the ability to see what the system is generating — this suits most residential customers. Choose Premium if you need backup during outages, want the highest specification, or are holding the property long term.',
+    q: 'Which option should I choose?',
+    a: 'Most residential customers should start with Recommended — it is where the extra spend buys the things that matter across the life of the system. Choose Essential if reducing the bill is the whole goal and you do not need backup. Choose High Performance if you need power through outages, want the strongest configuration, or are holding the property long term. These are starting points, not fixed packages: the final system is designed around your usage and roof.'
   },
   {
     q: 'Do the plans include the government subsidy?',
     a: 'No plan price includes or depends on a subsidy. Residential grid-connected systems may be eligible for central financial assistance under PM Surya Ghar, subject to prevailing government guidelines and your DISCOM process, but that assistance goes to the applicant through the official portal — it is not a discount we control or can promise. The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so confirm the vendor requirements on the official portal before committing if the assistance route is central to your decision.',
   },
   {
-    q: 'Why are prices not shown on the plan pages?',
-    a: 'The cost of a rooftop system depends on capacity, roof type, structure height, cable runs and component selection — all of which are confirmed during site assessment. Publishing a single figure would either overstate or understate the cost for most roofs, so we provide a written quote against your actual site instead.',
+    q: 'Why are prices not shown on the website?',
+    a: 'Because a single published figure would be wrong for most roofs. Cost depends on capacity, roof type, structure height, cable runs and component selection, all of which are established at site assessment. Final pricing is shared after understanding your electricity usage, system requirement and site conditions, in a written quotation for your property.'
   },
 ]
 
@@ -36,14 +36,14 @@ export default function PlansPage() {
 
   usePageMeta(
     {
-      title: 'Solar Plans — Budget, Standard & Premium | Kapizo Solar',
+      title: 'Solar Options — Essential, Recommended & High Performance | Kapizo Solar',
       description:
-        'Compare Kapizo Solar Budget, Standard and Premium rooftop solar plans: modules, inverter, protection, monitoring, documentation and battery options. Request a quote.',
+        'Compare the Kapizo Solar Essential, Recommended and High Performance rooftop solar options: component selection, system design, protection, monitoring and battery options. Get a personalised quotation.',
       path: '/plans',
     },
     [
       webPageSchema(
-        'Kapizo Solar Plans — Budget, Standard and Premium',
+        'Kapizo Solar Options — Essential, Recommended and High Performance',
         'Compare the three Kapizo Solar rooftop solar plans.',
         '/plans',
       ),
@@ -56,8 +56,8 @@ export default function PlansPage() {
     <>
       <PageHeader
         eyebrow="Kapizo Plans"
-        title="Budget, Standard and Premium — what actually changes"
-        description="Three specification levels, one engineering approach. What changes is the panels, the inverter, the protection and whether you get battery backup. What does not change is the care taken over sizing and safety."
+        title="Three ways to approach your solar system"
+        description="Essential, Recommended and High Performance are starting points rather than fixed packages. What changes between them is component selection, system design, protection, monitoring and battery capability. What does not change is the care taken over sizing and safety."
         breadcrumbs={crumbs}
       />
 
@@ -81,7 +81,7 @@ export default function PlansPage() {
             <h2 className="h-section mt-3">Full plan comparison</h2>
             <p className="lede mt-4">
               Every line below is a genuine difference, not a marketing tier. Where a value reads
-              “Shared on request”, we confirm it in your written proposal once we have seen the roof.
+              “Shared on request”, we confirm it in your written quotation once we have seen the roof.
             </p>
           </div>
           <div className="mt-10">
