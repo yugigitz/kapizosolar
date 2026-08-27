@@ -94,13 +94,17 @@ Please share the recommended system size, cost and subsidy eligibility.`
     },
   ]
 
-  // Supporting figures, secondary to the two above.
+  // Supporting figures, secondary to the two above. Annual generation runs the
+  // full width because it is the number the two headline figures are derived
+  // from, and it was getting lost among the smaller tiles.
   const supporting = [
     {
       icon: SunIcon,
       label: 'Annual generation',
       value: `${formatNumber(result.annualGenerationUnits)} units`,
+      note: 'Expected output over a full year, averaged across the seasons.',
       emphasis: true,
+      wide: true,
     },
     { icon: SunIcon, label: 'Monthly generation', value: `${formatNumber(result.monthlyGenerationUnits)} units` },
     { icon: BoltIcon, label: 'Annual bill offset', value: `${result.offsetPercent}% of usage` },
@@ -117,11 +121,25 @@ Please share the recommended system size, cost and subsidy eligibility.`
     <div className={compact ? '' : 'card p-5 sm:p-7 lg:p-8'}>
       <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
         <div className="lg:col-span-2">
-          <h3 className="font-display text-xl font-bold text-kapizo-navy">Your details</h3>
-          <p className="mt-1.5 text-sm text-slate-600">
-            Start with your monthly bill. If you know your tariff or terrace size, adding them
-            sharpens the estimate.
-          </p>
+          <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
+            <div className="flex items-center gap-2.5">
+              <span
+                aria-hidden="true"
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-kapizo-orange-deep text-[11px] font-bold text-white"
+              >
+                1
+              </span>
+              <h3 className="font-display text-xl font-bold text-kapizo-navy">Your details</h3>
+            </div>
+            <p className="mt-2 text-sm text-slate-600">
+              Start with your monthly bill. If you know your tariff or terrace size, adding them
+              sharpens the estimate.
+            </p>
+            {/* States the method plainly: the size follows the usage, rather than
+                a package being recommended first and justified afterwards. */}
+            <p className="mt-3 flex items-start gap-2 border-l-2 border-kapizo-green/50 pl-3 text-xs leading-relaxed text-slate-600">
+              We size the system from the units you actually consume, not from a fixed package.
+            </p>
 
           <div className="mt-6 space-y-5">
             <div>
@@ -267,16 +285,34 @@ Please share the recommended system size, cost and subsidy eligibility.`
               </div>
             </details>
 
-            <button type="button" onClick={handleCalculate} className="btn-primary w-full">
-              <CalculatorIcon className="h-4 w-4" />
-              Calculate My Solar Estimate
-            </button>
+            <div>
+              <button
+                type="button"
+                onClick={handleCalculate}
+                className="btn-primary w-full !py-3.5 text-base"
+              >
+                <CalculatorIcon className="h-5 w-5" />
+                Calculate My Solar Estimate
+              </button>
+              <p className="mt-2 text-center text-[11px] text-slate-500">
+                Takes about thirty seconds. No contact details needed.
+              </p>
+            </div>
+          </div>
           </div>
         </div>
 
         <div className="lg:col-span-3" ref={resultsRef}>
           <div className="flex items-center justify-between gap-3">
-            <h3 className="font-display text-xl font-bold text-kapizo-navy">Indicative estimate</h3>
+            <div className="flex items-center gap-2.5">
+              <span
+                aria-hidden="true"
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-kapizo-green text-[11px] font-bold text-white"
+              >
+                2
+              </span>
+              <h3 className="font-display text-xl font-bold text-kapizo-navy">Indicative estimate</h3>
+            </div>
             <span className="rounded-full bg-amber-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-800">
               Estimate only
             </span>
@@ -334,12 +370,12 @@ Please share the recommended system size, cost and subsidy eligibility.`
               </div>
 
               <div className="mt-3 grid grid-cols-2 gap-3">
-                {supporting.map(({ icon: Icon, label, value, emphasis }) => (
+                {supporting.map(({ icon: Icon, label, value, note, emphasis, wide }) => (
                   <div
                     key={label}
-                    className={`rounded-xl border p-3.5 ${
+                    className={`rounded-xl border p-3.5 ${wide ? 'col-span-2' : ''} ${
                       emphasis
-                        ? 'border-kapizo-green/25 bg-kapizo-green/[0.04]'
+                        ? 'border-kapizo-green/30 bg-kapizo-green/[0.05]'
                         : 'border-slate-200 bg-white'
                     }`}
                   >
@@ -350,12 +386,13 @@ Please share the recommended system size, cost and subsidy eligibility.`
                       </p>
                     </div>
                     <p
-                      className={`mt-1.5 font-display text-lg font-extrabold leading-tight ${
-                        emphasis ? 'text-kapizo-green-dark' : 'text-kapizo-navy'
-                      }`}
+                      className={`mt-1.5 font-display font-extrabold leading-tight ${
+                        wide ? 'text-2xl' : 'text-lg'
+                      } ${emphasis ? 'text-kapizo-green-dark' : 'text-kapizo-navy'}`}
                     >
                       {value}
                     </p>
+                    {note && <p className="mt-1 text-xs leading-relaxed text-slate-500">{note}</p>}
                   </div>
                 ))}
               </div>

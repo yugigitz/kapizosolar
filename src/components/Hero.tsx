@@ -73,33 +73,24 @@ export default function Hero() {
             <div className="relative">
               <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 backdrop-blur-sm sm:p-6">
                 {/*
-                  The banner has a transparent background, so its green "ZO"
-                  sat directly on the green end of the hero gradient and lost
-                  definition. This gives it a light plate to sit on.
+                  The supplied banner is transparent, so its green "ZO" would
+                  otherwise sit on the green end of the hero gradient and lose
+                  definition. It gets its own surface instead of a glow.
 
-                  Not a white box: the plate is a soft radial wash that is
-                  brightest behind the wordmark and fades to nothing at the
-                  edges, with a hairline border and inner highlight so it reads
-                  as a lit recess in the card rather than a pasted rectangle.
+                  The surface is frosted rather than solid: at 88% white over a
+                  blur of the hero behind it, the gradient still tints it, so it
+                  reads as a lit panel belonging to the card rather than a white
+                  rectangle laid on top. A hairline ring and a downward shadow
+                  give it real elevation; there is no halo or bloom.
                 */}
-                <div className="relative overflow-hidden rounded-xl px-4 py-6 sm:px-6 sm:py-7">
-                  <div
+                <div className="relative rounded-2xl bg-gradient-to-b from-white/95 via-white/90 to-white/[0.84] px-6 py-7 shadow-[0_16px_34px_-22px_rgba(2,6,23,0.85)] ring-1 ring-white/50 backdrop-blur-md sm:px-8 sm:py-8">
+                  <span
                     aria-hidden="true"
-                    className="absolute inset-0 rounded-xl bg-white/[0.93]"
-                    style={{
-                      maskImage:
-                        'radial-gradient(120% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%)',
-                      WebkitMaskImage:
-                        'radial-gradient(120% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%)',
-                    }}
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/25"
+                    className="pointer-events-none absolute inset-x-6 top-0 h-px bg-white/80"
                   />
                   <KapizoBanner
                     alt="Kapizo Solar rooftop solar EPC services in Telangana"
-                    className="relative w-full"
+                    className="relative mx-auto w-full"
                     priority
                   />
                 </div>
