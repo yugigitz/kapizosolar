@@ -136,11 +136,11 @@ export function calculateSolar(input: CalcInput): CalcResult {
   const co2TonnesPerYear = annualGenerationUnits * CO2_TONNES_PER_UNIT
 
   // Selection thresholds unchanged; only the returned identifier changed.
-  let suggestedPlan: PlanId = 'standard'
+  let suggestedPlan: PlanId = 'recommended'
   if (input.systemPreference === 'hybrid' || recommendedKw >= 8) {
-    suggestedPlan = 'premium'
+    suggestedPlan = 'high-performance'
   } else if (recommendedKw <= 2) {
-    suggestedPlan = 'budget'
+    suggestedPlan = 'essential'
   }
 
   return {
@@ -176,7 +176,7 @@ export const systemSizeGuide = [
   {
     size: '1 kW',
     kw: 1,
-    useCase: 'A small home with light usage — fans, lights, TV and a fridge.',
+    useCase: 'A small home with light usage: fans, lights, TV and a fridge.',
     area: '~90 sq ft',
     generation: '~4 units/day',
   },
@@ -190,7 +190,7 @@ export const systemSizeGuide = [
   {
     size: '3 kW',
     kw: 3,
-    useCase: 'The most common residential size — a typical family home with regular AC use.',
+    useCase: 'The most common residential size, a typical family home with regular AC use.',
     area: '~270 sq ft',
     generation: '~13 units/day',
   },

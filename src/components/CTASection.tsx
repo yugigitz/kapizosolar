@@ -14,7 +14,7 @@ type Props = {
 
 export default function CTASection({
   title = 'Ready to see what solar looks like for your property?',
-  description = 'Start with an estimate, or talk to us directly. Either way, the next step is a site assessment and a proper proposal — not a sales pitch.',
+  description = 'Start with an estimate, or talk to us directly. Either way, the next step is a site assessment and a proper proposal, not a sales pitch.',
   waMessage = waMessages.general,
   primaryLabel = 'Calculate My Savings',
   primaryTo = '/solar-calculator',

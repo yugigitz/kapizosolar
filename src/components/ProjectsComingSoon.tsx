@@ -11,12 +11,12 @@ export default function ProjectsComingSoon() {
             <PanelIcon className="h-7 w-7" />
           </span>
           <h2 className="mt-5 font-display text-2xl font-extrabold text-kapizo-navy sm:text-3xl">
-            Kapizo Projects — Coming Soon
+            Kapizo Projects: Coming Soon
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
             We are taking on our first customer projects now. Rather than fill this page with stock
-            photographs of somebody else's work, we will put real installations here — with the
-            system details — as they are commissioned.
+            photographs of somebody else's work, we will put real installations here, with the
+            system details, as they are commissioned.
           </p>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
             If you are looking at solar now, you get the founders on site and a fully documented

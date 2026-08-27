@@ -103,7 +103,7 @@ export default function ContactPage() {
                   </h3>
                   <p className="mt-1.5 text-sm text-slate-600">
                     Serving customers in Mancherial and across Telangana. We travel for site
-                    assessments across the state — tell us your location and we will confirm
+                    assessments across the state. Tell us your location and we will confirm
                     scheduling.
                   </p>
                 </div>

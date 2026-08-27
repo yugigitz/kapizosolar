@@ -15,14 +15,14 @@ export default function SolutionsPage() {
 
   usePageMeta(
     {
-      title: 'Solar Solutions — Residential, Commercial & Industrial | Kapizo Solar',
+      title: 'Solar Solutions: Residential, Commercial & Industrial | Kapizo Solar',
       description:
         'Rooftop solar EPC solutions for homes, businesses, industry and agriculture across Telangana. On-grid, hybrid and battery storage systems designed and installed by Kapizo Solar.',
       path: '/solutions',
     },
     [
       webPageSchema(
-        'Solar Solutions — Kapizo Solar',
+        'Solar Solutions | Kapizo Solar',
         'Rooftop solar solutions for every segment across Telangana.',
         '/solutions',
       ),

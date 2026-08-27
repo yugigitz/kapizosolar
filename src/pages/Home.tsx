@@ -34,7 +34,7 @@ export default function Home() {
       organizationSchema,
       websiteSchema,
       webPageSchema(
-        'Kapizo Solar — Rooftop Solar EPC in Mancherial & Telangana',
+        'Kapizo Solar | Rooftop Solar EPC in Mancherial & Telangana',
         'Rooftop solar design, installation and commissioning across Telangana.',
         '/',
       ),
@@ -78,7 +78,7 @@ export default function Home() {
             <h2 className="h-section mt-3">Three ways to go solar with us</h2>
             <p className="lede mt-4">
               The three plans differ in the panels, the inverter, the protection and whether you get
-              battery backup — not just in price. We do not publish a price per kW, because the real
+              battery backup, not just in price. We do not publish a price per kW, because the real
               cost depends on your roof, and a number that fits one terrace misleads on another.
             </p>
           </div>

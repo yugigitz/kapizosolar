@@ -11,7 +11,7 @@ export default function SolarSizeGuide() {
           <h2 className="h-section mt-3">What does each system size actually run?</h2>
           <p className="lede mt-4">
             A rough reference before you use the calculator. These figures assume typical
-            Telangana conditions and an unshaded terrace — your own numbers will shift with
+            Telangana conditions and an unshaded terrace. Your own numbers will shift with
             orientation, shading and the components used.
           </p>
         </div>

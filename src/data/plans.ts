@@ -15,11 +15,9 @@
  * TBD with a real value and the UI switches over automatically — no component
  * changes required.
  *
- * NOTE ON IDS AND SLUGS: the ids and route segments below deliberately remain
- * budget / standard / premium so that routing, the sitemap, canonical URLs and
- * the prerender list are untouched by the renaming. Only the customer-facing
- * `name` changed. If the URLs should match the new names, that is a routing
- * change and needs to be requested explicitly.
+ * Ids and route segments match the customer-facing names, so /plans/<slug>
+ * reads the same as the option it shows. The old budget / standard / premium
+ * routes were removed rather than left as duplicates.
  */
 
 import {
@@ -34,7 +32,7 @@ import { SUBSIDY_SHORT } from './scheme'
 export const TBD = null
 export type Configurable<T> = T | null
 
-export type PlanId = 'budget' | 'standard' | 'premium'
+export type PlanId = 'essential' | 'recommended' | 'high-performance'
 
 export type PlanSpec = {
   label: string
@@ -149,9 +147,9 @@ const sharedNotes = [
 
 export const plans: Plan[] = [
   {
-    id: 'budget',
+    id: 'essential',
     name: 'Essential',
-    slug: 'budget',
+    slug: 'essential',
     positioning:
       'A straightforward solar solution for customers primarily looking to reduce their electricity bill with a reliable, practical system.',
     idealCustomer:
@@ -196,7 +194,7 @@ export const plans: Plan[] = [
       'Net metering and subsidy documentation assistance included',
     ],
     expectedOutcome:
-      'Your daytime usage runs on solar instead of DISCOM units, so the bill comes down. During a power cut the system shuts down like any on-grid system — there is no battery at this level.',
+      'Your daytime usage runs on solar instead of DISCOM units, so the bill comes down. During a power cut the system shuts down like any on-grid system. There is no battery at this level.',
     pricePerKw: TBD,
     indicativePriceNote: TBD,
     subsidyNote: SUBSIDY_SHORT,
@@ -219,9 +217,9 @@ export const plans: Plan[] = [
     },
   },
   {
-    id: 'standard',
+    id: 'recommended',
     name: 'Recommended',
-    slug: 'standard',
+    slug: 'recommended',
     positioning:
       'A balanced combination of system performance, component quality, long-term value and service. This is where we suggest most residential customers start.',
     idealCustomer:
@@ -240,7 +238,7 @@ export const plans: Plan[] = [
       installation: { label: 'Installation', value: 'Professional installation, testing and commissioning' },
       documentation: { label: 'Documentation', value: 'Net metering and subsidy application assistance' },
       support: { label: 'After-sales support', value: 'Priority support, with optional AMC' },
-      storage: { label: 'Battery / storage', value: 'Not included — hybrid-ready configuration available on request' },
+      storage: { label: 'Battery / storage', value: 'Not included. Hybrid-ready configuration available on request' },
     },
     inclusions: [
       'Site assessment and system sizing based on your electricity usage',
@@ -291,9 +289,9 @@ export const plans: Plan[] = [
     },
   },
   {
-    id: 'premium',
+    id: 'high-performance',
     name: 'High Performance',
-    slug: 'premium',
+    slug: 'high-performance',
     positioning:
       'For customers who want higher system performance, enhanced component selection, greater monitoring capability or a more premium system configuration.',
     idealCustomer:

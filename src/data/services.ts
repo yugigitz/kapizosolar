@@ -47,7 +47,7 @@ export const solutions: Solution[] = [
     title: 'Industrial Solar Solutions',
     audience: 'Factories, processing units, workshops and industrial sheds',
     summary:
-      'Factory sheds usually have large, uninterrupted roofs and a steady daytime load — close to the ideal case for solar. The roof is already there and doing nothing.',
+      'Factory sheds usually have large, uninterrupted roofs and a steady daytime load, close to the ideal case for solar. The roof is already there and doing nothing.',
     typicalUse: 'Typically 50 kW and above, designed around your connected load and sanctioned demand.',
     benefits: [
       'Large shadow-free roof area is used productively',
@@ -149,7 +149,7 @@ export const processSteps = [
     step: 1,
     title: 'Requirement Discussion',
     detail:
-      'We start with a conversation about your property, your electricity usage and what you want solar to achieve — bill reduction, backup, or both.',
+      'We start with a conversation about your property, your electricity usage and what you want solar to achieve: bill reduction, backup, or both.',
   },
   {
     step: 2,

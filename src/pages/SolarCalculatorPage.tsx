@@ -10,11 +10,11 @@ import { ArrowRightIcon } from '@/components/ui/Icons'
 const methodologyFaqs = [
   {
     q: 'What does this solar calculator estimate?',
-    a: 'It estimates the rooftop solar capacity that would broadly match your annual electricity consumption, along with the expected generation, the share of your usage that solar could offset, indicative annual savings, a rough payback period, the rooftop area required and the approximate CO₂ avoided. It is a planning tool, not a quotation.',
+    a: 'It estimates the rooftop solar capacity that would broadly match your annual electricity consumption, along with the expected generation, the share of your usage that solar could offset, indicative annual savings, the rooftop area required and the approximate CO₂ avoided. It is a planning tool, not a quotation.',
   },
   {
     q: 'How does the calculation work?',
-    a: `The calculator converts your monthly bill into units using either the tariff you enter or a default rate for your consumer category. It then divides your daily consumption by an assumed generation of about ${SPECIFIC_YIELD_PER_KW_PER_DAY} units per kW per day — an annual average for Telangana conditions — to arrive at a capacity, which is rounded to a practical size. If you enter a rooftop area, the capacity is capped at what that area can physically hold at roughly ${AREA_SQFT_PER_KW} sq ft per kW.`,
+    a: `The calculator converts your monthly bill into units using either the tariff you enter or a default rate for your consumer category. It then divides your daily consumption by an assumed generation of about ${SPECIFIC_YIELD_PER_KW_PER_DAY} units per kW per day, an annual average for Telangana conditions, to arrive at a capacity, which is rounded to a practical size. If you enter a rooftop area, the capacity is capped at what that area can physically hold at roughly ${AREA_SQFT_PER_KW} sq ft per kW.`,
   },
   {
     q: 'What affects how much electricity a solar system generates?',
@@ -26,7 +26,7 @@ const methodologyFaqs = [
   },
   {
     q: 'Why can actual generation vary from the estimate?',
-    a: 'The estimate uses an annual average. Real output varies month to month — monsoon months generate less than clear pre-summer months. Output also degrades slowly over the life of the modules, and soiling reduces it between cleanings. Any shading that appears after installation, such as a new structure next door, will reduce generation.',
+    a: 'The estimate uses an annual average. Real output varies month to month. Monsoon months generate less than clear pre-summer months. Output also degrades slowly over the life of the modules, and soiling reduces it between cleanings. Any shading that appears after installation, such as a new structure next door, will reduce generation.',
   },
   {
     q: 'Why is a site assessment required before a firm quote?',
@@ -42,14 +42,14 @@ export default function SolarCalculatorPage() {
 
   usePageMeta(
     {
-      title: 'Solar Calculator — Estimate System Size & Savings | Kapizo Solar',
+      title: 'Solar Calculator: Estimate System Size & Savings | Kapizo Solar',
       description:
-        'Estimate your rooftop solar system size, generation, annual savings and payback period for Telangana. Free indicative solar calculator from Kapizo Solar.',
+        'Estimate your rooftop solar system size, expected generation and annual savings for Telangana. Free indicative solar calculator from Kapizo Solar.',
       path: '/solar-calculator',
     },
     [
       webPageSchema(
-        'Solar Calculator — Kapizo Solar',
+        'Solar Calculator | Kapizo Solar',
         'Estimate rooftop solar capacity, generation and savings.',
         '/solar-calculator',
       ),
@@ -118,16 +118,11 @@ export default function SolarCalculatorPage() {
                     Your entered tariff, or a category default
                   </dd>
                 </div>
-                <div className="flex justify-between gap-4 py-2.5">
-                  <dt className="text-slate-500">Payback</dt>
-                  <dd className="text-right font-semibold text-kapizo-navy">
-                    Indicative installed cost ÷ estimated annual savings
-                  </dd>
-                </div>
               </dl>
               <p className="mt-4 text-xs leading-relaxed text-slate-500">
-                Payback is shown before any government subsidy. Where a subsidy applies, the actual
-                payback period would be shorter.
+                The calculator does not show a payback period, because working one out requires
+                assuming a system price. We share pricing after understanding your usage and site,
+                and we would rather not put a made-up number in front of you.
               </p>
             </div>
 

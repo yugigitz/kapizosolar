@@ -67,7 +67,7 @@ export default function AboutPage() {
               </p>
               <p>
                 We are a solar EPC company based in Mancherial, working across Telangana. EPC means
-                engineering, procurement and construction — we handle the whole thing, so you are not
+                engineering, procurement and construction. We handle the whole thing, so you are not
                 coordinating between a panel supplier, a local electrician and someone who does the
                 DISCOM paperwork. One company, one point of accountability.
               </p>
@@ -87,7 +87,7 @@ export default function AboutPage() {
               <h2>How we work on a project</h2>
               <p>
                 We start with your last few electricity bills, because your units tell us the right
-                system size far better than your terrace does. Then we come and look at the roof —
+                system size far better than your terrace does. Then we come and look at the roof:
                 how much of it is genuinely shadow-free through the day, which way it faces, whether
                 the structure can take the load, and where the cable will run.
               </p>

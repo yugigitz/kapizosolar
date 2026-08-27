@@ -43,7 +43,7 @@ export default function PlanDetailPage() {
     [
       webPageSchema(plan.name, plan.seo.description, path),
       breadcrumbSchema(crumbs),
-      serviceSchema(`${plan.name} — Rooftop Solar Installation`, plan.positioning, path),
+      serviceSchema(`${plan.name} Rooftop Solar Installation`, plan.positioning, path),
     ],
   )
 
@@ -201,7 +201,7 @@ export default function PlanDetailPage() {
               </dl>
 
               <p className="mt-3 text-xs leading-relaxed text-slate-500">
-                Typical ranges only — the actual terms depend on the components selected for your
+                Typical ranges only. The actual terms depend on the components selected for your
                 project. {WARRANTY_TERMS_NOTE}
               </p>
 

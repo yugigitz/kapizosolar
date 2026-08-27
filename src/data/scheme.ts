@@ -54,7 +54,7 @@ export const SUBSIDY_SHORT = `Eligible residential systems may qualify for centr
  * customer's decision before they commit to an installer.
  */
 export const SUBSIDY_LIMITATIONS = [
-  'Eligibility is determined by the government and your DISCOM under the applicable scheme rules — not by Kapizo Solar, and not by the fact that a system has been installed.',
+  'Eligibility is determined by the government and your DISCOM under the applicable scheme rules, not by Kapizo Solar, and not by the fact that a system has been installed.',
   'Contacting or appointing Kapizo Solar does not secure, guarantee or accelerate any subsidy.',
   'Assistance is released after the application, DISCOM feasibility approval, installation to the applicable technical specifications, inspection and document verification.',
   'The scheme routes the balance payment through an empanelled vendor. Kapizo Solar does not currently claim empanelment, so confirm the vendor requirements on the official portal before committing to any installer, including us.',

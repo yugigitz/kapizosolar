@@ -32,7 +32,7 @@ export type WarrantyLayer = {
 export const WARRANTY_LAYERS: WarrantyLayer[] = [
   {
     id: 'module-product',
-    layer: 'Solar module — product warranty',
+    layer: 'Solar module product warranty',
     provider: 'Module manufacturer',
     typical: 'Typically 10–12 years',
     covers: 'Manufacturing and material defects in the panel itself.',
@@ -40,12 +40,12 @@ export const WARRANTY_LAYERS: WarrantyLayer[] = [
   },
   {
     id: 'module-performance',
-    layer: 'Solar module — performance warranty',
+    layer: 'Solar module performance warranty',
     provider: 'Module manufacturer',
     typical: 'Typically 25–30 years',
     covers:
       'The panel\'s guaranteed power output over time, against the manufacturer\'s published degradation curve.',
-    note: 'A performance warranty is not a promise that the panel will not fail — it is a promise about how much power it will still produce.',
+    note: 'A performance warranty is not a promise that the panel will not fail. It is a promise about how much power it will still produce.',
   },
   {
     id: 'inverter',
@@ -61,7 +61,7 @@ export const WARRANTY_LAYERS: WarrantyLayer[] = [
     provider: 'Kapizo Solar',
     typical: '1 year from commissioning',
     covers:
-      'Installation workmanship attributable to Kapizo — installation defects, mounting and roof-penetration workmanship, wiring joints and terminations, and loose connections caused by installation quality.',
+      'Installation workmanship attributable to Kapizo, covering installation defects, mounting and roof-penetration workmanship, wiring joints and terminations, and loose connections caused by installation quality.',
   },
 ]
 

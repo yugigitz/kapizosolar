@@ -47,7 +47,7 @@ export default function LegalPage({ kind }: Props) {
 
                 <h2>How we use it</h2>
                 <p>
-                  We use the information you provide solely to respond to your enquiry — to discuss
+                  We use the information you provide solely to respond to your enquiry, to discuss
                   your requirement, prepare a proposal and arrange a site assessment. We do not sell
                   your information, and we do not share it with third parties for marketing.
                 </p>
@@ -90,8 +90,8 @@ export default function LegalPage({ kind }: Props) {
 
                 <h2>Estimates are not quotations</h2>
                 <p>
-                  The solar calculator and all indicative figures on this website — system capacity,
-                  generation, savings, payback period, rooftop area and CO₂ reduction — are estimates
+                  The solar calculator and all indicative figures on this website, including system capacity,
+                  generation, savings, payback period, rooftop area and CO₂ reduction, are estimates
                   provided for initial planning only. They are based on stated assumptions and cannot
                   account for the specific conditions at your site.
                 </p>

@@ -40,7 +40,7 @@ export default function Hero() {
 
             <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">
               Professional rooftop solar solutions for homes, businesses and institutions across
-              Telangana — designed around your actual consumption, installed to proper electrical
+              Telangana, designed around your actual consumption, installed to proper electrical
               standards.
             </p>
 
@@ -73,7 +73,7 @@ export default function Hero() {
             <div className="relative">
               <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 backdrop-blur-sm sm:p-6">
                 <KapizoBanner
-                  alt="Kapizo Solar — rooftop solar EPC services in Telangana"
+                  alt="Kapizo Solar rooftop solar EPC services in Telangana"
                   className="w-full"
                   priority
                 />
@@ -102,7 +102,7 @@ export default function Hero() {
               <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3">
                 <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-kapizo-green-light" />
                 <p className="text-xs leading-relaxed text-slate-300">
-                  Every system is sized from your electricity bill and a site assessment — never from
+                  Every system is sized from your electricity bill and a site assessment, never from
                   a generic package list.
                 </p>
               </div>

@@ -70,7 +70,7 @@ const schemeFaqs = [
   },
   {
     q: 'How does the rooftop solar subsidy actually reach me?',
-    a: 'It is not a discount applied by the installer. Under the scheme, the consumer pays the balance amount to an empanelled vendor after successful installation and DISCOM verification, and the assistance is released after the DISCOM inspection and document verification, credited directly to the applicant\'s bank account. Eligibility and release are determined by the government and your DISCOM under the applicable scheme rules — contacting any installer, including us, does not secure or guarantee assistance.',
+    a: 'It is not a discount applied by the installer. Under the scheme, the consumer pays the balance amount to an empanelled vendor after successful installation and DISCOM verification, and the assistance is released after the DISCOM inspection and document verification, credited directly to the applicant\'s bank account. Eligibility and release are determined by the government and your DISCOM under the applicable scheme rules. Contacting any installer, including us, does not secure or guarantee assistance.',
   },
   {
     q: 'Does the subsidy cover battery or hybrid systems?',
@@ -118,8 +118,8 @@ export default function PMSuryaGharPage() {
     <>
       <PageHeader
         eyebrow="Government Scheme"
-        title="PM Surya Ghar — Rooftop Solar Scheme"
-        description="What the scheme is, who it is intended for, and how the application and subsidy process actually works — explained without overstating what anyone can promise you."
+        title="PM Surya Ghar Rooftop Solar Scheme"
+        description="What the scheme is, who it is intended for, and how the application and subsidy process actually works, explained without overstating what anyone can promise you."
         breadcrumbs={crumbs}
       />
 
@@ -132,7 +132,7 @@ export default function PMSuryaGharPage() {
                 amounts and approval requirements are subject to applicable government guidelines and
                 may change. Customers should verify the latest information through official
                 government channels before making a decision. The explanation below is Kapizo Solar's
-                summary in our own words, provided to help you understand the process — it is not a
+                summary in our own words, provided to help you understand the process. It is not a
                 government publication and does not replace official guidance.
               </div>
 
@@ -143,8 +143,8 @@ export default function PMSuryaGharPage() {
                 PM Surya Ghar Muft Bijli Yojana is a central government scheme intended to increase
                 rooftop solar adoption among residential electricity consumers in India. It provides
                 central financial assistance towards the cost of a grid-connected rooftop system, and
-                routes the whole process — application, feasibility approval, installation reporting,
-                inspection and subsidy release — through a single national portal, with your
+                routes the whole process, from application and feasibility approval to installation reporting,
+                inspection and subsidy release, through a single national portal, with your
                 electricity distribution company involved at the approval and metering stages.
               </p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
@@ -236,11 +236,11 @@ export default function PMSuryaGharPage() {
               </div>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
-                About empanelled vendors — please read
+                About empanelled vendors, please read
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                Under the scheme's operational guidelines, the consumer pays the balance amount —
-                the system cost less the assistance — to the bank account of an{' '}
+                Under the scheme's operational guidelines, the consumer pays the balance amount,
+                the system cost less the assistance, to the bank account of an{' '}
                 <strong>empanelled vendor</strong>, after successful installation and verification by
                 the DISCOM.
               </p>
@@ -252,7 +252,7 @@ export default function PMSuryaGharPage() {
                 us. We would rather lose an enquiry than have you discover this after signing.
               </p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                Rooftop solar remains worth installing outside the assistance route — it still
+                Rooftop solar remains worth installing outside the assistance route. It still
                 reduces your bill and still qualifies for net metering under the normal DISCOM
                 process. But that is a different calculation, and you should make it with accurate
                 information.
@@ -279,7 +279,7 @@ export default function PMSuryaGharPage() {
                 Where Kapizo Solar fits in
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
-                We handle the technical side — assessing your roof, designing a system that meets the
+                We handle the technical side: assessing your roof, designing a system that meets the
                 applicable specifications, installing and commissioning it properly, and assisting
                 with the documentation you need to submit. Approvals, inspection and subsidy release
                 are decisions made by the DISCOM and the government, not by us, and we will always be
@@ -309,7 +309,7 @@ export default function PMSuryaGharPage() {
                     pmsuryaghar.gov.in
                   </a>
                   <span className="block text-sm text-slate-500">
-                    The official national portal — registration, application status and current
+                    The official national portal for registration, application status and current
                     scheme terms.
                   </span>
                 </li>
@@ -320,7 +320,7 @@ export default function PMSuryaGharPage() {
                     rel="noopener noreferrer nofollow"
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
                   >
-                    MNRE — Operational Guidelines: Central Financial Assistance to Residential
+                    MNRE Operational Guidelines: Central Financial Assistance to Residential
                     Consumers
                   </a>
                   <span className="block text-sm text-slate-500">
@@ -334,7 +334,7 @@ export default function PMSuryaGharPage() {
                     rel="noopener noreferrer nofollow"
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
                   >
-                    MNRE — Guidelines for PM-Surya Ghar: Muft Bijli Yojana
+                    MNRE Guidelines for PM-Surya Ghar: Muft Bijli Yojana
                   </a>
                   <span className="block text-sm text-slate-500">
                     Ministry of New and Renewable Energy scheme guidelines.
@@ -347,7 +347,7 @@ export default function PMSuryaGharPage() {
                     rel="noopener noreferrer nofollow"
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
                   >
-                    MNRE — Grid Connected Rooftop Solar Programme
+                    MNRE Grid Connected Rooftop Solar Programme
                   </a>
                   <span className="block text-sm text-slate-500">
                     Programme background and related notices.

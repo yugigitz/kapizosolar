@@ -333,7 +333,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
               {result.cappedByRoof && (
                 <p className="mt-3 rounded-lg border border-blue-200 bg-blue-50 px-3.5 py-2.5 text-xs text-blue-900">
                   Your capacity has been limited by the rooftop area you entered. A larger system may
-                  be possible with an elevated structure — we can assess this during a site visit.
+                  be possible with an elevated structure. We can assess this during a site visit.
                 </p>
               )}
 

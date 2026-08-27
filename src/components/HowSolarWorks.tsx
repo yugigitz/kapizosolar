@@ -22,7 +22,7 @@ export default function HowSolarWorks() {
           </h2>
           <p className="lede mt-4 !text-slate-300">
             Rooftop solar is a straightforward chain. Understanding it helps you judge whether a
-            proposal you receive is complete — particularly the protection stages, which are the
+            proposal you receive is complete, particularly the protection stages, which are the
             easiest to leave out.
           </p>
         </div>

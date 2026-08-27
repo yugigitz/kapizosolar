@@ -20,7 +20,7 @@ export default function FAQPage() {
     },
     [
       webPageSchema(
-        'Rooftop Solar FAQs — Kapizo Solar',
+        'Rooftop Solar FAQs | Kapizo Solar',
         'Common questions about rooftop solar answered.',
         '/faq',
       ),
@@ -34,7 +34,7 @@ export default function FAQPage() {
       <PageHeader
         eyebrow="FAQs"
         title="Rooftop solar questions, answered straight"
-        description="Including the awkward parts — what solar will not do, what depends on your DISCOM, and what nobody can honestly guarantee you."
+        description="Including the awkward parts: what solar will not do, what depends on your DISCOM, and what nobody can honestly guarantee you."
         breadcrumbs={crumbs}
       />
       <FAQ

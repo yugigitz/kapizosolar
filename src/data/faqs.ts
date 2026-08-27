@@ -11,7 +11,7 @@ export const faqs: Faq[] = [
   {
     category: 'sizing',
     q: 'How much roof space do I need for solar?',
-    a: 'Roughly 80 to 100 sq ft of shadow-free terrace per kW. So a 3 kW system needs about 250 to 300 sq ft — a little under a third of a typical 1,000 sq ft terrace. The exact figure depends on module wattage and efficiency, the tilt and orientation of the structure, and the spacing needed to avoid row-to-row shading. Elevated structures over an existing roof slab can change the usable area considerably, so the number is confirmed during site assessment.',
+    a: 'Roughly 80 to 100 sq ft of shadow-free terrace per kW. So a 3 kW system needs about 250 to 300 sq ft, a little under a third of a typical 1,000 sq ft terrace. The exact figure depends on module wattage and efficiency, the tilt and orientation of the structure, and the spacing needed to avoid row-to-row shading. Elevated structures over an existing roof slab can change the usable area considerably, so the number is confirmed during site assessment.',
   },
   {
     category: 'sizing',
@@ -36,7 +36,7 @@ export const faqs: Faq[] = [
   {
     category: 'technical',
     q: 'Do I really need a battery?',
-    a: 'Only if you need power during cuts, or want to use solar energy after sunset. A battery does not increase how much electricity your panels generate — it stores what has already been generated so you can use it later, with a small round-trip loss. If your supply is reliable and your goal is bill reduction, an on-grid system without a battery usually gives better value. If outages are frequent or long, a hybrid system is worth the additional cost.',
+    a: 'Only if you need power during cuts, or want to use solar energy after sunset. A battery does not increase how much electricity your panels generate. It stores what has already been generated so you can use it later, with a small round-trip loss. If your supply is reliable and your goal is bill reduction, an on-grid system without a battery usually gives better value. If outages are frequent or long, a hybrid system is worth the additional cost.',
   },
   {
     category: 'commercial',
@@ -56,12 +56,12 @@ export const faqs: Faq[] = [
   {
     category: 'commercial',
     q: 'What warranty do I get?',
-    a: `There are four separate warranties, and it is worth knowing the difference because the market usually blurs them. On the solar modules you get two: a product warranty covering manufacturing and material defects, typically 10–12 years, and a performance warranty covering guaranteed power output, typically 25–30 years. These are not the same thing — when a company advertises a "25-year panel warranty", they mean the performance one, not cover on the panel itself. The inverter carries its own manufacturer warranty, typically 5–10 years depending on the model, often extendable. And we provide the ${WORKMANSHIP_WARRANTY_NAME}, covering installation workmanship attributable to us. An optional AMC is available separately for preventive maintenance and cleaning. ${WARRANTY_TERMS_NOTE}`,
+    a: `There are four separate warranties, and it is worth knowing the difference because the market usually blurs them. On the solar modules you get two: a product warranty covering manufacturing and material defects, typically 10–12 years, and a performance warranty covering guaranteed power output, typically 25–30 years. These are not the same thing. When a company advertises a "25-year panel warranty", they mean the performance one, not cover on the panel itself. The inverter carries its own manufacturer warranty, typically 5–10 years depending on the model, often extendable. And we provide the ${WORKMANSHIP_WARRANTY_NAME}, covering installation workmanship attributable to us. An optional AMC is available separately for preventive maintenance and cleaning. ${WARRANTY_TERMS_NOTE}`,
   },
   {
     category: 'scheme',
     q: 'How does the government solar subsidy actually work?',
-    a: `Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers may receive central financial assistance for a grid-connected system: ${SUBSIDY_STRUCTURE} At benchmark prices that is roughly ${SUBSIDY_SLABS.map((s) => `${s.amount} for ${s.capacity}`).join(', ')}. It is applied for through the national portal and released after DISCOM inspection and document verification. Not every customer receives the maximum — ${SUBSIDY_HEADLINE} The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so verify the current position on pmsuryaghar.gov.in before deciding.`,
+    a: `Under the PM Surya Ghar rooftop solar scheme, eligible residential consumers may receive central financial assistance for a grid-connected system: ${SUBSIDY_STRUCTURE} At benchmark prices that is roughly ${SUBSIDY_SLABS.map((s) => `${s.amount} for ${s.capacity}`).join(', ')}. It is applied for through the national portal and released after DISCOM inspection and document verification. Not every customer receives the maximum. ${SUBSIDY_HEADLINE} The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so verify the current position on pmsuryaghar.gov.in before deciding.`,
   },
   {
     category: 'commercial',
@@ -71,7 +71,7 @@ export const faqs: Faq[] = [
   {
     category: 'technical',
     q: 'Will solar work during a power cut?',
-    a: 'Only if you have a battery. This surprises most people, so it is worth being clear: a normal on-grid system shuts down during a power cut, even in bright sunshine. The inverter is required to disconnect the moment grid supply fails, so that your system cannot send power back into lines that DISCOM staff may be working on. It is a safety rule, not a fault in your system. If you want power during cuts, you need a hybrid system with a battery, sized to the specific circuits you want to keep running — usually lights, fans, the fridge and a few sockets rather than the whole house. At night the same logic applies: an on-grid system simply draws from the grid as before, while a hybrid system draws from the battery first.',
+    a: 'Only if you have a battery. This surprises most people, so it is worth being clear: a normal on-grid system shuts down during a power cut, even in bright sunshine. The inverter is required to disconnect the moment grid supply fails, so that your system cannot send power back into lines that DISCOM staff may be working on. It is a safety rule, not a fault in your system. If you want power during cuts, you need a hybrid system with a battery, sized to the specific circuits you want to keep running, usually lights, fans, the fridge and a few sockets rather than the whole house. At night the same logic applies: an on-grid system simply draws from the grid as before, while a hybrid system draws from the battery first.',
   },
   {
     category: 'commercial',
@@ -85,7 +85,7 @@ export const faqs: Faq[] = [
   },
   {
     category: 'commercial',
-    q: 'Which option should I choose — Essential, Recommended or High Performance?',
-    a: 'Most homes start with Recommended. Essential covers the fundamentals properly and makes sense if cutting the bill is the whole goal. Recommended adds better component selection, a more efficient design, stronger protection and monitoring you can actually check on your phone — the things that matter most across fifteen years. High Performance is for you if you need power during cuts or want the strongest configuration we offer. The honest deciding question is whether power cuts bother you enough to pay for a battery. None of these are fixed packages — the final system is designed around your usage and your roof.'
+    q: 'Which option should I choose: Essential, Recommended or High Performance?',
+    a: 'Most homes start with Recommended. Essential covers the fundamentals properly and makes sense if cutting the bill is the whole goal. Recommended adds better component selection, a more efficient design, stronger protection and monitoring you can actually check on your phone. Those are the things that matter most across fifteen years. High Performance is for you if you need power during cuts or want the strongest configuration we offer. The honest deciding question is whether power cuts bother you enough to pay for a battery. None of these are fixed packages. The final system is designed around your usage and your roof.'
   },
 ]

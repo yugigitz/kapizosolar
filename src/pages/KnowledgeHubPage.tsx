@@ -21,7 +21,7 @@ export default function KnowledgeHubPage() {
     },
     [
       webPageSchema(
-        'Solar Knowledge Hub — Kapizo Solar',
+        'Solar Knowledge Hub | Kapizo Solar',
         'Practical guides and explanations about rooftop solar.',
         '/solar-knowledge',
       ),
@@ -34,7 +34,7 @@ export default function KnowledgeHubPage() {
       <PageHeader
         eyebrow="Knowledge Hub"
         title="Understand solar before you buy it"
-        description="Plain explanations written for customers in Telangana — including the parts that usually do not come up until after you have paid."
+        description="Plain explanations written for customers in Telangana, including the parts that usually do not come up until after you have paid."
         breadcrumbs={crumbs}
       />
 
@@ -71,7 +71,7 @@ export default function KnowledgeHubPage() {
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
               We are adding more on cost factors, choosing components and the scheme paperwork. If
-              something is confusing you, ask us — we will answer you directly, and probably write it
+              something is confusing you, ask us. We will answer you directly, and probably write it
               up here for the next person.
             </p>
           </div>

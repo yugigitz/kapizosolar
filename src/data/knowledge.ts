@@ -29,7 +29,7 @@ export const articles: Article[] = [
     slug: 'rooftop-solar-guide-telangana',
     title: 'Rooftop Solar Guide for Telangana',
     summary:
-      'What a homeowner or business in Telangana needs to understand before installing rooftop solar — sizing, generation, costs, approvals and the decisions that actually matter.',
+      'What a homeowner or business in Telangana needs to understand before installing rooftop solar: sizing, generation, costs, approvals and the decisions that actually matter.',
     directAnswer:
       'Rooftop solar in Telangana works well because the state receives strong year-round irradiance. A well-installed system commonly generates in the region of 4 to 4.5 units per kW per day averaged across the year. The main decisions are capacity (driven by your consumption, not your roof size), system type (on-grid for bill reduction, hybrid if you need backup), and component specification.',
     publishedISO: '2026-08-26',
@@ -106,7 +106,7 @@ export const articles: Article[] = [
     summary:
       'The practical difference between on-grid and hybrid solar systems, what each costs you, and how to decide which one your property actually needs.',
     directAnswer:
-      'Choose on-grid if your goal is reducing your electricity bill and your grid supply is reliable — it costs less per kW and has no battery to replace. Choose hybrid if you need power during outages. The deciding question is not which is technically better, but whether you need backup: a hybrid system costs meaningfully more and that cost only pays off if outages actually affect you.',
+      'Choose on-grid if your goal is reducing your electricity bill and your grid supply is reliable. It costs less per kW and has no battery to replace. Choose hybrid if you need power during outages. The deciding question is not which is technically better, but whether you need backup: a hybrid system costs meaningfully more and that cost only pays off if outages actually affect you.',
     publishedISO: '2026-08-26',
     updatedISO: '2026-08-26',
     readMinutes: 6,
@@ -115,7 +115,7 @@ export const articles: Article[] = [
         heading: 'How an on-grid system works',
         paragraphs: [
           'An on-grid system connects your solar array to your existing grid connection through an inverter. During daylight, solar powers your loads directly. If you generate more than you are consuming, the surplus can be exported to the grid where net metering is available.',
-          'There is no battery. During a grid outage the inverter disconnects automatically and the system stops producing — this is a safety requirement, not a fault. It prevents your system from energising lines that utility staff may be working on.',
+          'There is no battery. During a grid outage the inverter disconnects automatically and the system stops producing. This is a safety requirement, not a fault. It prevents your system from energising lines that utility staff may be working on.',
         ],
       },
       {
@@ -129,13 +129,13 @@ export const articles: Article[] = [
         heading: 'What the difference costs you',
         paragraphs: [
           'A hybrid system costs more for two reasons: the hybrid inverter itself, and the battery. The battery is usually the larger share, and unlike the modules, it has a finite cycle life and will need replacement at some point during the system life.',
-          'This is the honest trade-off. A battery does not generate additional electricity — it stores what has already been generated, with a small round-trip loss. If your supply is reliable, that money buys you nothing you would notice. If outages are frequent, it buys you something you would notice immediately.',
+          'This is the honest trade-off. A battery does not generate additional electricity. It stores what has already been generated, with a small round-trip loss. If your supply is reliable, that money buys you nothing you would notice. If outages are frequent, it buys you something you would notice immediately.',
         ],
       },
       {
         heading: 'How to decide',
         paragraphs: [
-          'Ask yourself how many hours of outage you experienced in the last year and how much they actually disrupted you. If the honest answer is "not much", an on-grid system is the better use of the same budget — you could install more capacity instead and offset more of your bill.',
+          'Ask yourself how many hours of outage you experienced in the last year and how much they actually disrupted you. If the honest answer is "not much", an on-grid system is the better use of the same budget. You could install more capacity instead and offset more of your bill.',
           'If outages are regular, or if you have equipment that cannot tolerate interruption, hybrid is worth it. A middle path also exists: specify a hybrid-ready inverter now and add the battery later. This costs slightly more upfront than a plain on-grid inverter but preserves the option without paying for the battery today.',
         ],
         bullets: [
@@ -148,7 +148,7 @@ export const articles: Article[] = [
     faqs: [
       {
         q: 'Can I add a battery to an on-grid system later?',
-        a: 'Only if the inverter supports it. A standard on-grid string inverter cannot simply have a battery attached — you would need to replace the inverter or add separate equipment. If there is any chance you will want backup later, specify a hybrid-ready inverter at the design stage. Tell your installer this before the design is finalised, not after installation.',
+        a: 'Only if the inverter supports it. A standard on-grid string inverter cannot simply have a battery attached. You would need to replace the inverter or add separate equipment. If there is any chance you will want backup later, specify a hybrid-ready inverter at the design stage. Tell your installer this before the design is finalised, not after installation.',
       },
       {
         q: 'Why does my solar system stop working during a power cut?',
@@ -157,7 +157,7 @@ export const articles: Article[] = [
     ],
     relatedLinks: [
       { label: 'Compare system types', to: '/solutions#system-types' },
-      { label: 'High Performance option with battery backup', to: '/plans/premium' },
+      { label: 'High Performance option with battery backup', to: '/plans/high-performance' },
       { label: 'Calculate your system size', to: '/solar-calculator' },
     ],
     seo: {
@@ -180,7 +180,7 @@ export const articles: Article[] = [
       {
         heading: 'Step 1: Find your actual consumption in units',
         paragraphs: [
-          'Your bill shows consumption in units (kWh). Take an average across several recent bills rather than a single month, because consumption varies seasonally — air conditioning in summer changes the picture substantially.',
+          'Your bill shows consumption in units (kWh). Take an average across several recent bills rather than a single month, because consumption varies seasonally. Air conditioning in summer changes the picture substantially.',
           'If you only have the rupee amount and not the units, divide the energy charge by your tariff per unit. Be aware that most bills also include fixed charges and duties that are not proportional to consumption, so dividing the total bill by the tariff overstates your usage.',
         ],
       },
@@ -206,7 +206,7 @@ export const articles: Article[] = [
       {
         heading: 'Step 5: Sanity-check against your goals and budget',
         paragraphs: [
-          'A system sized to fully offset annual consumption is a reasonable default, but it is not the only sensible choice. Some customers deliberately install less because of budget, planning to expand later. Others install more because they expect consumption to grow — an electric vehicle, an additional floor, a new air conditioner.',
+          'A system sized to fully offset annual consumption is a reasonable default, but it is not the only sensible choice. Some customers deliberately install less because of budget, planning to expand later. Others install more because they expect consumption to grow: an electric vehicle, an additional floor, a new air conditioner.',
           'What matters is that the number is deliberate. A capacity chosen because it was the package on offer, rather than because it matched consumption, is the most common reason customers are disappointed with their results.',
         ],
       },
@@ -218,7 +218,7 @@ export const articles: Article[] = [
       },
       {
         q: 'Should I install a bigger system than I need?',
-        a: 'Usually not by much. Surplus exported to the grid is settled according to your DISCOM\'s net metering rules, which may not compensate you at the same rate you pay for imported units. Modest headroom for future consumption growth is reasonable — significantly oversizing on the assumption that export is as valuable as self-consumption generally is not.',
+        a: 'Usually not by much. Surplus exported to the grid is settled according to your DISCOM\'s net metering rules, which may not compensate you at the same rate you pay for imported units. Modest headroom for future consumption growth is reasonable. Significantly oversizing on the assumption that export is as valuable as self-consumption generally is not.',
       },
     ],
     relatedLinks: [
@@ -261,7 +261,7 @@ export const articles: Article[] = [
         heading: 'What your DISCOM controls',
         paragraphs: [
           'The distribution company sets eligibility by consumer category, capacity limits relative to your sanctioned load, the technical requirements your installation must meet, the inspection process, and how the settlement is calculated and carried forward.',
-          'These rules are set by regulation and can change. Any installer stating them as fixed permanent facts is overstating the position — what we can do is tell you what applies at the time of your enquiry and prepare the application correctly.',
+          'These rules are set by regulation and can change. Any installer stating them as fixed permanent facts is overstating the position. What we can do is tell you what applies at the time of your enquiry and prepare the application correctly.',
         ],
       },
       {
@@ -297,7 +297,7 @@ export const articles: Article[] = [
     slug: 'solar-maintenance-guide',
     title: 'Rooftop Solar Maintenance Guide',
     summary:
-      'What rooftop solar actually needs after commissioning — cleaning, inspection, monitoring, and the failure points worth knowing about.',
+      'What rooftop solar actually needs after commissioning: cleaning, inspection, monitoring, and the failure points worth knowing about.',
     directAnswer:
       'Rooftop solar is low-maintenance rather than no-maintenance. The main routine requirement is keeping modules clean, since dust noticeably reduces output in Telangana conditions. Beyond that, maintenance is inspection-based: checking mounting hardware, cable condition, earthing, protection devices and inverter status periodically.',
     publishedISO: '2026-08-26',
@@ -308,7 +308,7 @@ export const articles: Article[] = [
         heading: 'Cleaning',
         paragraphs: [
           'Dust accumulation is the most common cause of underperformance, and it is the easiest to fix. In dry, dusty months the drop in output between a clean and a soiled array is visible in the monitoring data.',
-          'Clean in the early morning or evening when the modules are cool — spraying cold water on hot glass is not good practice. Use water and a soft brush. Avoid abrasive materials, harsh detergents and walking on the modules.',
+          'Clean in the early morning or evening when the modules are cool. Spraying cold water on hot glass is not good practice. Use water and a soft brush. Avoid abrasive materials, harsh detergents and walking on the modules.',
         ],
       },
       {
@@ -328,7 +328,7 @@ export const articles: Article[] = [
       {
         heading: 'Monitoring is your early warning',
         paragraphs: [
-          'If your system has monitoring, use it. A gradual decline in daily generation relative to comparable days usually indicates soiling. A sudden drop indicates something specific — a tripped protection device, an inverter fault, or a string that has gone offline.',
+          'If your system has monitoring, use it. A gradual decline in daily generation relative to comparable days usually indicates soiling. A sudden drop indicates something specific: a tripped protection device, an inverter fault, or a string that has gone offline.',
           'This is one of the practical reasons to specify monitoring rather than treating it as a luxury. Without it, an underperforming string can go unnoticed for months.',
         ],
       },
@@ -343,7 +343,7 @@ export const articles: Article[] = [
     faqs: [
       {
         q: 'How often should solar panels be cleaned?',
-        a: 'It depends on local dust conditions. In dry, dusty periods in Telangana, more frequent cleaning is worthwhile; during and after monsoon rain, less. Rather than fixing a rigid schedule, watch your generation data — a steady decline relative to comparable days is the signal that cleaning is due.',
+        a: 'It depends on local dust conditions. In dry, dusty periods in Telangana, more frequent cleaning is worthwhile; during and after monsoon rain, less. Rather than fixing a rigid schedule, watch your generation data. A steady decline relative to comparable days is the signal that cleaning is due.',
       },
       {
         q: 'Does rooftop solar need an annual maintenance contract?',

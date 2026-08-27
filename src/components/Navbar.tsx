@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
           <Link to="/" className="flex shrink-0 items-center" aria-label="Kapizo Solar home">
             <KapizoLogo
-              alt="Kapizo Solar — Powering a Sustainable Tomorrow"
+              alt="Kapizo Solar, Powering a Sustainable Tomorrow"
               className="h-9 w-auto lg:h-11"
               priority
             />

@@ -44,9 +44,9 @@ Three specification tiers. Pricing is not published because cost depends on
 capacity, roof type, structure height, cable runs and component selection,
 confirmed after site assessment.
 
-- Budget Plan (https://kapizosolar.in/plans/budget) — on-grid, essential protection, lowest entry cost
-- Standard Plan (https://kapizosolar.in/plans/standard) — higher-efficiency modules, monitoring, full surge protection; recommended
-- Premium Plan (https://kapizosolar.in/plans/premium) — premium components, hybrid capability, optional battery backup
+- Essential (https://kapizosolar.in/plans/essential): straightforward on-grid system, reliable components, essential protection
+- Recommended (https://kapizosolar.in/plans/recommended): better component selection, efficient design, stronger protection, monitoring. Default suggestion for most homes.
+- High Performance (https://kapizosolar.in/plans/high-performance): enhanced components, enhanced protection, advanced monitoring, optional battery backup
 
 ## Key pages
 

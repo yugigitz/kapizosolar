@@ -16,11 +16,11 @@ const planFaqs = [
   },
   {
     q: 'Which option should I choose?',
-    a: 'Most residential customers should start with Recommended — it is where the extra spend buys the things that matter across the life of the system. Choose Essential if reducing the bill is the whole goal and you do not need backup. Choose High Performance if you need power through outages, want the strongest configuration, or are holding the property long term. These are starting points, not fixed packages: the final system is designed around your usage and roof.'
+    a: 'Most residential customers should start with Recommended. It is where the extra spend buys the things that matter across the life of the system. Choose Essential if reducing the bill is the whole goal and you do not need backup. Choose High Performance if you need power through outages, want the strongest configuration, or are holding the property long term. These are starting points, not fixed packages: the final system is designed around your usage and roof.'
   },
   {
     q: 'Do the plans include the government subsidy?',
-    a: 'No plan price includes or depends on a subsidy. Residential grid-connected systems may be eligible for central financial assistance under PM Surya Ghar, subject to prevailing government guidelines and your DISCOM process, but that assistance goes to the applicant through the official portal — it is not a discount we control or can promise. The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so confirm the vendor requirements on the official portal before committing if the assistance route is central to your decision.',
+    a: 'No plan price includes or depends on a subsidy. Residential grid-connected systems may be eligible for central financial assistance under PM Surya Ghar, subject to prevailing government guidelines and your DISCOM process, but that assistance goes to the applicant through the official portal. It is not a discount we control or can promise. The scheme also routes the balance payment through an empanelled vendor, and Kapizo Solar does not currently claim empanelment, so confirm the vendor requirements on the official portal before committing if the assistance route is central to your decision.',
   },
   {
     q: 'Why are prices not shown on the website?',
@@ -36,14 +36,14 @@ export default function PlansPage() {
 
   usePageMeta(
     {
-      title: 'Solar Options — Essential, Recommended & High Performance | Kapizo Solar',
+      title: 'Solar Options: Essential, Recommended & High Performance | Kapizo Solar',
       description:
         'Compare the Kapizo Solar Essential, Recommended and High Performance rooftop solar options: component selection, system design, protection, monitoring and battery options. Get a personalised quotation.',
       path: '/plans',
     },
     [
       webPageSchema(
-        'Kapizo Solar Options — Essential, Recommended and High Performance',
+        'Kapizo Solar Options: Essential, Recommended and High Performance',
         'Compare the three Kapizo Solar rooftop solar plans.',
         '/plans',
       ),
@@ -129,7 +129,7 @@ export default function PlansPage() {
 
       <CTASection
         title="Not sure which plan fits?"
-        description="Send us your last electricity bill on WhatsApp. We will tell you the capacity you need and which plan makes sense — before you commit to anything."
+        description="Send us your last electricity bill on WhatsApp. We will tell you the capacity you need and which plan makes sense, before you commit to anything."
         primaryLabel="Calculate My System Size"
       />
     </>
