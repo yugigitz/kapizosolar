@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import MobileCTA from '@/components/MobileCTA'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 import Home from '@/pages/Home'
 import SolarCalculatorPage from '@/pages/SolarCalculatorPage'
 import SolutionsPage from '@/pages/SolutionsPage'
@@ -69,6 +70,7 @@ export default function App() {
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
       <MobileCTA />
     </>
   )

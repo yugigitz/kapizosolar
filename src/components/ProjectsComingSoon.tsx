@@ -19,7 +19,7 @@ export default function ProjectsComingSoon() {
             system details, as they are commissioned.
           </p>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
-            If you are looking at solar now, you get the founders on site and a fully documented
+            If you are looking at solar now, you get our own team on site and a fully documented
             installation.
           </p>
           <div className="mt-7 flex justify-center">

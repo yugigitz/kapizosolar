@@ -15,9 +15,13 @@ export const business = {
     country: 'IN',
   },
   serviceArea: 'Mancherial and across Telangana',
-  founders: [
-    { name: 'Yugandhar Jadi', role: 'Founder', phone: '7799049801' },
-    { name: 'Thoutam Ramakrishna', role: 'Co-Founder', phone: '9652398338' },
+  /**
+   * Contact lines. Designations are deliberately omitted until the team
+   * structure is finalised, so nothing here invents a job title.
+   */
+  contacts: [
+    { name: 'Yugandhar Jadi', phone: '7799049801' },
+    { name: 'Thoutam Ramakrishna', phone: '9652398338' },
   ],
 } as const
 

@@ -52,24 +52,26 @@ export default function ContactPage() {
               </h2>
               <p className="mt-1.5 text-sm font-semibold text-kapizo-green">{business.tagline}</p>
 
-              <div className="mt-8 space-y-5">
-                {business.founders.map((f) => (
-                  <div key={f.name} className="card p-5">
-                    <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange-deep">
-                      {f.role}
-                    </p>
-                    <p className="mt-1 font-display text-lg font-bold text-kapizo-navy">{f.name}</p>
+              {/* One heading over the group rather than repeated on each card:
+                  both lines reach the same team. */}
+              <p className="mt-8 text-xs font-bold uppercase tracking-wider text-kapizo-orange-deep">
+                Speak with our solar team
+              </p>
+              <div className="mt-4 space-y-5">
+                {business.contacts.map((c) => (
+                  <div key={c.name} className="card p-5">
+                    <p className="font-display text-lg font-bold text-kapizo-navy">{c.name}</p>
                     <div className="mt-4 flex flex-wrap gap-2.5">
                       <a
-                        href={telHref(f.phone)}
+                        href={telHref(c.phone)}
                         onClick={() => trackEvent('phone_click', { context: 'contact_page' })}
                         className="btn-navy !px-4 !py-2.5 text-xs"
                       >
                         <PhoneIcon className="h-4 w-4" />
-                        {f.phone}
+                        {c.phone}
                       </a>
                       <a
-                        href={whatsappHref(waMessages.general, f.phone)}
+                        href={whatsappHref(waMessages.general, c.phone)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackEvent('whatsapp_click', { context: 'contact_page' })}

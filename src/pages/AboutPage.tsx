@@ -29,11 +29,11 @@ export default function AboutPage() {
         '/about',
       ),
       breadcrumbSchema(crumbs),
-      ...business.founders.map((f) => ({
+      ...business.contacts.map((c) => ({
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: f.name,
-        jobTitle: f.role,
+        name: c.name,
+        // No jobTitle: designations are not finalised.
         worksFor: { '@id': `${SITE_URL}/#organization` },
       })),
     ],
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 put stock photographs up and let you assume they are ours.
               </p>
               <p>
-                If you are weighing that up: an early customer gets the founders on site rather than
+                If you are weighing that up: an early customer gets our own team on site rather than
                 a subcontracted crew, and a company with every reason to get the job right. That is
                 the honest trade. We would rather tell you this now than have you find out later.
               </p>
@@ -106,20 +106,17 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {business.founders.map((f) => (
-                <div key={f.name} className="card p-6">
-                  <p className="text-xs font-bold uppercase tracking-wider text-kapizo-orange-deep">
-                    {f.role}
-                  </p>
-                  <h3 className="mt-1.5 font-display text-lg font-extrabold text-kapizo-navy">
-                    {f.name}
-                  </h3>
+              {business.contacts.map((c) => (
+                /* No designation line: the "The team" heading above already
+                   frames these cards, and no job titles are claimed. */
+                <div key={c.name} className="card p-6">
+                  <h3 className="font-display text-lg font-extrabold text-kapizo-navy">{c.name}</h3>
                   <a
-                    href={telHref(f.phone)}
+                    href={telHref(c.phone)}
                     className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-kapizo-green hover:underline"
                   >
                     <PhoneIcon className="h-4 w-4" />
-                    {f.phone}
+                    {c.phone}
                   </a>
                 </div>
               ))}

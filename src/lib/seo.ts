@@ -122,7 +122,8 @@ export const organizationSchema = {
       availableLanguage: ['en', 'te', 'hi'],
     },
   ],
-  founder: business.founders.map((f) => ({ '@type': 'Person', name: f.name, jobTitle: f.role })),
+  // No founder/jobTitle nodes: designations are not finalised, and structured
+  // data must not assert a role the site does not state.
 }
 
 /**

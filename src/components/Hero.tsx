@@ -72,11 +72,37 @@ export default function Hero() {
           <div className="lg:col-span-5">
             <div className="relative">
               <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 backdrop-blur-sm sm:p-6">
-                <KapizoBanner
-                  alt="Kapizo Solar rooftop solar EPC services in Telangana"
-                  className="w-full"
-                  priority
-                />
+                {/*
+                  The banner has a transparent background, so its green "ZO"
+                  sat directly on the green end of the hero gradient and lost
+                  definition. This gives it a light plate to sit on.
+
+                  Not a white box: the plate is a soft radial wash that is
+                  brightest behind the wordmark and fades to nothing at the
+                  edges, with a hairline border and inner highlight so it reads
+                  as a lit recess in the card rather than a pasted rectangle.
+                */}
+                <div className="relative overflow-hidden rounded-xl px-4 py-6 sm:px-6 sm:py-7">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-xl bg-white/[0.93]"
+                    style={{
+                      maskImage:
+                        'radial-gradient(120% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%)',
+                      WebkitMaskImage:
+                        'radial-gradient(120% 92% at 50% 50%, #000 58%, rgba(0,0,0,0.55) 80%, transparent 100%)',
+                    }}
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/25"
+                  />
+                  <KapizoBanner
+                    alt="Kapizo Solar rooftop solar EPC services in Telangana"
+                    className="relative w-full"
+                    priority
+                  />
+                </div>
                 <dl className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5 text-center">
                   <div>
                     <dt className="text-[10px] font-semibold uppercase tracking-wider text-slate-300">

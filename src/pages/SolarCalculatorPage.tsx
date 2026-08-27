@@ -60,14 +60,21 @@ export default function SolarCalculatorPage() {
 
   return (
     <>
+      {/* Dense header: on this page the calculator itself is what the visitor
+          came for, so the heading gives up height to bring the tool up into
+          the first viewport. */}
       <PageHeader
+        dense
         eyebrow="Solar Calculator"
         title="How much solar do you actually need?"
         description="Tell us roughly what you pay for electricity each month. We will use that to estimate the system size that may suit you, what it should generate, and what you could save. It takes about thirty seconds."
         breadcrumbs={crumbs}
       />
 
-      <section className="section bg-white" aria-labelledby="calc-heading">
+      <section
+        className="bg-white pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-10"
+        aria-labelledby="calc-heading"
+      >
         <div className="container-kapizo">
           <h2 id="calc-heading" className="sr-only">
             Rooftop solar savings calculator
