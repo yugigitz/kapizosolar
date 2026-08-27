@@ -6,6 +6,7 @@ import LeadForm from '@/components/LeadForm'
 import { waMessages, whatsappHref } from '@/data/business'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import {
+  COST_VS_SUBSIDY_NOTE,
   OFFICIAL_LINKS,
   SUBSIDY_HEADLINE,
   SUBSIDY_LIMITATIONS,
@@ -236,6 +237,13 @@ export default function PMSuryaGharPage() {
               </div>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
+                Project price, assistance and what you actually pay
+              </h2>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">
+                {COST_VS_SUBSIDY_NOTE}
+              </p>
+
+              <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 About empanelled vendors, please read
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-600">
@@ -301,7 +309,21 @@ export default function PMSuryaGharPage() {
               <ul className="mt-4 space-y-3 text-base">
                 <li>
                   <a
-                    href="https://pmsuryaghar.gov.in"
+                    href={OFFICIAL_LINKS.cfaNotification}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"
+                  >
+                    PM Surya Ghar scheme notification (PDF)
+                  </a>
+                  <span className="block text-sm text-slate-500">
+                    The official notification setting out the residential Central Financial
+                    Assistance structure quoted on this page.
+                  </span>
+                </li>
+                <li>
+                  <a
+                    href={OFFICIAL_LINKS.portal}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="font-semibold text-kapizo-green underline underline-offset-2 hover:text-kapizo-green-dark"

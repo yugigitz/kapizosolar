@@ -1,5 +1,9 @@
 import { SUBSIDY_HEADLINE, SUBSIDY_SLABS, SUBSIDY_STRUCTURE } from './scheme'
-import { WARRANTY_TERMS_NOTE, WORKMANSHIP_WARRANTY_NAME } from './warranty'
+import {
+  EQUIPMENT_WARRANTY_NOTE,
+  WARRANTY_TERMS_NOTE,
+  WORKMANSHIP_WARRANTY_NAME,
+} from './warranty'
 
 export type Faq = {
   q: string
@@ -56,7 +60,7 @@ export const faqs: Faq[] = [
   {
     category: 'commercial',
     q: 'What warranty do I get?',
-    a: `There are four separate warranties, and it is worth knowing the difference because the market usually blurs them. On the solar modules you get two: a product warranty covering manufacturing and material defects, typically 10–12 years, and a performance warranty covering guaranteed power output, typically 25–30 years. These are not the same thing. When a company advertises a "25-year panel warranty", they mean the performance one, not cover on the panel itself. The inverter carries its own manufacturer warranty, typically 5–10 years depending on the model, often extendable. And we provide the ${WORKMANSHIP_WARRANTY_NAME}, covering installation workmanship attributable to us. An optional AMC is available separately for preventive maintenance and cleaning. ${WARRANTY_TERMS_NOTE}`,
+    a: `Two different things, from two different sources. From us you get the ${WORKMANSHIP_WARRANTY_NAME}, covering defects directly attributable to our installation workmanship for 3 years from commissioning. That includes the mounting and roof penetrations we made, wiring joints and terminations, and connections that come loose because of how they were fitted. From the manufacturers you get equipment warranties on the panels, inverter and other components. ${EQUIPMENT_WARRANTY_NOTE} On panels specifically, note that the product warranty covering defects and the performance warranty covering power output are different lengths and cover different things, so a single headline number tells you little. ${WARRANTY_TERMS_NOTE}`,
   },
   {
     category: 'scheme',

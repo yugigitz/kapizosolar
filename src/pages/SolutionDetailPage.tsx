@@ -126,13 +126,27 @@ export default function SolutionDetailPage() {
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-kapizo-green text-xs font-bold text-white">
                     2
                   </span>
-                  <span>
-                    Compare the{' '}
-                    <Link to="/plans" className="font-semibold text-kapizo-green hover:underline">
-                      Essential, Recommended and High Performance options
-                    </Link>{' '}
-                    to decide on specification.
-                  </span>
+                  {/*
+                    The three options are residential decision paths. A shop,
+                    factory or farm is sized from its own load profile, so those
+                    segments get a custom-solution path instead of being pointed
+                    at a specification tier that does not apply to them.
+                  */}
+                  {sol.slug === 'residential' ? (
+                    <span>
+                      Compare the{' '}
+                      <Link to="/plans" className="font-semibold text-kapizo-green hover:underline">
+                        Essential, Recommended and High Performance options
+                      </Link>{' '}
+                      to decide on specification.
+                    </span>
+                  ) : (
+                    <span>
+                      We analyse your electricity consumption and load pattern, then size the system
+                      and prepare a bill of materials for your site. There is no fixed package here:
+                      the specification is built around your requirement.
+                    </span>
+                  )}
                 </li>
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-kapizo-green text-xs font-bold text-white">

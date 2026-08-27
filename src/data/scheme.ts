@@ -19,6 +19,8 @@ export const OFFICIAL_LINKS = {
     'https://mnre.gov.in/en/notice/operational-guidelines-for-implementation-of-the-component-central-financial-assistance-to-residential-consumers-of-pm-surya-ghar-muft-bijli-yojana/',
   mnreGuidelines: 'https://mnre.gov.in/en/notice/guidelines-for-pm-surya-ghar-muft-bijli-yojana/',
   mnreRooftopProgramme: 'https://mnre.gov.in/en/grid-connected-solar-rooftop-programme/',
+  /** The scheme notification setting out the residential CFA structure. */
+  cfaNotification: 'https://solarrooftop.pmsuryaghar.gov.in/notification/170_notification.pdf',
 } as const
 
 /**
@@ -35,19 +37,27 @@ export const SUBSIDY_SLABS = [
 /** The headline figure, phrased so it can never read as a guaranteed entitlement. */
 export const SUBSIDY_MAX = '₹78,000'
 
-/** The formula behind the slabs, for pages that explain the mechanism. */
+/**
+ * The per-kW structure set out in the scheme notification.
+ * 2 kW at ₹30,000 gives ₹60,000; the third kW adds ₹18,000 to reach the
+ * ₹78,000 ceiling. Nothing further is payable above 3 kW.
+ */
 export const SUBSIDY_STRUCTURE =
-  '60% of the system cost at government benchmark prices for systems up to 2 kW, plus 40% of the additional cost for capacity between 2 kW and 3 kW, capped at the 3 kW level.'
+  '₹30,000 per kW for the first 2 kW, plus ₹18,000 for the additional 1 kW up to 3 kW. No further central assistance applies above 3 kW, so the maximum for a residential system is ₹78,000.'
+
+/** How the three figures customers confuse relate to each other. */
+export const COST_VS_SUBSIDY_NOTE =
+  'Three separate figures are involved and they are easy to mix up. The project price is what the system costs, and it depends on your site and specification. The Central Financial Assistance is a government amount you may be eligible for, decided by the government and your DISCOM. What you finally pay is the project price less any assistance actually approved and released to you. We quote the project price. We cannot quote the other two, and neither can any installer.'
 
 /**
  * The one-line statement to use wherever the subsidy is mentioned.
  * Deliberately says "up to" and "may be available" — never that a customer
  * will receive a specific amount.
  */
-export const SUBSIDY_HEADLINE = `Central financial assistance of up to ${SUBSIDY_MAX} may be available for eligible residential rooftop solar installations, subject to applicable scheme rules, eligibility, approved installation and vendor requirements, and DISCOM and government processes.`
+export const SUBSIDY_HEADLINE = `Eligible residential consumers may receive Central Financial Assistance under ${SCHEME_SHORT}, subject to the scheme's eligibility requirements, approved process, applicable benchmark conditions and portal and DISCOM requirements. The maximum for a residential system is ${SUBSIDY_MAX}. Not every customer receives the maximum, and some receive none.`
 
 /** Short form for cards and plan pages where space is tight. */
-export const SUBSIDY_SHORT = `Eligible residential systems may qualify for central financial assistance of up to ${SUBSIDY_MAX} under ${SCHEME_SHORT}, subject to scheme rules and DISCOM processes.`
+export const SUBSIDY_SHORT = `Eligible residential consumers may receive Central Financial Assistance of up to ${SUBSIDY_MAX} under ${SCHEME_SHORT}, subject to the scheme's eligibility requirements, approved process and DISCOM requirements. This is separate from the project price and is not a discount we control.`
 
 /**
  * Kapizo's position on the scheme. Stated plainly because it affects the

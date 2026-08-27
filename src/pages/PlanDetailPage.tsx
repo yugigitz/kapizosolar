@@ -16,6 +16,8 @@ import {
 import {
   AMC_NAME,
   AMC_SUMMARY,
+  EQUIPMENT_WARRANTY_NOTE,
+  ROOF_LEAKAGE_POSITION,
   WARRANTY_KEY_DISTINCTION,
   WARRANTY_LAYERS,
   WARRANTY_TERMS_NOTE,
@@ -180,7 +182,7 @@ export default function PlanDetailPage() {
                   <div key={w.id} className="rounded-lg border border-slate-200 p-4">
                     <dt className="flex flex-wrap items-baseline justify-between gap-2">
                       <span className="text-sm font-bold text-kapizo-navy">{w.layer}</span>
-                      <span className="text-sm font-semibold text-kapizo-green">{w.typical}</span>
+                      <span className="text-sm font-semibold text-kapizo-green">{w.duration}</span>
                     </dt>
                     <dd className="mt-1.5 text-sm leading-relaxed text-slate-600">
                       <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
@@ -200,10 +202,28 @@ export default function PlanDetailPage() {
                 </div>
               </dl>
 
-              <p className="mt-3 text-xs leading-relaxed text-slate-500">
-                Typical ranges only. The actual terms depend on the components selected for your
-                project. {WARRANTY_TERMS_NOTE}
+              <p className="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-600">
+                {EQUIPMENT_WARRANTY_NOTE}
               </p>
+
+              <h3 className="mt-8 font-display text-lg font-bold text-kapizo-navy">
+                Roof leakage
+              </h3>
+              <ul className="mt-3 space-y-2.5">
+                <li className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
+                  <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-kapizo-green" />
+                  {ROOF_LEAKAGE_POSITION.covered}
+                </li>
+                <li className="flex gap-2.5 text-sm leading-relaxed text-slate-600">
+                  <XIcon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                  {ROOF_LEAKAGE_POSITION.notCovered}
+                </li>
+              </ul>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                {ROOF_LEAKAGE_POSITION.assessment}
+              </p>
+
+              <p className="mt-4 text-xs leading-relaxed text-slate-500">{WARRANTY_TERMS_NOTE}</p>
 
               <h2 className="mt-10 font-display text-2xl font-extrabold text-kapizo-navy">
                 Pricing and subsidy

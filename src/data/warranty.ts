@@ -1,88 +1,110 @@
 /**
  * SINGLE SOURCE OF TRUTH for warranty wording.
  *
- * The website previously implied a single "25–30 year panel warranty". That is
- * a widespread and misleading shorthand in the Indian solar market: the 25–30
- * year figure is the PERFORMANCE (power output) warranty, while the product
- * (materials and workmanship) warranty on the same panel is typically 10–12
- * years. Presenting the long figure as though it covered the whole panel sets
- * an expectation the manufacturer will not honour.
+ * Two separate things are described here and the market routinely blurs them:
  *
- * Four distinct layers are modelled here, each from a different provider:
- *   1. Module product warranty      — from the module manufacturer
- *   2. Module performance warranty  — from the module manufacturer
- *   3. Inverter warranty            — from the inverter manufacturer
- *   4. Installation workmanship     — from Kapizo Solar
- * Plus an optional AMC, which is a service, not a warranty.
+ *   1. Kapizo's own workmanship warranty, which Kapizo controls and can state
+ *      as a firm commitment.
+ *   2. Equipment warranties, which come from the manufacturer of whatever is
+ *      actually supplied and vary by make and model.
  *
- * Typical ranges only. The actual terms depend on the components selected for
- * a specific project and are stated in that customer's quotation.
+ * The website deliberately publishes no universal equipment warranty duration.
+ * A blanket "25-year panel warranty" or "10-year inverter warranty" is a
+ * promise about somebody else's product that Kapizo cannot honour if the
+ * selected component carries different terms. Actual durations belong in the
+ * customer's quotation, where the components are known.
  */
 
 export type WarrantyLayer = {
   id: string
   layer: string
   provider: string
-  typical: string
+  /** Firm only where Kapizo controls it. Otherwise deferred to the quotation. */
+  duration: string
   covers: string
   /** Shown where the distinction is easy to get wrong. */
   note?: string
 }
 
+export const WORKMANSHIP_WARRANTY_YEARS = 3
+export const WORKMANSHIP_WARRANTY_NAME = '3-Year Kapizo Installation Workmanship Warranty'
+
 export const WARRANTY_LAYERS: WarrantyLayer[] = [
+  {
+    id: 'workmanship',
+    layer: 'Kapizo installation workmanship warranty',
+    provider: 'Kapizo Solar',
+    duration: '3 years from commissioning',
+    covers:
+      'Defects directly attributable to Kapizo installation workmanship, including mounting and roof-penetration workmanship, wiring joints and terminations, and loose connections caused by installation quality.',
+    note: 'This is the part we control, so it is the part we state as a firm commitment. Detailed terms come with your quotation.',
+  },
   {
     id: 'module-product',
     layer: 'Solar module product warranty',
     provider: 'Module manufacturer',
-    typical: 'Typically 10–12 years',
+    duration: 'Per the selected manufacturer',
     covers: 'Manufacturing and material defects in the panel itself.',
-    note: 'This is the warranty that covers the physical panel. It is shorter than the performance warranty, and the two are often confused.',
+    note: 'Durations differ by make and model, so the figure that applies to your system is confirmed in your quotation rather than promised here.',
   },
   {
     id: 'module-performance',
     layer: 'Solar module performance warranty',
     provider: 'Module manufacturer',
-    typical: 'Typically 25–30 years',
+    duration: 'Per the selected manufacturer',
     covers:
-      'The panel\'s guaranteed power output over time, against the manufacturer\'s published degradation curve.',
-    note: 'A performance warranty is not a promise that the panel will not fail. It is a promise about how much power it will still produce.',
+      'The panel\'s power output over time, measured against that manufacturer\'s published degradation curve.',
+    note: 'Module makers commonly publish a long performance warranty, considerably longer than the product warranty on the same panel. The two cover different things and the exact terms are the manufacturer\'s, not ours.',
   },
   {
     id: 'inverter',
     layer: 'Inverter warranty',
     provider: 'Inverter manufacturer',
-    typical: 'Typically 5–10 years',
-    covers: 'The inverter unit, per the manufacturer\'s terms for the selected model.',
-    note: 'Many models offer a paid extension. Worth considering, since the inverter is the component most likely to need attention first.',
-  },
-  {
-    id: 'workmanship',
-    layer: 'Kapizo installation workmanship warranty',
-    provider: 'Kapizo Solar',
-    typical: '1 year from commissioning',
-    covers:
-      'Installation workmanship attributable to Kapizo, covering installation defects, mounting and roof-penetration workmanship, wiring joints and terminations, and loose connections caused by installation quality.',
+    duration: 'Per the selected manufacturer',
+    covers: 'The inverter unit, on that manufacturer\'s terms for the selected model.',
+    note: 'Many models offer a paid extension. Worth asking about, since the inverter usually needs attention before anything else on the roof.',
   },
 ]
 
 /** The distinction customers most often get wrong, in one sentence. */
 export const WARRANTY_KEY_DISTINCTION =
-  'Product warranty covers manufacturing and material defects. Performance warranty covers the panel\'s guaranteed power output over time. They are different lengths and they cover different things.'
+  'A product warranty covers manufacturing and material defects in the panel. A performance warranty covers how much power that panel still produces years later. They run for different lengths and they cover different things, so a single headline number tells you very little.'
 
-export const WORKMANSHIP_WARRANTY_NAME = '1-Year Kapizo Installation Workmanship Warranty'
+/** Equipment warranties are the manufacturer\'s, and are stated as such. */
+export const EQUIPMENT_WARRANTY_NOTE =
+  'Equipment warranties are provided according to the selected manufacturer\'s applicable warranty terms. Because the modules, inverter and balance-of-system are chosen to suit your site, the durations that apply to your system are confirmed in your quotation.'
 
 export const WORKMANSHIP_WARRANTY_SUMMARY =
-  'Covers installation workmanship attributable to Kapizo Solar, including applicable installation defects, mounting and roof-penetration workmanship, wiring joints and terminations, and loose connections caused by installation quality.'
+  'Covers defects directly attributable to Kapizo Solar installation workmanship, for 3 years from commissioning, subject to the detailed warranty terms provided with your quotation.'
 
 /**
- * Indicative exclusions. These are commercial terms for orientation, not the
- * contract — the website is deliberately not a warranty document.
+ * Roof leakage, stated properly.
+ *
+ * A blanket "roof leakage is not covered" is the industry's usual dodge and it
+ * is not honest: if our penetration workmanship caused the leak, that is our
+ * defect. What is genuinely outside the workmanship warranty is a roof that was
+ * already failing before we arrived.
+ */
+export const ROOF_LEAKAGE_POSITION = {
+  covered:
+    'If leakage is directly caused by Kapizo installation workmanship, for example a roof penetration we made or sealed, it is covered during the workmanship warranty period.',
+  notCovered:
+    'Pre-existing leakage, structural defects, deteriorated or ageing roofing material, unrelated civil work, and modifications made by others are not Kapizo workmanship defects and fall outside this warranty.',
+  assessment:
+    'Roof condition is noted during the site assessment. Where a roof already shows signs of leakage or deterioration, we tell you before installation rather than after.',
+}
+
+/**
+ * Indicative exclusions for the workmanship warranty. Orientation for the
+ * customer, not the contract: the website is deliberately not a warranty
+ * document and makes no legal claim beyond the actual terms.
  */
 export const WORKMANSHIP_EXCLUSIONS = [
-  'Manufacturer equipment defects, which are covered by the respective manufacturer warranty',
+  'Manufacturer equipment defects, which fall under the respective manufacturer warranty',
+  'Pre-existing roof leakage, structural defects and deteriorated roofing material',
   'Lightning, fire, flooding and severe weather beyond design conditions',
   'Rodent and pest damage',
-  'Unauthorised modifications or third-party work on the system',
+  'Unauthorised modifications, or work on the system by others',
   'Physical damage after handover',
   'Grid abnormalities beyond equipment specifications',
   'Normal wear and tear',

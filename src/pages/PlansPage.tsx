@@ -5,6 +5,7 @@ import PlanComparison from '@/components/plans/PlanComparison'
 import CTASection from '@/components/CTASection'
 import LeadForm from '@/components/LeadForm'
 import { plans } from '@/data/plans'
+import { WORKMANSHIP_WARRANTY_NAME } from '@/data/warranty'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { breadcrumbSchema, faqSchema, webPageSchema } from '@/lib/seo'
 import { ArrowRightIcon } from '@/components/ui/Icons'
@@ -12,7 +13,7 @@ import { ArrowRightIcon } from '@/components/ui/Icons'
 const planFaqs = [
   {
     q: 'What is the difference between the Essential, Recommended and High Performance options?',
-    a: 'They differ in component selection, system design, protection scheme, monitoring and whether battery storage is included. Essential is a straightforward on-grid system with reliable components and essential protection, for customers focused on reducing the bill. Recommended adds better component selection, a more efficient design, stronger protection including surge protection, and proper monitoring. High Performance adds enhanced components where the site justifies them, an enhanced protection scheme, advanced monitoring where available, and battery storage as an option. All three include the same engineering approach to sizing and safety, net metering and subsidy assistance, and the 1-Year Kapizo Installation Workmanship Warranty.'
+    a: `They differ in component selection, system design, protection scheme, monitoring and whether battery storage is included. Essential is a straightforward on-grid system with reliable components and essential protection, for customers focused on reducing the bill. Recommended adds better component selection, a more efficient design, stronger protection including surge protection, and proper monitoring. High Performance adds enhanced components where the site justifies them, an enhanced protection scheme, advanced monitoring where available, and battery storage as an option. All three include the same engineering approach to sizing and safety, net metering and subsidy assistance, and the ${WORKMANSHIP_WARRANTY_NAME}.`
   },
   {
     q: 'Which option should I choose?',

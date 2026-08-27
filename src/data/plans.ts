@@ -128,7 +128,7 @@ export const COMPONENT_QUOTATION_NOTE =
 /** Shared warranty rows, derived from the four-layer structure. */
 const sharedWarranty: PlanSpec[] = WARRANTY_LAYERS.map((w) => ({
   label: w.layer,
-  value: w.typical,
+  value: w.duration,
 }))
 
 const sharedExclusions = [
@@ -150,8 +150,7 @@ export const plans: Plan[] = [
     id: 'essential',
     name: 'Essential',
     slug: 'essential',
-    positioning:
-      'A straightforward solar solution for customers primarily looking to reduce their electricity bill with a reliable, practical system.',
+    positioning: 'Reliable and practical solar solution.',
     idealCustomer:
       'Your main goal is a smaller monthly bill, your supply is reasonably reliable, and you want a sensible system without paying for capability you will not use. Nothing is trimmed from the electrical safety side to reach this level.',
     audienceLabel: 'Practical and reliable',
@@ -220,8 +219,7 @@ export const plans: Plan[] = [
     id: 'recommended',
     name: 'Recommended',
     slug: 'recommended',
-    positioning:
-      'A balanced combination of system performance, component quality, long-term value and service. This is where we suggest most residential customers start.',
+    positioning: 'Balanced performance, quality and long-term value.',
     idealCustomer:
       'You want a system that performs well over fifteen years rather than one that only looks cheap on day one, you would like to see what it is generating, and you want the fuller protection scheme.',
     audienceLabel: 'Balanced performance and value',
@@ -292,8 +290,7 @@ export const plans: Plan[] = [
     id: 'high-performance',
     name: 'High Performance',
     slug: 'high-performance',
-    positioning:
-      'For customers who want higher system performance, enhanced component selection, greater monitoring capability or a more premium system configuration.',
+    positioning: 'For customers looking for higher performance and enhanced features.',
     idealCustomer:
       'You want the strongest configuration we offer, you need power through outages, or you are holding the property long term and would rather invest once. Also suits commercial and industrial sites where downtime has a cost.',
     audienceLabel: 'Higher performance and configuration',
