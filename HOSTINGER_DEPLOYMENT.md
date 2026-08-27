@@ -12,8 +12,9 @@ automatically. Every step below is one you run yourself.
 You need:
 
 - Your Hostinger hPanel login
-- A mailbox on your own domain for lead notifications (for example
-  `website@kapizosolar.in`) — create it in hPanel → Emails if it does not exist
+- The lead notification mailbox `connect@kapizosolar.in`, which already exists.
+  You do not need to create a second mailbox: the same address is used both as
+  the destination and as the sending identity
 - Node.js 18 or newer on the machine where you run the build
 
 Confirm PHP is enabled for the domain in hPanel → Advanced → PHP Configuration.
@@ -73,9 +74,9 @@ serve them: your credentials, and your customer lead data.
     ├── contact/index.html
     ├── faq/index.html
     ├── plans/index.html
-    ├── plans/budget/index.html
-    ├── plans/standard/index.html
-    ├── plans/premium/index.html
+    ├── plans/essential/index.html
+    ├── plans/recommended/index.html
+    ├── plans/high-performance/index.html
     ├── pm-surya-ghar/index.html
     ├── privacy-policy/index.html
     ├── solar-calculator/index.html
@@ -119,8 +120,8 @@ In File Manager, navigate **one level above** `public_html` — you should see
 `public_html` listed as a folder. Create a new file there named `.env`:
 
 ```ini
-LEAD_TO_EMAIL=enquiries@kapizosolar.in
-LEAD_FROM_EMAIL=website@kapizosolar.in
+LEAD_TO_EMAIL=connect@kapizosolar.in
+LEAD_FROM_EMAIL=connect@kapizosolar.in
 LEAD_SUBJECT_PREFIX=[Kapizo Lead]
 LEAD_STORE_PATH=/home/uXXXXXXX/storage/leads.jsonl
 LEAD_RATE_LIMIT_PER_HOUR=20
@@ -131,8 +132,8 @@ LEAD_ALLOWED_ORIGINS=https://kapizosolar.in,https://www.kapizosolar.in
 
 | Variable | What to enter |
 |---|---|
-| `LEAD_TO_EMAIL` | Where enquiries are emailed. Comma-separate for several people: `you@kapizosolar.in,partner@kapizosolar.in` |
-| `LEAD_FROM_EMAIL` | **Must be a real mailbox on kapizosolar.in.** Hostinger rejects mail claiming to be from a domain you do not own, so a Gmail address here means notifications never arrive |
+| `LEAD_TO_EMAIL` | Where enquiries are emailed. Use `connect@kapizosolar.in`. Comma-separate to add people later: `connect@kapizosolar.in,partner@kapizosolar.in` |
+| `LEAD_FROM_EMAIL` | The address the notification is sent *from*. Use `connect@kapizosolar.in` — the same mailbox. It must be an address on kapizosolar.in, because mail claiming to come from a domain you do not control is rejected or filtered. This is **not** a login: the site sends via PHP `mail()`, so no password is involved |
 | `LEAD_SUBJECT_PREFIX` | Subject-line prefix. Useful for a mail filter |
 | `LEAD_STORE_PATH` | Absolute path to the lead file. Replace `uXXXXXXX` with your real username — the File Manager shows it in the path bar. Must be outside `public_html` |
 | `LEAD_RATE_LIMIT_PER_HOUR` | Max enquiries accepted from one IP per hour. `20` is sensible; raise it only if you see genuine customers blocked |
@@ -183,7 +184,7 @@ Work through this in order. Each step catches a different failure.
 - [ ] `https://kapizosolar.in` loads
 - [ ] `http://kapizosolar.in` redirects to `https://`
 - [ ] `https://www.kapizosolar.in` redirects to the non-`www` address
-- [ ] Open `https://kapizosolar.in/plans/standard` **directly in a fresh tab**,
+- [ ] Open `https://kapizosolar.in/plans/recommended` **directly in a fresh tab**,
       not by clicking through. If this 404s, `.htaccess` did not upload
 - [ ] Refresh a deep page with F5 — it should stay on that page
 - [ ] `https://kapizosolar.in/no-such-page` shows the 404 page
@@ -282,7 +283,7 @@ automatically once set:
 
 - Price per kW for each plan
 - Warranty terms — module, inverter, battery, workmanship
-- `recommendedReason` for the Budget and Premium plans
+- `recommendedReason` for the Essential and High Performance options
 
 Two other open items:
 
