@@ -15,8 +15,8 @@ export const solutions: Solution[] = [
     title: 'Residential Rooftop Solar',
     audience: 'Independent houses, villas and apartment owners',
     summary:
-      'Rooftop solar systems sized around your household consumption, designed to reduce your monthly electricity bill and give you long-term protection from tariff increases.',
-    typicalUse: 'Typically 1 kW to 10 kW depending on your bill and available shadow-free roof area.',
+      'A system sized to what your house actually uses, so your monthly bill comes down and stays down as tariffs rise.',
+    typicalUse: 'Usually 1 kW to 10 kW, depending on your bill and how much shadow-free terrace you have.',
     benefits: [
       'Reduces the units you buy from the grid every month',
       'Long asset life with low running cost',
@@ -31,7 +31,7 @@ export const solutions: Solution[] = [
     title: 'Commercial Solar EPC',
     audience: 'Shops, showrooms, offices, hospitals, schools and commercial buildings',
     summary:
-      'Commercial tariffs are usually higher than residential, which means each unit generated on your own roof displaces a more expensive unit from the grid.',
+      'Commercial tariffs are higher than domestic ones, so every unit your roof generates replaces a costlier unit from the grid. That is why the numbers often work better for a shop or office than for a house.',
     typicalUse: 'Typically 10 kW to several hundred kW depending on load profile and roof area.',
     benefits: [
       'Offsets daytime consumption, which is when most commercial loads run',
@@ -47,7 +47,7 @@ export const solutions: Solution[] = [
     title: 'Industrial Solar Solutions',
     audience: 'Factories, processing units, workshops and industrial sheds',
     summary:
-      'Industrial roofs usually offer large, uninterrupted areas well suited to higher-capacity solar plants matched to a continuous daytime load.',
+      'Factory sheds usually have large, uninterrupted roofs and a steady daytime load — close to the ideal case for solar. The roof is already there and doing nothing.',
     typicalUse: 'Typically 50 kW and above, designed around your connected load and sanctioned demand.',
     benefits: [
       'Large shadow-free roof area is used productively',
@@ -63,8 +63,8 @@ export const solutions: Solution[] = [
     title: 'Agricultural Solar Solutions',
     audience: 'Farms, agricultural pump sets and rural establishments',
     summary:
-      'Solar solutions for agricultural applications, designed around pump capacity, water requirement and daily operating hours.',
-    typicalUse: 'Sized to the pump rating and daily running hours rather than a monthly electricity bill.',
+      'Sized to the pump, not to a monthly bill. We work from the pump rating, how much water you need and how many hours a day it has to run.',
+    typicalUse: 'Sized to the pump rating and daily running hours, not to a monthly bill.',
     benefits: [
       'Reduces dependence on grid supply timing for daytime operations',
       'Designed around actual pump load and duty cycle',

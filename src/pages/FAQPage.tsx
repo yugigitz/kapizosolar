@@ -33,13 +33,13 @@ export default function FAQPage() {
     <>
       <PageHeader
         eyebrow="FAQs"
-        title="Rooftop solar questions, answered properly"
-        description="Including the parts that are commonly glossed over — what solar will not do, what depends on your DISCOM, and what nobody can guarantee."
+        title="Rooftop solar questions, answered straight"
+        description="Including the awkward parts — what solar will not do, what depends on your DISCOM, and what nobody can honestly guarantee you."
         breadcrumbs={crumbs}
       />
       <FAQ
         heading="Frequently asked questions"
-        intro="If your question is not here, send it to us on WhatsApp — we will answer it directly."
+        intro="If your question is not here, WhatsApp it to us. We will answer it properly, even if the answer is no."
       />
       <CTASection />
     </>

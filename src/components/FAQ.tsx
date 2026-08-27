@@ -16,7 +16,7 @@ export default function FAQ({
   limit,
   showViewAll = false,
   heading = 'Questions customers actually ask',
-  intro = 'Straight answers, including the parts that are commonly glossed over.',
+  intro = 'Straight answers, including the parts most sellers skip over.',
 }: Props) {
   const [open, setOpen] = useState<number | null>(0)
   const list = limit ? items.slice(0, limit) : items

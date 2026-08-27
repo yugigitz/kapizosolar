@@ -43,8 +43,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About Us"
-        title="A solar EPC company built around getting the engineering right"
-        description="Kapizo Solar is a new company. We would rather be judged on how carefully we design and install than on claims about how long we have been around."
+        title="Two people who got tired of seeing solar done badly"
+        description="Kapizo Solar is new. We would rather you judge us on how carefully we size and install your system than on claims about how long we have been around."
         breadcrumbs={crumbs}
       />
 
@@ -52,46 +52,54 @@ export default function AboutPage() {
         <div className="container-kapizo">
           <div className="mx-auto max-w-3xl">
             <div className="prose-kapizo">
-              <h2>Who we are</h2>
+              <h2>Why Kapizo exists</h2>
               <p>
-                Kapizo Solar is a solar EPC company based in Mancherial, Telangana. We design,
-                supply, install and commission rooftop solar systems for homes, businesses,
-                industrial premises and agricultural customers across the state.
+                Plenty of rooftop solar in Telangana is sold as a package rather than designed for
+                the building it sits on. A customer is quoted 3 kW because 3 kW is what the seller
+                stocks, not because anyone looked at their bill. Protection on the DC side gets
+                trimmed to win the price. Then the system underperforms and the customer concludes
+                solar does not work.
               </p>
               <p>
-                EPC stands for engineering, procurement and construction. In practice it means we are
-                responsible for the system end to end — assessing the site, engineering the design,
-                selecting and procuring components, installing to proper electrical standards, and
-                supporting you afterwards. You deal with one accountable party rather than
-                coordinating between a supplier, an electrician and a paperwork agent.
-              </p>
-
-              <h2>Where we are in our journey</h2>
-              <p>
-                We are being straightforward about this: Kapizo Solar is a new company and is
-                currently onboarding its first customer projects. You will not find a gallery of past
-                installations on this website, because we have not completed customer projects yet
-                and we are not going to present stock photographs as our own work.
+                We started Kapizo to do the ordinary things properly: read the bill, look at the
+                roof, size the system to the usage, and put in the protection that should be there
+                anyway.
               </p>
               <p>
-                What that means for an early customer is direct attention from the founders, a fully
-                documented installation, and a company with every reason to get your project right.
-                What it does not mean is that we will overstate our track record to win the work.
+                We are a solar EPC company based in Mancherial, working across Telangana. EPC means
+                engineering, procurement and construction — we handle the whole thing, so you are not
+                coordinating between a panel supplier, a local electrician and someone who does the
+                DISCOM paperwork. One company, one point of accountability.
               </p>
 
-              <h2>How we approach a project</h2>
+              <h2>We are new, and we are not hiding it</h2>
               <p>
-                Sizing starts from your actual electricity consumption and a physical assessment of
-                your roof, not from a package list. Protection on both the DC and AC sides is treated
-                as part of the core design rather than as an optional extra — it is the part most
-                commonly trimmed to reduce a quote, and the part you are least able to inspect
-                afterwards.
+                Kapizo is taking on its first customer projects now. There is no photo gallery on
+                this site because we have not completed installations yet, and we are not going to
+                put stock photographs up and let you assume they are ours.
               </p>
               <p>
-                We explain what is being installed and why, including the parts that are less
-                convenient to hear: that an on-grid system will not run during a power cut, that a
-                bill rarely becomes exactly zero, and that approval timelines are decided by your
-                distribution company rather than by us.
+                If you are weighing that up: an early customer gets the founders on site rather than
+                a subcontracted crew, and a company with every reason to get the job right. That is
+                the honest trade. We would rather tell you this now than have you find out later.
+              </p>
+
+              <h2>How we work on a project</h2>
+              <p>
+                We start with your last few electricity bills, because your units tell us the right
+                system size far better than your terrace does. Then we come and look at the roof —
+                how much of it is genuinely shadow-free through the day, which way it faces, whether
+                the structure can take the load, and where the cable will run.
+              </p>
+              <p>
+                DC and AC protection is part of the design, not an add-on. It is the easiest thing to
+                quietly leave out of a quote, and the thing you are least able to check once the
+                system is on your roof.
+              </p>
+              <p>
+                We also tell you the inconvenient parts up front: an on-grid system will not run
+                during a power cut, your bill will not become zero, and the DISCOM decides its own
+                approval timelines, not us. You should hear that before you pay, not after.
               </p>
 
               <h2>The team</h2>
@@ -119,17 +127,17 @@ export default function AboutPage() {
 
             <div className="prose-kapizo mt-10">
               <p>
-                The team has undertaken structured preparation in solar PV system design and
-                installation practice. We mention this as context for how we work, not as a
-                substitute for a track record we have yet to build.
+                Both of us have gone through structured training in solar PV design and installation
+                practice before starting this. We mention it as context for how we approach the work,
+                not as a substitute for a track record we still have to build.
               </p>
 
               <h2>Where we work</h2>
               <p>
-                Our office is in Mancherial and we serve customers across Telangana. Being local to
-                the region matters for the parts of this business that are not glamorous — getting to
-                site for the assessment, being reachable when there is a question, and returning for
-                service after commissioning.
+                Our office is in Mancherial and we take on work across Telangana. Being local matters
+                for the unglamorous parts of this business: turning up for the site visit, picking up
+                the phone when you have a question six months later, and coming back when something
+                needs servicing.
               </p>
             </div>
 

@@ -39,8 +39,8 @@ export default function SolutionsPage() {
     <>
       <PageHeader
         eyebrow="Solar Solutions"
-        title="Solar solutions for every kind of property"
-        description="A home, a showroom, a factory and a farm draw power differently. We design for the load pattern in front of us rather than fitting every customer to the same package."
+        title="Solar for homes, businesses, factories and farms"
+        description="A house, a showroom, a factory shed and a borewell pump all draw power differently. We design for the building in front of us instead of fitting everyone to the same package."
         breadcrumbs={crumbs}
       />
 
@@ -107,8 +107,8 @@ export default function SolutionsPage() {
             <span className="eyebrow">Full Scope</span>
             <h2 className="h-section mt-3">Everything we handle as your EPC partner</h2>
             <p className="lede mt-4">
-              EPC means engineering, procurement and construction — we are responsible for the system
-              end to end rather than supplying parts and leaving you to coordinate.
+              EPC means engineering, procurement and construction. In plain terms: we do the whole
+              job, instead of dropping panels at your gate and leaving you to find an electrician.
             </p>
           </div>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

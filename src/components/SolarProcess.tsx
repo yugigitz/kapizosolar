@@ -7,10 +7,10 @@ export default function SolarProcess() {
       <div className="container-kapizo">
         <div className="max-w-2xl">
           <span className="eyebrow">The Kapizo EPC Process</span>
-          <h2 className="h-section mt-3">Six steps from first call to commissioned system</h2>
+          <h2 className="h-section mt-3">What actually happens, step by step</h2>
           <p className="lede mt-4">
-            Every project follows the same sequence, so you always know what happens next and what is
-            expected from you at each stage.
+            Every project runs the same way, so you always know what comes next and what we need
+            from you.
           </p>
         </div>
 

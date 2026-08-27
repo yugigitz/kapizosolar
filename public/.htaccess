@@ -3,6 +3,12 @@
 
 DirectoryIndex index.html
 
+# mod_dir would 301 "/plans" to "/plans/" because a directory of that name
+# exists. Every canonical URL on this site is written WITHOUT a trailing slash,
+# so that redirect would make each canonical URL bounce before resolving.
+# Turning it off lets the rewrite below serve the prerendered file directly.
+DirectorySlash Off
+
 # Never serve environment files, the lead store, or version control data,
 # even if one is accidentally uploaded into the web root.
 <FilesMatch "^\.env|\.(jsonl|log|ini|sh|bak)$|^\.git">
@@ -19,6 +25,39 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
+  # -------------------------------------------------------------------------
+  # Canonical host and scheme.
+  #
+  # Every canonical URL on this site is https://kapizosolar.in (no www), so
+  # http:// and www. must redirect there, or the same page is reachable at
+  # four addresses and search engines see duplicates.
+  #
+  # Both conditions are handled in ONE rule so http://www. does not chain
+  # through two redirects. %{HTTP:X-Forwarded-Proto} is checked because
+  # shared hosts terminate TLS at a proxy, where %{HTTPS} can read as "off"
+  # on a request that actually arrived over HTTPS.
+  # -------------------------------------------------------------------------
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https [NC]
+  RewriteRule ^ https://kapizosolar.in%{REQUEST_URI} [R=301,L,NE]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+  # -------------------------------------------------------------------------
+  # Hard block on sensitive paths.
+  #
+  # storage/ and .env belong OUTSIDE public_html. These rules are a safety net
+  # for the case where one is uploaded into the web root by mistake — a 404 is
+  # returned rather than customer lead data.
+  # -------------------------------------------------------------------------
+  RewriteRule ^(storage|\.git|node_modules|scripts)(/|$) - [R=404,L]
+  RewriteRule (^|/)\.env - [R=404,L]
+
+  # -------------------------------------------------------------------------
+  # Routing
+  # -------------------------------------------------------------------------
+
   # The lead intake endpoint is a real PHP file — let Apache handle it directly
   # so it is never swallowed by the SPA fallback below.
   RewriteRule ^api/ - [L]
@@ -30,12 +69,30 @@ DirectoryIndex index.html
   # Serve the prerendered static HTML for a route when one exists.
   # The build writes dist/<route>/index.html for every known route, so
   # crawlers and link-preview scrapers get real content without running JS.
+  #
+  # "^(.+?)/?$" matches both "/plans" and "/plans/" and normalises them to the
+  # same file, with no redirect in between, so the canonical URL resolves
+  # directly with a 200. The "+" excludes "/" itself, which DirectoryIndex
+  # already serves from the document root.
   RewriteCond %{REQUEST_FILENAME}/index.html -f
-  RewriteRule ^(.*)$ /$1/index.html [L]
+  RewriteRule ^(.+?)/?$ /$1/index.html [L]
 
-  # Unknown routes fall back to the SPA shell, which renders the 404 page.
-  RewriteRule . /index.html [L]
+  # Deliberately NO catch-all rewrite here.
+  #
+  # A catch-all would serve the SPA shell with HTTP 200 for every unknown URL,
+  # producing soft-404s that search engines index as real pages. Instead,
+  # unmatched paths fall through to Apache's 404 handler below, which returns
+  # the correct status AND still serves the app shell — so React Router boots
+  # and renders the 404 page as usual.
+  #
+  # Safe failure mode: if a route is ever added to the app without being added
+  # to the prerender list in scripts/prerender.mjs, this returns the shell with
+  # a 404 status and the app still renders the correct page. Degraded, not
+  # broken.
 </IfModule>
+
+# Serves the app shell for unknown URLs while returning a truthful 404 status.
+ErrorDocument 404 /index.html
 
 # Compression
 <IfModule mod_deflate.c>

@@ -15,8 +15,8 @@ export default function SystemTypes() {
           <span className="eyebrow">System Types</span>
           <h2 className="h-section mt-3">On-grid, hybrid or battery storage?</h2>
           <p className="lede mt-4">
-            The difference comes down to one question: do you only want to reduce your bill, or do
-            you also need power during an outage?
+            It comes down to one question: do you just want a smaller bill, or do you also want
+            the fans running when the power goes out?
           </p>
         </div>
 

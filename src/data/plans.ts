@@ -100,9 +100,9 @@ export const plans: Plan[] = [
     id: 'budget',
     name: 'Budget Plan',
     slug: 'budget',
-    positioning: 'A correctly engineered on-grid system at the lowest sensible entry cost.',
+    positioning: 'For customers who want to start with a practical solar setup and keep the initial spend under control.',
     idealCustomer:
-      'Customers whose priority is reducing the monthly electricity bill with the smallest initial investment, and who do not need battery backup.',
+      'You want your monthly bill to come down, you are not worried about power cuts, and you would rather not spend more than you need to at the start. Nothing here is cut from the electrical safety side to reach the price.',
     audienceLabel: 'Lowest entry cost',
     recommended: false,
     recommendedReason: TBD,
@@ -139,7 +139,7 @@ export const plans: Plan[] = [
       'Straightforward path to bill reduction',
     ],
     expectedOutcome:
-      'A grid-connected system sized to your consumption that reduces the units you buy from the DISCOM during daylight hours. No backup during a power cut.',
+      'Your daytime usage runs on solar instead of DISCOM units, so the bill drops. During a power cut the system shuts down like any on-grid system — there is no battery in this plan.',
     pricePerKw: TBD,
     indicativePriceNote: TBD,
     subsidyNote:
@@ -171,13 +171,13 @@ export const plans: Plan[] = [
     name: 'Standard Plan',
     slug: 'standard',
     positioning:
-      'A balanced specification with better modules, monitoring and full protection.',
+      'For customers who want a balanced combination of system quality, performance and value. This is what most homes end up choosing.',
     idealCustomer:
-      'Customers who want a meaningful step up in component quality, visibility into generation and a fuller protection scheme, without moving to a premium build.',
+      'You want better panels than the entry level, you would like to see on your phone what the system is generating, and you want the full protection scheme — without paying for a premium build you do not need.',
     audienceLabel: 'Balanced quality and value',
     recommended: true,
     recommendedReason:
-      'It adds the upgrades that most affect long-term output and safety — higher-efficiency modules, monitoring you can actually check, and full surge protection — while staying below a premium build.',
+      'The three upgrades over Budget are the ones that matter most across fifteen years: better panels, monitoring you will actually look at, and full surge protection. Beyond this point you are mainly paying for battery backup.',
     capacityOptions: 'Typically 2 kW – 15 kW, sized to your bill and roof area',
     specs: {
       panels: { label: 'Solar modules', value: 'Higher-efficiency modules' },
@@ -214,7 +214,7 @@ export const plans: Plan[] = [
       'Upgrade path to battery backup later',
     ],
     expectedOutcome:
-      'A well-specified grid-connected system with monitoring, sized to cover a substantial share of your annual consumption, with the option to add battery backup later.',
+      'A well-built system covering a good share of your yearly usage, with generation you can check yourself. If you later decide you want backup, a battery can be added — tell us at the design stage so we specify a hybrid-ready inverter.',
     pricePerKw: TBD,
     indicativePriceNote: TBD,
     subsidyNote:
@@ -246,9 +246,9 @@ export const plans: Plan[] = [
     name: 'Premium Plan',
     slug: 'premium',
     positioning:
-      'A higher specification build with hybrid capability and battery backup as an option.',
+      'For customers who want higher-end components and a stronger focus on long-term performance — and usually, power that stays on during cuts.',
     idealCustomer:
-      'Customers who want the best available specification, need backup during outages, or are holding the asset for the long term and want the strongest components and finish.',
+      'Power cuts genuinely disrupt you, or you are keeping this property long term and want the best components we offer. Also suits commercial and industrial sites where downtime costs money.',
     audienceLabel: 'Highest specification',
     recommended: false,
     recommendedReason: TBD,
@@ -288,7 +288,7 @@ export const plans: Plan[] = [
       'Priority support after commissioning',
     ],
     expectedOutcome:
-      'A high-specification system that reduces your grid consumption and, with a battery, keeps your essential loads running through an outage.',
+      'Your bill comes down like any solar system, and with a battery the lights, fans and fridge keep running when the grid goes out. The battery is sized to the circuits you choose, not the whole house.',
     pricePerKw: TBD,
     indicativePriceNote: TBD,
     subsidyNote:

@@ -33,8 +33,8 @@ export default function KnowledgeHubPage() {
     <>
       <PageHeader
         eyebrow="Knowledge Hub"
-        title="Understand rooftop solar before you buy it"
-        description="Practical explanations written for customers in Telangana — including the parts that installers usually leave out of the sales conversation."
+        title="Understand solar before you buy it"
+        description="Plain explanations written for customers in Telangana — including the parts that usually do not come up until after you have paid."
         breadcrumbs={crumbs}
       />
 
@@ -70,9 +70,9 @@ export default function KnowledgeHubPage() {
               More guides are being added
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
-              We are building this section out with practical explanations on cost factors, component
-              selection and scheme processes. If there is something you want explained, ask us
-              directly and we will answer it — and probably write it up here.
+              We are adding more on cost factors, choosing components and the scheme paperwork. If
+              something is confusing you, ask us — we will answer you directly, and probably write it
+              up here for the next person.
             </p>
           </div>
         </div>

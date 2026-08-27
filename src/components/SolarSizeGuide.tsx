@@ -8,11 +8,11 @@ export default function SolarSizeGuide() {
       <div className="container-kapizo">
         <div className="max-w-2xl">
           <span className="eyebrow">System Size Guide</span>
-          <h2 className="h-section mt-3">What does each system size actually cover?</h2>
+          <h2 className="h-section mt-3">What does each system size actually run?</h2>
           <p className="lede mt-4">
-            A useful starting reference before you calculate. These are indicative figures for
-            typical Telangana conditions — your own numbers depend on site, orientation, shading and
-            system specification.
+            A rough reference before you use the calculator. These figures assume typical
+            Telangana conditions and an unshaded terrace — your own numbers will shift with
+            orientation, shading and the components used.
           </p>
         </div>
 

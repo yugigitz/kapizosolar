@@ -38,8 +38,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="Contact"
-        title="Talk to a solar expert"
-        description="Send us your electricity bill and we will tell you the system size you need, what it would cost and what to expect. No obligation."
+        title="Send us your electricity bill"
+        description="It is the fastest way to get a useful answer. Share a recent bill and we will tell you the system size that fits, roughly what it costs, and what to expect. No obligation."
         breadcrumbs={crumbs}
       />
 

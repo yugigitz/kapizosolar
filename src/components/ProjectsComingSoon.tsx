@@ -14,13 +14,13 @@ export default function ProjectsComingSoon() {
             Kapizo Projects — Coming Soon
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            We are a new solar EPC company and are currently onboarding our first customer projects.
-            Rather than fill this page with stock photographs, we will publish real installation
-            galleries with system details as our projects are commissioned.
+            We are taking on our first customer projects now. Rather than fill this page with stock
+            photographs of somebody else's work, we will put real installations here — with the
+            system details — as they are commissioned.
           </p>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
-            If you are considering rooftop solar now, you will get direct attention from the founders
-            and a fully documented installation.
+            If you are looking at solar now, you get the founders on site and a fully documented
+            installation.
           </p>
           <div className="mt-7 flex justify-center">
             <WhatsAppButton

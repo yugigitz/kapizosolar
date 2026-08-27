@@ -57,7 +57,7 @@ export default function PlansPage() {
       <PageHeader
         eyebrow="Kapizo Plans"
         title="Budget, Standard and Premium — what actually changes"
-        description="Three specification levels for the same engineering approach. The differences are in components, protection, monitoring and backup capability, not in how carefully the system is designed."
+        description="Three specification levels, one engineering approach. What changes is the panels, the inverter, the protection and whether you get battery backup. What does not change is the care taken over sizing and safety."
         breadcrumbs={crumbs}
       />
 
@@ -80,8 +80,8 @@ export default function PlansPage() {
             <span className="eyebrow">Side by Side</span>
             <h2 className="h-section mt-3">Full plan comparison</h2>
             <p className="lede mt-4">
-              Every line below is a real specification difference. Where a value reads “Shared on
-              request”, it is confirmed in your written proposal after site assessment.
+              Every line below is a genuine difference, not a marketing tier. Where a value reads
+              “Shared on request”, we confirm it in your written proposal once we have seen the roof.
             </p>
           </div>
           <div className="mt-10">

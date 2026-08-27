@@ -10,8 +10,8 @@ export default function WhyKapizo() {
           <span className="eyebrow">Why Kapizo Solar</span>
           <h2 className="h-section mt-3">What we hold ourselves to</h2>
           <p className="lede mt-4">
-            Kapizo Solar is a new company, and we would rather earn trust through how we work than
-            through claims we cannot back up. These are the standards every project is held to.
+            We are new, so we cannot point at a hundred finished roofs. What we can do is be
+            specific about how we work. Hold us to these.
           </p>
         </div>
 

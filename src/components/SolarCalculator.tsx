@@ -95,7 +95,8 @@ Please share the recommended system size, cost and subsidy eligibility.`
         <div className="lg:col-span-2">
           <h3 className="font-display text-xl font-bold text-kapizo-navy">Your details</h3>
           <p className="mt-1.5 text-sm text-slate-600">
-            Start with your monthly bill. The optional fields make the estimate more accurate.
+            Start with your monthly bill. If you know your tariff or terrace size, adding them
+            sharpens the estimate.
           </p>
 
           <div className="mt-6 space-y-5">
@@ -261,10 +262,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
             <div className="mt-5 flex min-h-[280px] flex-col items-center justify-center rounded-xl border border-dashed border-slate-300 bg-slate-50/60 px-6 text-center">
               <SunIcon className="h-9 w-9 text-slate-300" />
               <p className="mt-3 text-sm font-semibold text-slate-500">
-                Enter your details and calculate
+                Enter your bill to see an estimate
               </p>
               <p className="mt-1 max-w-xs text-xs text-slate-400">
-                You will get recommended capacity, expected generation, savings and payback.
+                You will see the system size that suits your usage, what it should generate,
+                and roughly what you would save.
               </p>
             </div>
           ) : (
@@ -349,10 +351,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
       </div>
 
       <div className="disclaimer mt-7">
-        <strong>Indicative estimate.</strong> These figures are for initial planning only and are not
-        a quotation or a guarantee of generation or savings. Actual output depends on site
-        conditions, shading, roof orientation, component selection, DISCOM tariff and applicable
-        regulations. A site assessment is required before any firm proposal.
+        <strong>This is an estimate, not a quotation.</strong> Treat these numbers as a starting
+        point for the conversation. What you actually generate depends on which way your roof faces,
+        whether anything shades it during the day, your location and weather through the year, the
+        components used, your DISCOM tariff and how much electricity you really use. We only put a
+        firm number in writing after seeing the roof.
       </div>
     </div>
   )

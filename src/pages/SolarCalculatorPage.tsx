@@ -62,8 +62,8 @@ export default function SolarCalculatorPage() {
     <>
       <PageHeader
         eyebrow="Solar Calculator"
-        title="Estimate your solar system size and savings"
-        description="Start with your monthly electricity bill. In about thirty seconds you will have an indicative capacity, expected generation, annual savings and payback period."
+        title="How much solar do you actually need?"
+        description="Tell us roughly what you pay for electricity each month. We will use that to estimate the system size that may suit you, what it should generate, and what you could save. It takes about thirty seconds."
         breadcrumbs={crumbs}
       />
 
@@ -82,8 +82,8 @@ export default function SolarCalculatorPage() {
             <span className="eyebrow">Methodology</span>
             <h2 className="h-section mt-3">How this calculator works</h2>
             <p className="lede mt-4">
-              We would rather you understand the assumptions than treat the output as a promise.
-              Here is exactly what the calculator does and what it cannot know.
+              We would rather you understand the assumptions than treat the number as a promise.
+              Here is exactly what it does, and the things it cannot know about your roof.
             </p>
 
             <div className="mt-10 space-y-8">

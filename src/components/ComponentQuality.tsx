@@ -9,9 +9,9 @@ export default function ComponentQuality() {
           <span className="eyebrow">Components</span>
           <h2 className="h-section mt-3">Quality Components. Smart Procurement.</h2>
           <p className="lede mt-4">
-            We do not tie every project to one brand. Component selection is a design decision made
-            against your system requirements, budget, availability, performance expectations,
-            warranty terms and site suitability.
+            We are not tied to one brand, and we would not serve you well if we were. What goes on
+            your roof depends on the system size, your budget, what is genuinely available at the
+            time, the warranty terms and what suits the site.
           </p>
         </div>
 

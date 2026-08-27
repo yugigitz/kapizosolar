@@ -53,10 +53,11 @@ export default function Home() {
         <div className="container-kapizo">
           <div className="max-w-2xl">
             <span className="eyebrow">Solar Calculator</span>
-            <h2 className="h-section mt-3">Find your system size and savings</h2>
+            <h2 className="h-section mt-3">Start with your electricity bill</h2>
             <p className="lede mt-4">
-              Enter your monthly electricity bill to get an indicative system size, expected
-              generation, annual savings and payback period. It takes about thirty seconds.
+              Your bill tells us more about the right system size than your terrace does. Enter
+              roughly what you pay each month and we will estimate the capacity, generation and
+              savings that go with it.
             </p>
           </div>
           <div className="mt-10">
@@ -76,9 +77,9 @@ export default function Home() {
             <span className="eyebrow">Kapizo Plans</span>
             <h2 className="h-section mt-3">Three ways to go solar with us</h2>
             <p className="lede mt-4">
-              Budget, Standard and Premium differ in component specification, protection, monitoring
-              and whether battery backup is included — not just in price. Pricing is confirmed after
-              a site assessment, so we quote rather than publish a number that may not fit your roof.
+              The three plans differ in the panels, the inverter, the protection and whether you get
+              battery backup — not just in price. We do not publish a price per kW, because the real
+              cost depends on your roof, and a number that fits one terrace misleads on another.
             </p>
           </div>
 

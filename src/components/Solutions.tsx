@@ -17,10 +17,10 @@ export default function Solutions() {
       <div className="container-kapizo">
         <div className="max-w-2xl">
           <span className="eyebrow">Solar Solutions</span>
-          <h2 className="h-section mt-3">Solar built around how you actually use power</h2>
+          <h2 className="h-section mt-3">Not every roof needs the same system</h2>
           <p className="lede mt-4">
-            A home, a showroom, a factory and a farm each have different load patterns. We size and
-            design for the segment rather than fitting everyone to the same template.
+            A house uses power in the evening. A showroom uses it all day. A farm pump runs in
+            bursts. Those are different problems, so we size them differently.
           </p>
         </div>
 
