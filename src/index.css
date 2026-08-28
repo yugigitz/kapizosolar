@@ -33,6 +33,42 @@
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
+  /*
+   * Safe area for the floating WhatsApp button.
+   *
+   * The page container is capped at max-w-7xl (1280px). Above about 1377px the
+   * viewport is wide enough that centring leaves a margin the button can sit
+   * in; below that the container reaches the viewport edge and a corner button
+   * has nowhere to go but on top of the content. Measured, it was covering
+   * body text, footer links, phone numbers and form fields on every page at
+   * 768, 1024 and 1280.
+   *
+   * Reserving the width the button needs is the only thing that actually keeps
+   * it off the text; moving or shrinking it cannot, because the gutter does not
+   * exist. Applied only between sm and 1376px, so the wide-desktop layout and
+   * the phone layout are both untouched.
+   */
+  /*
+   * Inset the content, not the section: the backgrounds live on the sections,
+   * so padding <main> would pull the hero gradient off the viewport edge and
+   * leave a white strip down the right. The header is excluded because the
+   * button never reaches it. Values are totals, replacing the base padding for
+   * this range, not adding to it.
+   */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      padding-right: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1376px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      padding-right: 5.5rem;
+    }
+  }
+
   .section {
     @apply py-16 sm:py-20 lg:py-24;
   }

@@ -63,8 +63,11 @@ export default function Hero() {
               standards.
             </p>
 
+            {/* min-h on both buttons: stacked in a column there is no cross-axis
+                stretch, and the WhatsApp disc is taller than the CTA's line box,
+                so without it the two differ by 4px on a phone. */}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link to="/solar-calculator" className="btn-cta !px-6 !py-3.5 text-base">
+              <Link to="/solar-calculator" className="btn-cta min-h-[3.5rem] !px-6 !py-3.5 text-base">
                 <CalculatorIcon className="h-5 w-5" />
                 Calculate My Savings
                 <ArrowRightIcon />
@@ -74,7 +77,7 @@ export default function Hero() {
               <WhatsAppButton
                 message={waMessages.quote}
                 label="Get Solar Quote"
-                className="btn-ghost-light !px-6 !py-3.5 text-base [&>svg]:h-[15px] [&>svg]:w-[15px] [&>svg]:box-content [&>svg]:rounded-full [&>svg]:bg-[#25D366] [&>svg]:p-[5.5px] [&>svg]:text-white"
+                className="btn-ghost-light min-h-[3.5rem] !px-6 !py-3.5 text-base [&>svg]:h-[15px] [&>svg]:w-[15px] [&>svg]:box-content [&>svg]:rounded-full [&>svg]:bg-[#25D366] [&>svg]:p-[5.5px] [&>svg]:text-white"
                 context="hero"
               />
             </div>

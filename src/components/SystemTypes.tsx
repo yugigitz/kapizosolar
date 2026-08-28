@@ -13,7 +13,9 @@ export default function SystemTypes() {
       <div className="container-kapizo">
         <div className="max-w-2xl">
           <span className="eyebrow">System Types</span>
-          <h2 className="h-section mt-3">On-grid, hybrid or off-grid?</h2>
+          <h2 className="h-section mt-3">
+            On-grid, hybrid or <span className="whitespace-nowrap">off-grid?</span>
+          </h2>
           <p className="lede mt-4">
             It comes down to what the site needs. Battery storage is not a system type of its
             own: it is the component that lets a hybrid or off-grid system keep running when the
