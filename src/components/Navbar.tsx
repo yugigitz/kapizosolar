@@ -77,7 +77,7 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden shrink-0 xl:block">
-            <Link to="/contact" className="btn-primary !px-4 !py-2.5 text-[13px]">
+            <Link to="/contact" className="btn-cta !rounded-full !px-5 !py-2.5 text-[13px]">
               Get Solar Quote
               <ArrowRightIcon />
             </Link>

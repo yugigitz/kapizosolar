@@ -23,7 +23,7 @@ export const solutions: Solution[] = [
       'Eligible for consideration under government rooftop solar schemes, subject to prevailing guidelines',
       'Adds a visible, long-term improvement to your property',
     ],
-    systemOptions: ['On-grid', 'Hybrid with battery backup'],
+    systemOptions: ['On-grid', 'Hybrid with battery backup', 'Off-grid, where the site requires it'],
     waKey: 'general',
   },
   {
@@ -39,7 +39,7 @@ export const solutions: Solution[] = [
       'Uses existing roof space that is otherwise unproductive',
       'Supports organisational sustainability commitments',
     ],
-    systemOptions: ['On-grid', 'Hybrid', 'Solar with energy storage'],
+    systemOptions: ['On-grid', 'Hybrid with battery storage', 'Off-grid, where the site requires it'],
     waKey: 'commercial',
   },
   {
@@ -55,7 +55,7 @@ export const solutions: Solution[] = [
       'Structured design accounting for load, protection and safety requirements',
       'Documentation support for approvals and metering',
     ],
-    systemOptions: ['On-grid', 'Hybrid', 'Solar with energy storage'],
+    systemOptions: ['On-grid', 'Hybrid with battery storage', 'Off-grid, where the site requires it'],
     waKey: 'industrial',
   },
   {
@@ -71,7 +71,7 @@ export const solutions: Solution[] = [
       'Suitable for locations with adequate open, shadow-free area',
       'Guidance on applicable schemes, subject to prevailing government guidelines',
     ],
-    systemOptions: ['Solar pumping', 'On-grid', 'Hybrid'],
+    systemOptions: ['Solar pumping', 'On-grid', 'Hybrid', 'Off-grid, where there is no usable connection'],
     waKey: 'agricultural',
   },
 ]
@@ -130,16 +130,17 @@ export const systemTypes: SystemType[] = [
     ],
   },
   {
-    id: 'storage',
-    name: 'Solar + Battery Storage',
-    flow: ['Solar Panels', 'Inverter', 'Battery Bank', 'Loads'],
-    bestFor: 'Sites with unreliable supply or a need to shift solar energy to evening use.',
+    id: 'off-grid',
+    name: 'Off-Grid Solar',
+    flow: ['Solar Panels', 'Off-Grid Inverter', 'Battery Bank', 'Loads'],
+    bestFor:
+      'Sites with no usable grid connection, or where supply is too unreliable to depend on.',
     explanation:
-      'Energy generated during the day is stored and used later. This is useful where grid supply is unreliable or where a meaningful part of consumption happens after sunset.',
+      'The system runs independently of the grid. Solar powers the loads during the day and charges a battery bank that carries them through the night. Because there is no grid to fall back on, generation and storage are sized against the loads that actually have to run.',
     considerations: [
-      'Storage adds cost and should be sized deliberately',
-      'Round-trip losses mean stored energy is slightly less than energy generated',
-      'Best decided after reviewing your actual consumption pattern',
+      'Requires deliberate load planning: the system is designed around what must run, not around a bill',
+      'Battery capacity and autonomy days drive the cost more than panel capacity does',
+      'No export and no net metering, so scheme assistance for grid-connected systems does not apply',
     ],
   },
 ]
@@ -216,7 +217,7 @@ export const componentCategories = [
   },
   {
     name: 'Energy Storage',
-    what: 'Batteries used in hybrid and storage systems.',
+    what: 'Batteries used in hybrid and off-grid systems.',
     selection:
       'Selected on chemistry, usable capacity, cycle life and the specific loads you want backed up.',
   },

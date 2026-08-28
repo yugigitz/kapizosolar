@@ -68,6 +68,16 @@
            shadow-[0_2px_8px_rgba(179,83,9,0.28)] hover:shadow-[0_4px_16px_rgba(179,83,9,0.36)];
   }
 
+  /*
+   * The hero and navigation calls to action only. Everything else stays on
+   * .btn-primary; this exists so the CTA colour can differ without moving the
+   * shared orange-deep token that the rest of the UI depends on.
+   */
+  .btn-cta {
+    @apply btn bg-kapizo-cta text-white hover:bg-kapizo-cta-hover
+           shadow-[0_4px_14px_rgba(194,65,12,0.32)] hover:shadow-[0_6px_20px_rgba(194,65,12,0.40)];
+  }
+
   .btn-navy {
     @apply btn bg-kapizo-navy text-white hover:bg-kapizo-navy-light;
   }

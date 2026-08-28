@@ -23,6 +23,12 @@ export default {
           // Use for text on light backgrounds and for button fills under white text.
           'orange-deep': '#b35309',
           'orange-deep-hover': '#8f4207',
+          // CTA-only orange, for the hero and navigation calls to action. Kept
+          // separate from orange-deep so the shared token, which carries text
+          // and icons across the rest of the site, is unaffected.
+          // 5.18:1 against white, so white button text clears WCAG AA.
+          cta: '#c2410c',
+          'cta-hover': '#9c340a',
           amber: '#ffb300',
         },
       },
