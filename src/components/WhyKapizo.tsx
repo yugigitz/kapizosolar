@@ -10,8 +10,8 @@ export default function WhyKapizo() {
           <span className="eyebrow">Why Kapizo Solar</span>
           <h2 className="h-section mt-3">What we hold ourselves to</h2>
           <p className="lede mt-4">
-            We are new, so we cannot point at a hundred finished roofs. What we can do is be
-            specific about how we work. Hold us to these.
+            Rather than general claims about quality, here is specifically what we commit to on
+            every system. Hold us to these.
           </p>
         </div>
 

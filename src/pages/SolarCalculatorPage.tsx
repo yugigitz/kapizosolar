@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '@/components/PageHeader'
 import SolarCalculator from '@/components/SolarCalculator'
+import SolarLoanCalculator from '@/components/SolarLoanCalculator'
 import CTASection from '@/components/CTASection'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { breadcrumbSchema, faqSchema, webPageSchema } from '@/lib/seo'
@@ -83,7 +84,29 @@ export default function SolarCalculatorPage() {
         </div>
       </section>
 
-      <section className="section bg-slate-50">
+      {/* Financing sits next to the savings figure, on the same page, because
+          the two questions arrive together: what will it save, and what would
+          the instalment be. */}
+      <section className="bg-slate-50 pb-16 pt-14 sm:pb-20 sm:pt-16" aria-labelledby="emi-heading">
+        <div className="container-kapizo">
+          <div className="max-w-2xl">
+            <span className="eyebrow">Financing</span>
+            <h2 id="emi-heading" className="h-section mt-3">
+              Working out the monthly instalment
+            </h2>
+            <p className="lede mt-4">
+              If you are considering financing part of the system, this works out the EMI on the
+              amount, rate and tenure you have been offered. We are not a lender and have no tie-up
+              with one, so the numbers are yours to enter.
+            </p>
+          </div>
+          <div className="mt-8">
+            <SolarLoanCalculator />
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
         <div className="container-kapizo">
           <div className="max-w-3xl">
             <span className="eyebrow">Methodology</span>
@@ -102,7 +125,7 @@ export default function SolarCalculatorPage() {
               ))}
             </div>
 
-            <div className="mt-10 rounded-xl border border-slate-200 bg-white p-6">
+            <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
               <h3 className="font-display text-lg font-bold text-kapizo-navy">
                 Assumptions used in this tool
               </h3>

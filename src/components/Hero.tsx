@@ -73,20 +73,29 @@ export default function Hero() {
             <div className="relative">
               <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 backdrop-blur-sm sm:p-6">
                 {/*
-                  The supplied banner is transparent, so its green "ZO" would
-                  otherwise sit on the green end of the hero gradient and lose
-                  definition. It gets its own surface instead of a glow.
+                  Presentation follows the brand banner: a dark stage with the
+                  logo lit from behind, rather than a plate laid over the hero.
 
-                  The surface is frosted rather than solid: at 88% white over a
-                  blur of the hero behind it, the gradient still tints it, so it
-                  reads as a lit panel belonging to the card rather than a white
-                  rectangle laid on top. A hairline ring and a downward shadow
-                  give it real elevation; there is no halo or bloom.
+                  The lit core is doing real work, not decoration. The gradient
+                  runs to green on this side and three parts of the artwork are
+                  dark — the "ZO", the word SOLAR and the navy strapline — so on
+                  a dark panel they disappear. The panel therefore holds its own
+                  navy frame, and a bright core sits under the artwork so every
+                  element has a light ground. Bright centre, dark edge: a lit
+                  stage, not a white rectangle.
                 */}
-                <div className="relative rounded-2xl bg-gradient-to-b from-white/95 via-white/90 to-white/[0.84] px-6 py-7 shadow-[0_16px_34px_-22px_rgba(2,6,23,0.85)] ring-1 ring-white/50 backdrop-blur-md sm:px-8 sm:py-8">
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0b1f3a] via-[#123049] to-[#0d2b33] px-5 py-7 ring-1 ring-inset ring-white/20 sm:px-7 sm:py-8">
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-6 top-0 h-px bg-white/80"
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        'radial-gradient(68% 74% at 50% 48%, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.94) 38%, rgba(255,255,255,0.72) 60%, rgba(255,255,255,0.28) 78%, rgba(255,255,255,0.04) 92%, rgba(255,255,255,0) 100%)',
+                    }}
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/25"
                   />
                   <KapizoBanner
                     alt="Kapizo Solar rooftop solar EPC services in Telangana"

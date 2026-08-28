@@ -25,9 +25,17 @@ export const business = {
   ],
 } as const
 
+/**
+ * Three distinct lines, deliberately not interchangeable:
+ *   primary   - Yugandhar Jadi's line, used for calls and the contact page.
+ *   secondary - Thoutam Ramakrishna's line, used for calls and the contact page.
+ *   whatsapp  - the shared WhatsApp line behind the floating button. It is not
+ *               either personal number and must not be substituted with one.
+ */
 export const phones = {
   primary: '7799049801',
   secondary: '9652398338',
+  whatsapp: '9640358338',
 } as const
 
 export const primaryPhoneIntl = `+91${phones.primary}`

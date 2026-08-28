@@ -14,18 +14,17 @@ export default function ProjectsComingSoon() {
             Kapizo Projects: Coming Soon
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            We are taking on our first customer projects now. Rather than fill this page with stock
-            photographs of somebody else's work, we will put real installations here, with the
-            system details, as they are commissioned.
+            Rather than fill this page with stock photographs of somebody else's work, we publish
+            our own installations here, with the system details, as they are commissioned.
           </p>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-slate-600">
-            If you are looking at solar now, you get our own team on site and a fully documented
-            installation.
+            Every installation is carried out by our own team and documented end to end, from the
+            system design through to commissioning.
           </p>
           <div className="mt-7 flex justify-center">
             <WhatsAppButton
               message={waMessages.consultation}
-              label="Be One of Our First Solar Customers"
+              label="Talk to Us About Your Roof"
               className="btn-primary"
               context="projects_coming_soon"
             />

@@ -9,6 +9,21 @@ import { SITE_URL } from '@/data/business'
 import { breadcrumbSchema, webPageSchema } from '@/lib/seo'
 import { ArrowRightIcon, PhoneIcon } from '@/components/ui/Icons'
 
+/**
+ * The delivery sequence, kept short on purpose. Each line is a step a customer
+ * can expect to see happen, not a description of a value.
+ */
+const projectSteps = [
+  { title: 'Understand actual usage', detail: 'We read your recent electricity bills. Units consumed size the system; a terrace does not.' },
+  { title: 'Assess the site', detail: 'Shadow-free area through the day, orientation, structural condition and the cable route.' },
+  { title: 'Determine the system size', detail: 'Capacity worked out from consumption and what the roof can genuinely carry.' },
+  { title: 'Select components', detail: 'Modules, inverter and balance of system chosen for the conditions on that roof.' },
+  { title: 'Design the electrical system', detail: 'Layout, earthing, and DC and AC protection designed in rather than added on.' },
+  { title: 'Install to standard', detail: 'Mounting, cabling and terminations carried out to proper electrical practice.' },
+  { title: 'Test, commission, hand over', detail: 'The system is verified end to end and explained to you before we leave.' },
+  { title: 'Support afterwards', detail: 'Net metering follow-through, servicing, and a number that still answers later.' },
+]
+
 export default function AboutPage() {
   const crumbs = [
     { name: 'Home', path: '/' },
@@ -19,7 +34,7 @@ export default function AboutPage() {
     {
       title: 'About Kapizo Solar | Solar EPC Company in Mancherial, Telangana',
       description:
-        'Kapizo Solar is a solar EPC company based in Mancherial, Telangana, founded by Yugandhar Jadi and Thoutam Ramakrishna, focused on technical understanding and quality execution.',
+        'Kapizo Solar is a solar EPC company based in Mancherial, Telangana, run by Yugandhar Jadi and Thoutam Ramakrishna, built around engineering-led system design and quality execution.',
       path: '/about',
     },
     [
@@ -43,8 +58,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About Us"
-        title="Two people who got tired of seeing solar done badly"
-        description="Kapizo Solar is new. We would rather you judge us on how carefully we size and install your system than on claims about how long we have been around."
+        title="Solar done to an engineering standard"
+        description="We looked closely at how rooftop solar is designed and installed in Telangana, found the standard uneven, and built Kapizo Solar around closing that gap."
         breadcrumbs={crumbs}
       />
 
@@ -54,52 +69,77 @@ export default function AboutPage() {
             <div className="prose-kapizo">
               <h2>Why Kapizo exists</h2>
               <p>
-                Plenty of rooftop solar in Telangana is sold as a package rather than designed for
-                the building it sits on. A customer is quoted 3 kW because 3 kW is what the seller
-                stocks, not because anyone looked at their bill. Protection on the DC side gets
-                trimmed to win the price. Then the system underperforms and the customer concludes
-                solar does not work.
+                We both come from a technical background. Yugandhar Jadi and Thoutam Ramakrishna
+                each hold an M.Sc. in Electronics, and Thoutam also completed an embedded systems
+                course in Pune. That background matters here for one reason: it shaped how closely
+                we looked at solar before deciding to work in it.
               </p>
               <p>
-                We started Kapizo to do the ordinary things properly: read the bill, look at the
-                roof, size the system to the usage, and put in the protection that should be there
-                anyway.
+                What we found, studying the technology and watching the market in Telangana, was a
+                gap. Adoption is rising quickly. The standard of the work often is not. System
+                sizing gets done from a price list rather than from a bill. Component selection
+                follows margin rather than site conditions. Protection on the DC side is trimmed to
+                win a quote. Installation quality varies widely, and the customer usually cannot
+                tell until the system underperforms.
               </p>
               <p>
-                We are a solar EPC company based in Mancherial, working across Telangana. EPC means
-                engineering, procurement and construction. We handle the whole thing, so you are not
-                coordinating between a panel supplier, a local electrician and someone who does the
-                DISCOM paperwork. One company, one point of accountability.
+                Kapizo Solar exists to close that gap. We are a solar EPC company based in
+                Mancherial, working across Telangana. EPC means engineering, procurement and
+                construction: we design the system, source the components and carry out the
+                installation ourselves, so there is one point of accountability rather than a panel
+                supplier, a local electrician and someone who handles the DISCOM paperwork.
               </p>
 
-              <h2>We are new, and we are not hiding it</h2>
+              <h2>Quality first, in practice</h2>
               <p>
-                Kapizo is taking on its first customer projects now. There is no photo gallery on
-                this site because we have not completed installations yet, and we are not going to
-                put stock photographs up and let you assume they are ours.
+                Quality-first is easy to claim, so here is what we mean by it. Sizing comes from
+                measured consumption. Design is worked out for the specific roof, not adapted from a
+                template. Components are chosen for the conditions they will actually operate in.
+                DC and AC protection is part of the design rather than an optional line. Installation
+                follows proper electrical standards, and the system is tested and commissioned
+                before it is handed over. After that, we stay reachable.
               </p>
               <p>
-                If you are weighing that up: an early customer gets our own team on site rather than
-                a subcontracted crew, and a company with every reason to get the job right. That is
-                the honest trade. We would rather tell you this now than have you find out later.
+                We are also genuinely interested in where this technology goes. Renewable generation
+                at the building level changes how a household or a business relates to its energy
+                supply, and we would rather be part of doing that well than part of the volume. Our
+                motivation is not to move as many systems as possible. It is to install ones that
+                perform for their full life and to be the company a customer can still call in year
+                six.
               </p>
 
               <h2>How we work on a project</h2>
               <p>
-                We start with your last few electricity bills, because your units tell us the right
-                system size far better than your terrace does. Then we come and look at the roof:
-                how much of it is genuinely shadow-free through the day, which way it faces, whether
-                the structure can take the load, and where the cable will run.
+                We do not start with a package and fit the customer into it. We start with the
+                customer's actual requirement and design the system around it.
               </p>
+            </div>
+
+            <ol className="mt-6 grid gap-3 sm:grid-cols-2">
+              {projectSteps.map((step, i) => (
+                <li
+                  key={step.title}
+                  className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-kapizo-green/10 text-xs font-bold text-kapizo-green"
+                  >
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-sm font-bold text-kapizo-navy">{step.title}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">{step.detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <div className="prose-kapizo mt-10">
               <p>
-                DC and AC protection is part of the design, not an add-on. It is the easiest thing to
-                quietly leave out of a quote, and the thing you are least able to check once the
-                system is on your roof.
-              </p>
-              <p>
-                We also tell you the inconvenient parts up front: an on-grid system will not run
-                during a power cut, your bill will not become zero, and the DISCOM decides its own
-                approval timelines, not us. You should hear that before you pay, not after.
+                We also say the inconvenient parts up front: an on-grid system will not run during a
+                power cut, your bill will not fall to zero, and the DISCOM sets its own approval
+                timelines. You should hear that before you pay, not after.
               </p>
 
               <h2>The team</h2>
@@ -123,12 +163,6 @@ export default function AboutPage() {
             </div>
 
             <div className="prose-kapizo mt-10">
-              <p>
-                Both of us have gone through structured training in solar PV design and installation
-                practice before starting this. We mention it as context for how we approach the work,
-                not as a substitute for a track record we still have to build.
-              </p>
-
               <h2>Where we work</h2>
               <p>
                 Our office is in Mancherial and we take on work across Telangana. Being local matters

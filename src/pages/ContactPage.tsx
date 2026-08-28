@@ -61,24 +61,29 @@ export default function ContactPage() {
                 {business.contacts.map((c) => (
                   <div key={c.name} className="card p-5">
                     <p className="font-display text-lg font-bold text-kapizo-navy">{c.name}</p>
+                    {/* The number itself is the WhatsApp action, so it is obvious
+                        both that it is clickable and where it goes. Calling stays
+                        available beside it. Each line keeps its own number. */}
                     <div className="mt-4 flex flex-wrap gap-2.5">
-                      <a
-                        href={telHref(c.phone)}
-                        onClick={() => trackEvent('phone_click', { context: 'contact_page' })}
-                        className="btn-navy !px-4 !py-2.5 text-xs"
-                      >
-                        <PhoneIcon className="h-4 w-4" />
-                        {c.phone}
-                      </a>
                       <a
                         href={whatsappHref(waMessages.general, c.phone)}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackEvent('whatsapp_click', { context: 'contact_page' })}
+                        aria-label={`Chat with ${c.name} on WhatsApp at ${c.phone}`}
                         className="btn-green !px-4 !py-2.5 text-xs"
                       >
                         <WhatsAppIcon className="h-4 w-4" />
-                        WhatsApp
+                        WhatsApp {c.phone}
+                      </a>
+                      <a
+                        href={telHref(c.phone)}
+                        onClick={() => trackEvent('phone_click', { context: 'contact_page' })}
+                        aria-label={`Call ${c.name} at ${c.phone}`}
+                        className="btn-navy !px-4 !py-2.5 text-xs"
+                      >
+                        <PhoneIcon className="h-4 w-4" />
+                        Call
                       </a>
                     </div>
                   </div>

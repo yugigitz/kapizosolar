@@ -5,12 +5,12 @@ import { WhatsAppIcon } from './ui/Icons'
 /**
  * The single persistent WhatsApp button on the public site.
  *
- * Routed to phones.secondary (9652398338), which is the number monitored for
- * this channel. The mobile action bar keeps its own Call and WhatsApp cells on
- * phones.primary; this button is deliberately a plain circle rather than a
- * labelled pill so it reads as an overlay affordance instead of a second copy
- * of that bar's button, and it sits over the bar's right-hand cell rather than
- * above its WhatsApp cell.
+ * Routed to phones.whatsapp (9640358338), the shared WhatsApp line. This is
+ * neither personal contact number and must not be swapped for one. The button
+ * is deliberately a plain circle rather than a labelled pill so it reads as an
+ * overlay affordance instead of a second copy of the mobile action bar's
+ * button, and it sits over that bar's right-hand cell rather than above its
+ * WhatsApp cell.
  *
  * No entrance or hover animation beyond a shadow change: a button that is on
  * screen at all times should not draw attention to itself.
@@ -25,7 +25,7 @@ import { WhatsAppIcon } from './ui/Icons'
 export default function FloatingWhatsApp() {
   return (
     <a
-      href={whatsappHref(waMessages.general, phones.secondary)}
+      href={whatsappHref(waMessages.general, phones.whatsapp)}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent('whatsapp_click', { context: 'floating_button' })}

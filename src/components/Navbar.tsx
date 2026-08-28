@@ -47,9 +47,12 @@ export default function Navbar() {
       <nav className="container-kapizo" aria-label="Main navigation">
         <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
           <Link to="/" className="flex shrink-0 items-center" aria-label="Kapizo Solar home">
+            {/* Sized off the bar height rather than a fixed value, so the
+                wordmark and the strapline under it are both legible without
+                the header growing. Aspect ratio is preserved by w-auto. */}
             <KapizoLogo
               alt="Kapizo Solar, Powering a Sustainable Tomorrow"
-              className="h-9 w-auto lg:h-11"
+              className="h-12 w-auto lg:h-14"
               priority
             />
           </Link>
