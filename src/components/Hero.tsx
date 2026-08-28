@@ -73,29 +73,33 @@ export default function Hero() {
             <div className="relative">
               <div className="rounded-2xl border border-white/15 bg-white/[0.07] p-5 backdrop-blur-sm sm:p-6">
                 {/*
-                  Presentation follows the brand banner: a dark stage with the
-                  logo lit from behind, rather than a plate laid over the hero.
+                  No plate behind the logo. The banner stays transparent and the
+                  blue-green hero gradient shows through around it.
 
-                  The lit core is doing real work, not decoration. The gradient
-                  runs to green on this side and three parts of the artwork are
-                  dark — the "ZO", the word SOLAR and the navy strapline — so on
-                  a dark panel they disappear. The panel therefore holds its own
-                  navy frame, and a bright core sits under the artwork so every
-                  element has a light ground. Bright centre, dark edge: a lit
-                  stage, not a white rectangle.
+                  The one legibility problem is local: the wordmark's "ZO" is
+                  green and meets the green side of the gradient. So the light
+                  is local too — a soft cool bloom sitting behind that part of
+                  the wordmark, with a wider, much fainter wash under the rest
+                  so the two never form a visible edge. No ring, no fill, no
+                  shape: only a diffused lightening of the ground beneath the
+                  letters.
                 */}
-                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0b1f3a] via-[#123049] to-[#0d2b33] px-5 py-7 ring-1 ring-inset ring-white/20 sm:px-7 sm:py-8">
+                <div className="relative px-4 py-6 sm:px-6 sm:py-7">
                   <span
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0"
                     style={{
-                      background:
-                        'radial-gradient(68% 74% at 50% 48%, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.94) 38%, rgba(255,255,255,0.72) 60%, rgba(255,255,255,0.28) 78%, rgba(255,255,255,0.04) 92%, rgba(255,255,255,0) 100%)',
+                      background: [
+                        // Sits behind the "ZO", the only part of the artwork that
+                        // meets the green side of the gradient.
+                        'radial-gradient(36% 44% at 71% 45%, rgba(230,246,255,0.58) 0%, rgba(226,244,255,0.46) 28%, rgba(218,240,255,0.28) 52%, rgba(210,236,255,0.13) 72%, rgba(200,230,255,0.04) 88%, rgba(255,255,255,0) 100%)',
+                        // A wider, much fainter wash under the rest of the logo so
+                        // the bloom above has nothing to terminate against. Both
+                        // radii are sized to reach zero inside the element, so
+                        // neither leaves a straight edge where the box ends.
+                        'radial-gradient(40% 46% at 58% 48%, rgba(226,242,255,0.18) 0%, rgba(226,242,255,0.09) 52%, rgba(255,255,255,0) 100%)',
+                      ].join(', '),
                     }}
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/25"
                   />
                   <KapizoBanner
                     alt="Kapizo Solar rooftop solar EPC services in Telangana"
