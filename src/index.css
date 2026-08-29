@@ -53,8 +53,19 @@
    * so padding <main> would pull the hero gradient off the viewport edge and
    * leave a white strip down the right. The header is excluded because the
    * button never reaches it. Values are totals, replacing the base padding for
-   * this range, not adding to it.
+   * each range, not adding to it.
+   *
+   * Phones need this too, and need the most of it: the gutter there is 16px
+   * against a 44px button, so without the reservation the button sits over
+   * body text on every page as it scrolls past.
    */
+  @media (max-width: 767px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      padding-right: 4rem;
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 1023px) {
     main .container-kapizo,
     footer .container-kapizo {
