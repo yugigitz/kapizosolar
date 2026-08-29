@@ -62,7 +62,10 @@
   @media (max-width: 767px) {
     main .container-kapizo,
     footer .container-kapizo {
-      padding-right: 4rem;
+      /* 44px button + 8px offset + 4px clearance. Trimmed to the button's
+         actual footprint so the phone layout gives up no more width than it
+         has to. */
+      padding-right: 3.5rem;
     }
   }
 

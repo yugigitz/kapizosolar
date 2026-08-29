@@ -127,7 +127,12 @@ export default function PMSuryaGharPage() {
       <section className="section bg-white">
         <div className="container-kapizo">
           <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
-            <div className="lg:col-span-2">
+            {/* min-w-0: a grid item defaults to min-width:auto, which propagates
+                the subsidy table's min-w-[380px] up and sizes the whole column
+                to 380px. That pushed every heading, paragraph and list in this
+                column past the container on a phone. With the floor removed the
+                table's own overflow-x-auto wrapper can scroll as intended. */}
+            <div className="min-w-0 lg:col-span-2">
               <div className="disclaimer">
                 <strong>Please read first.</strong> Government scheme benefits, eligibility, subsidy
                 amounts and approval requirements are subject to applicable government guidelines and

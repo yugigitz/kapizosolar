@@ -17,10 +17,9 @@ import { WhatsAppIcon } from './ui/Icons'
  *
  * Placement clears the two things it could otherwise cover. Vertically it sits
  * above the mobile action bar, which is fixed to the bottom below xl.
- * Horizontally the size and offset are paired to the container gutter at each
- * breakpoint (58px below sm, wider above) so the button's left edge lands on
- * the content column's right edge instead of over it — otherwise a full-width
- * control such as the calculator's bill slider runs underneath it on a phone.
+ * Horizontally it is paired with the container safe area in index.css: the
+ * offset is kept tight so the reservation the page has to make stays as small
+ * as the button's own footprint allows.
  */
 export default function FloatingWhatsApp() {
   return (
@@ -31,7 +30,7 @@ export default function FloatingWhatsApp() {
       onClick={() => trackEvent('whatsapp_click', { context: 'floating_button' })}
       aria-label="Chat with Kapizo Solar on WhatsApp"
       title="Chat with Kapizo Solar on WhatsApp"
-      className="fixed bottom-[4.5rem] right-3.5 z-40 flex h-11 w-11 items-center justify-center
+      className="fixed bottom-[4.5rem] right-2 z-40 flex h-11 w-11 items-center justify-center
                  rounded-full bg-[#25D366] text-white ring-1 ring-white/70
                  shadow-[0_6px_16px_-4px_rgba(2,6,23,0.45)]
                  transition-shadow duration-200 hover:shadow-[0_8px_22px_-4px_rgba(2,6,23,0.55)]
