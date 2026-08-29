@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '@/components/PageHeader'
 import WhyKapizo from '@/components/WhyKapizo'
-import ProjectsComingSoon from '@/components/ProjectsComingSoon'
 import CTASection from '@/components/CTASection'
 import { business, phones, telHref } from '@/data/business'
 import { usePageMeta } from '@/hooks/usePageMeta'
@@ -201,7 +200,6 @@ export default function AboutPage() {
       </section>
 
       <WhyKapizo />
-      <ProjectsComingSoon />
       <CTASection />
     </>
   )

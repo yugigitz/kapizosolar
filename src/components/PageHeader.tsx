@@ -31,7 +31,7 @@ export default function PageHeader({
       <div className="absolute inset-0 bg-kapizo-radial" aria-hidden="true" />
       <div
         className={`container-kapizo relative ${
-          dense ? 'py-8 sm:py-10 lg:py-12' : 'py-12 sm:py-16 lg:py-20'
+          dense ? 'py-6 sm:py-7 lg:py-7' : 'py-12 sm:py-16 lg:py-20'
         }`}
       >
         {breadcrumbs && breadcrumbs.length > 0 && (

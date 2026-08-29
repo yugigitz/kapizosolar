@@ -1,17 +1,29 @@
 import { Link } from 'react-router-dom'
 import { KapizoLogo } from './ui/BrandImage'
-import { business, phones, telHref } from '@/data/business'
-import { MapPinIcon, PhoneIcon } from './ui/Icons'
+import { business, phones, socialLinks, telHref } from '@/data/business'
+import { FacebookIcon, InstagramIcon, MapPinIcon, PhoneIcon } from './ui/Icons'
 
 const quickLinks = [
   { label: 'Solar Solutions', to: '/solutions' },
-  { label: 'Solar Calculator', to: '/solar-calculator' },
+  { label: 'Solar Savings Calculator', to: '/solar-calculator' },
+  { label: 'Solar Loan EMI Calculator', to: '/solar-loan-emi' },
   { label: 'Plans', to: '/plans' },
   { label: 'PM Surya Ghar', to: '/pm-surya-ghar' },
   { label: 'Solar Knowledge Hub', to: '/solar-knowledge' },
   { label: 'About Kapizo', to: '/about' },
   { label: 'FAQs', to: '/faq' },
   { label: 'Contact', to: '/contact' },
+]
+
+/**
+ * Rendered from socialLinks, which ships with empty URLs because the accounts
+ * do not exist yet. An unconfigured entry renders as a muted, non-interactive
+ * icon rather than a link to nowhere; filling in the URL turns it into a link
+ * with no other change.
+ */
+const socialProfiles = [
+  { key: 'instagram' as const, label: 'Instagram', Icon: InstagramIcon },
+  { key: 'facebook' as const, label: 'Facebook', Icon: FacebookIcon },
 ]
 
 const solutionLinks = [
@@ -35,6 +47,33 @@ export default function Footer() {
               A solar EPC company based in Mancherial, delivering rooftop solar design, installation
               and commissioning across Telangana.
             </p>
+
+            <div className="mt-5 flex items-center gap-2.5">
+              {socialProfiles.map(({ key, label, Icon }) => {
+                const url = socialLinks[key]
+                return url ? (
+                  <a
+                    key={key}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Kapizo Solar on ${label}`}
+                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-600 transition-colors hover:border-kapizo-green hover:text-kapizo-green"
+                  >
+                    <Icon className="h-[18px] w-[18px]" />
+                  </a>
+                ) : (
+                  <span
+                    key={key}
+                    title={`${label} — profile coming soon`}
+                    aria-hidden="true"
+                    className="flex h-9 w-9 cursor-default items-center justify-center rounded-lg border border-slate-200 bg-slate-100 text-slate-400"
+                  >
+                    <Icon className="h-[18px] w-[18px]" />
+                  </span>
+                )
+              })}
+            </div>
           </div>
 
           <div>

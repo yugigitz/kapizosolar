@@ -146,11 +146,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
     >
       {!compact && (
         /* A named header, so the page reads as a tool rather than a section. */
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-5 py-4 sm:px-7">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-slate-50 px-5 py-3 sm:px-7">
           <div className="flex items-center gap-3">
             <span
               aria-hidden="true"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-kapizo-orange-deep text-white"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-kapizo-orange-deep text-white"
             >
               <CalculatorIcon className="h-5 w-5" />
             </span>
@@ -169,11 +169,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
         </div>
       )}
 
-      <div className={compact ? '' : 'p-5 sm:p-7 lg:p-8'}>
-        <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
+      <div className={compact ? '' : 'p-4 sm:p-5 lg:p-6'}>
+        <div className="grid gap-5 lg:grid-cols-5 lg:gap-7">
           <div className="lg:col-span-2">
             {/* Orange marks the side the customer acts on. */}
-            <div className="rounded-xl border border-slate-200 border-l-4 border-l-kapizo-orange-deep bg-slate-50/70 p-5 sm:p-6">
+            <div className="rounded-xl border border-slate-200 border-l-4 border-l-kapizo-orange-deep bg-slate-50/70 p-4 sm:p-5">
               <div className="flex items-center gap-2.5">
                 <span
                   aria-hidden="true"
@@ -184,16 +184,15 @@ Please share the recommended system size, cost and subsidy eligibility.`
                 <h3 className="font-display text-xl font-bold text-kapizo-navy">Your details</h3>
               </div>
               <p className="mt-2 text-sm text-slate-600">
-                Start with your monthly bill. If you know your tariff or terrace size, adding them
-                sharpens the estimate.
+                Start with your monthly bill. Tariff and terrace size sharpen it further.
               </p>
               {/* States the method plainly: the size follows the usage, rather than
                   a package being recommended first and justified afterwards. */}
-              <p className="mt-3 border-l-2 border-kapizo-green/50 pl-3 text-xs leading-relaxed text-slate-600">
+              <p className="mt-2.5 border-l-2 border-kapizo-green/50 pl-3 text-xs leading-relaxed text-slate-600">
                 We size the system from the units you actually consume, not from a fixed package.
               </p>
 
-              <div className="mt-6 space-y-5">
+              <div className="mt-4 space-y-3.5">
                 <div>
                   <label htmlFor="calc-bill" className="field-label">
                     Monthly electricity bill
@@ -225,7 +224,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                       markStarted()
                       setMonthlyBill(Number(e.target.value))
                     }}
-                    className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-kapizo-orange"
+                    className="mt-2.5 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-kapizo-orange"
                     aria-label="Monthly electricity bill slider"
                   />
                   <div className="mt-1 flex justify-between text-[11px] text-slate-400">
@@ -246,7 +245,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                           setConsumerType(ct.value)
                         }}
                         aria-pressed={consumerType === ct.value}
-                        className={`rounded-lg border px-3 py-2.5 text-sm font-semibold transition-all ${
+                        className={`rounded-lg border px-3 py-2.5 text-sm font-semibold transition-all lg:py-2 ${
                           consumerType === ct.value
                             ? 'border-kapizo-green bg-kapizo-green/5 text-kapizo-green'
                             : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
@@ -280,7 +279,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                 </div>
 
                 <details className="rounded-lg border border-slate-200 bg-white">
-                  <summary className="cursor-pointer px-4 py-3 text-sm font-semibold text-kapizo-navy">
+                  <summary className="cursor-pointer px-4 py-2.5 text-sm font-semibold text-kapizo-navy">
                     Optional details for a closer estimate
                   </summary>
                   <div className="space-y-4 px-4 pb-4">
@@ -342,7 +341,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                   <button
                     type="button"
                     onClick={handleCalculate}
-                    className="btn-primary w-full !py-3.5 text-base"
+                    className="btn-primary w-full !py-3 text-base"
                   >
                     <CalculatorIcon className="h-5 w-5" />
                     Calculate My Solar Estimate
@@ -382,11 +381,11 @@ Please share the recommended system size, cost and subsidy eligibility.`
               </p>
             )}
 
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="mt-3 grid gap-2.5 sm:grid-cols-2">
               {headline.map(({ icon: Icon, label, value, note, tone }) => (
                 <div
                   key={label}
-                  className={`relative overflow-hidden rounded-xl border-2 p-4 transition-colors duration-200 sm:p-5 ${
+                  className={`relative overflow-hidden rounded-xl border-2 p-3.5 transition-colors duration-200 sm:p-4 ${
                     !hasInput
                       ? 'border-slate-200 bg-slate-50/70'
                       : tone === 'green'
@@ -435,7 +434,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
             </div>
 
             <div
-              className={`mt-3 rounded-xl border p-4 transition-colors duration-200 ${
+              className={`mt-2.5 rounded-xl border p-3.5 transition-colors duration-200 ${
                 hasInput
                   ? 'border-kapizo-green/30 bg-kapizo-green/[0.05]'
                   : 'border-slate-200 bg-slate-50/70'
@@ -459,9 +458,9 @@ Please share the recommended system size, cost and subsidy eligibility.`
               <p className="mt-1 text-xs leading-relaxed text-slate-500">{generation.note}</p>
             </div>
 
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <div className="mt-2.5 grid grid-cols-2 gap-2.5">
               {supporting.map(({ icon: Icon, label, value }) => (
-                <div key={label} className="rounded-xl border border-slate-200 bg-white p-3.5">
+                <div key={label} className="rounded-xl border border-slate-200 bg-white p-3">
                   <div className="flex items-center gap-1.5">
                     <Icon className="h-3.5 w-3.5 text-slate-400" />
                     <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
@@ -481,7 +480,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
 
             {hasInput && (
               <>
-                <div className="mt-4 rounded-xl border border-kapizo-navy/15 bg-kapizo-navy/[0.03] p-4">
+                <div className="mt-3 rounded-xl border border-kapizo-navy/15 bg-kapizo-navy/[0.03] p-3.5">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                     Suggested starting point
                   </p>
@@ -514,7 +513,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                   </p>
                 )}
 
-                <div className="mt-4 flex flex-col gap-2.5 sm:flex-row">
+                <div className="mt-3 flex flex-col gap-2.5 sm:flex-row">
                   <a
                     href={whatsappHref(quoteMessage)}
                     target="_blank"
@@ -531,7 +530,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
                   </Link>
                 </div>
 
-                <p className="mt-4 text-xs leading-relaxed text-slate-500">
+                <p className="mt-3 text-xs leading-relaxed text-slate-500">
                   Assumptions used: {formatNumber(result.monthlyUnits)} units per month at ₹
                   {result.assumedTariff}/unit, and an annual average of 4.2 units per kW per day for
                   Telangana conditions. Actual generation and savings depend on your site,
@@ -542,7 +541,7 @@ Please share the recommended system size, cost and subsidy eligibility.`
           </div>
         </div>
 
-        <div className="disclaimer mt-7">
+        <div className="disclaimer mt-5">
           <strong>This is an estimate, not a quotation.</strong> Treat these numbers as a starting
           point for the conversation. What you actually generate depends on which way your roof
           faces, whether anything shades it during the day, your location and weather through the

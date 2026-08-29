@@ -186,3 +186,21 @@ export function HeadsetIcon({ className = base }: IconProps) {
     </svg>
   )
 }
+
+export function InstagramIcon({ className = 'h-5 w-5' }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+export function FacebookIcon({ className = 'h-5 w-5' }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M14 8.5V6.9c0-.7.2-1.1 1.2-1.1H16.5V3.1A16 16 0 0 0 14.6 3c-2 0-3.4 1.2-3.4 3.5v2H9v2.9h2.2V21h3v-9.6h2.2l.4-2.9H14z" />
+    </svg>
+  )
+}

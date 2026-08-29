@@ -9,7 +9,6 @@ import HowSolarWorks from '@/components/HowSolarWorks'
 import SolarProcess from '@/components/SolarProcess'
 import WhyKapizo from '@/components/WhyKapizo'
 import ComponentQuality from '@/components/ComponentQuality'
-import ProjectsComingSoon from '@/components/ProjectsComingSoon'
 import FAQ from '@/components/FAQ'
 import CTASection from '@/components/CTASection'
 import PlanCard from '@/components/plans/PlanCard'
@@ -20,7 +19,7 @@ import {
   webPageSchema,
   websiteSchema,
 } from '@/lib/seo'
-import { ArrowRightIcon } from '@/components/ui/Icons'
+import { ArrowRightIcon, CalculatorIcon } from '@/components/ui/Icons'
 
 export default function Home() {
   usePageMeta(
@@ -52,7 +51,7 @@ export default function Home() {
       <section className="section bg-white" id="calculator">
         <div className="container-kapizo">
           <div className="max-w-2xl">
-            <span className="eyebrow">Solar Calculator</span>
+            <span className="eyebrow">Solar Calculators</span>
             <h2 className="h-section mt-3">Start with your electricity bill</h2>
             <p className="lede mt-4">
               Your bill tells us more about the right system size than your terrace does. Enter
@@ -60,7 +59,42 @@ export default function Home() {
               savings that go with it.
             </p>
           </div>
-          <div className="mt-10">
+
+          {/* Both calculators are reachable from here, so nobody has to open one
+              and go looking for the other. */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                to: '/solar-calculator',
+                title: 'Solar Savings Calculator',
+                detail: 'Calculate your potential solar savings.',
+              },
+              {
+                to: '/solar-loan-emi',
+                title: 'Solar Loan EMI Calculator',
+                detail: 'Estimate your monthly solar loan EMI.',
+              },
+            ].map((c) => (
+              <Link
+                key={c.to}
+                to={c.to}
+                className="card card-hover flex items-center gap-4 p-5"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange-deep">
+                  <CalculatorIcon className="h-5 w-5" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-display text-base font-extrabold text-kapizo-navy">
+                    {c.title}
+                  </span>
+                  <span className="mt-0.5 block text-sm text-slate-600">{c.detail}</span>
+                </span>
+                <ArrowRightIcon className="ml-auto h-4 w-4 shrink-0 text-slate-400" />
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-6">
             <SolarCalculator />
           </div>
         </div>
@@ -99,7 +133,6 @@ export default function Home() {
       <SolarProcess />
       <WhyKapizo />
       <ComponentQuality />
-      <ProjectsComingSoon />
       <FAQ limit={6} showViewAll />
       <CTASection />
     </>

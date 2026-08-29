@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHeader from '@/components/PageHeader'
 import SolarCalculator from '@/components/SolarCalculator'
-import SolarLoanCalculator from '@/components/SolarLoanCalculator'
 import CTASection from '@/components/CTASection'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { breadcrumbSchema, faqSchema, webPageSchema } from '@/lib/seo'
@@ -38,19 +37,19 @@ const methodologyFaqs = [
 export default function SolarCalculatorPage() {
   const crumbs = [
     { name: 'Home', path: '/' },
-    { name: 'Solar Calculator', path: '/solar-calculator' },
+    { name: 'Solar Savings Calculator', path: '/solar-calculator' },
   ]
 
   usePageMeta(
     {
-      title: 'Solar Calculator: Estimate System Size & Savings | Kapizo Solar',
+      title: 'Solar Savings Calculator | Kapizo Solar',
       description:
         'Estimate your rooftop solar system size, expected generation and annual savings for Telangana. Free indicative solar calculator from Kapizo Solar.',
       path: '/solar-calculator',
     },
     [
       webPageSchema(
-        'Solar Calculator | Kapizo Solar',
+        'Solar Savings Calculator | Kapizo Solar',
         'Estimate rooftop solar capacity, generation and savings.',
         '/solar-calculator',
       ),
@@ -66,14 +65,14 @@ export default function SolarCalculatorPage() {
           the first viewport. */}
       <PageHeader
         dense
-        eyebrow="Solar Calculator"
+        eyebrow="Solar Savings Calculator"
         title="How much solar do you actually need?"
-        description="Tell us roughly what you pay for electricity each month. We will use that to estimate the system size that may suit you, what it should generate, and what you could save. It takes about thirty seconds."
+        description="Enter roughly what you pay for electricity each month and we will estimate the system size, the generation and the saving that go with it."
         breadcrumbs={crumbs}
       />
 
       <section
-        className="bg-white pb-16 pt-8 sm:pb-20 sm:pt-10 lg:pb-24 lg:pt-10"
+        className="bg-white pb-10 pt-4 sm:pb-12 sm:pt-5"
         aria-labelledby="calc-heading"
       >
         <div className="container-kapizo">
@@ -84,29 +83,26 @@ export default function SolarCalculatorPage() {
         </div>
       </section>
 
-      {/* Financing sits next to the savings figure, on the same page, because
-          the two questions arrive together: what will it save, and what would
-          the instalment be. */}
-      <section className="bg-slate-50 pb-16 pt-14 sm:pb-20 sm:pt-16" aria-labelledby="emi-heading">
+      <section className="bg-white pb-14 sm:pb-16">
         <div className="container-kapizo">
-          <div className="max-w-2xl">
-            <span className="eyebrow">Financing</span>
-            <h2 id="emi-heading" className="h-section mt-3">
-              Working out the monthly instalment
-            </h2>
-            <p className="lede mt-4">
-              If you are considering financing part of the system, this works out the EMI on the
-              amount, rate and tenure you have been offered. We are not a lender and have no tie-up
-              with one, so the numbers are yours to enter.
+          {/* Sizing the system and financing it are the same decision from two
+              sides, so each calculator points at the other. */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4">
+            <p className="text-sm font-semibold text-kapizo-navy">
+              Planning to finance your solar system?
             </p>
-          </div>
-          <div className="mt-8">
-            <SolarLoanCalculator />
+            <Link
+              to="/solar-loan-emi"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-kapizo-green hover:underline"
+            >
+              Solar Loan EMI Calculator
+              <ArrowRightIcon className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-slate-50">
         <div className="container-kapizo">
           <div className="max-w-3xl">
             <span className="eyebrow">Methodology</span>
@@ -125,7 +121,7 @@ export default function SolarCalculatorPage() {
               ))}
             </div>
 
-            <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
+            <div className="mt-10 rounded-xl border border-slate-200 bg-white p-6">
               <h3 className="font-display text-lg font-bold text-kapizo-navy">
                 Assumptions used in this tool
               </h3>
@@ -163,6 +159,10 @@ export default function SolarCalculatorPage() {
               </Link>
               <Link to="/pm-surya-ghar" className="btn-outline">
                 Understand subsidy eligibility
+                <ArrowRightIcon />
+              </Link>
+              <Link to="/solar-loan-emi" className="btn-outline">
+                Work out the monthly EMI
                 <ArrowRightIcon />
               </Link>
             </div>

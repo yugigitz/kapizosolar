@@ -31,6 +31,7 @@ const PORT = 5199
 export const ROUTES = [
   '/',
   '/solar-calculator',
+  '/solar-loan-emi',
   '/solutions',
   '/solutions/residential',
   '/solutions/commercial',

@@ -6,6 +6,7 @@ import MobileCTA from '@/components/MobileCTA'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
 import Home from '@/pages/Home'
 import SolarCalculatorPage from '@/pages/SolarCalculatorPage'
+import SolarLoanEmiPage from '@/pages/SolarLoanEmiPage'
 import SolutionsPage from '@/pages/SolutionsPage'
 import SolutionDetailPage from '@/pages/SolutionDetailPage'
 import PlansPage from '@/pages/PlansPage'
@@ -53,6 +54,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solar-calculator" element={<SolarCalculatorPage />} />
+          <Route path="/solar-loan-emi" element={<SolarLoanEmiPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/solutions/:slug" element={<SolutionDetailPage />} />
           <Route path="/plans" element={<PlansPage />} />

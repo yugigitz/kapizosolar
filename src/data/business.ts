@@ -38,6 +38,16 @@ export const phones = {
   whatsapp: '9640358338',
 } as const
 
+/**
+ * Social profiles. Empty means the account does not exist yet: the footer
+ * renders the icon in a disabled state rather than linking somewhere wrong.
+ * Adding the real URL here is the only change needed to activate the link.
+ */
+export const socialLinks = {
+  instagram: '',
+  facebook: '',
+} as const
+
 export const primaryPhoneIntl = `+91${phones.primary}`
 export const secondaryPhoneIntl = `+91${phones.secondary}`
 
