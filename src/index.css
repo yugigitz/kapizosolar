@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* `clip` prevents a horizontal scroll container forming at all, unlike
+       `hidden`, which still allows programmatic sideways scrolling. */
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-white text-kapizo-navy font-sans antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-kapizo-orange ring-offset-2 ring-offset-white rounded;
+  }
+}
+
+@layer components {
+  .container-kapizo {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /*
+   * Safe area for the floating WhatsApp button.
+   *
+   * The page container is capped at max-w-7xl (1280px). Above about 1377px the
+   * viewport is wide enough that centring leaves a margin the button can sit
+   * in; below that the container reaches the viewport edge and a corner button
+   * has nowhere to go but on top of the content. Measured, it was covering
+   * body text, footer links, phone numbers and form fields on every page at
+   * 768, 1024 and 1280.
+   *
+   * Reserving the width the button needs is the only thing that actually keeps
+   * it off the text; moving or shrinking it cannot, because the gutter does not
+   * exist. Applied only between sm and 1376px, so the wide-desktop layout and
+   * the phone layout are both untouched.
+   */
+  /*
+   * Inset the content, not the section: the backgrounds live on the sections,
+   * so padding <main> would pull the hero gradient off the viewport edge and
+   * leave a white strip down the right. The header is excluded because the
+   * button never reaches it. Values are totals, replacing the base padding for
+   * each range, not adding to it.
+   *
+   * Phones need this too, and need the most of it: the gutter there is 16px
+   * against a 44px button, so without the reservation the button sits over
+   * body text on every page as it scrolls past.
+   */
+  @media (max-width: 767px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      /* 44px button + 8px offset + 4px clearance. Trimmed to the button's
+         actual footprint so the phone layout gives up no more width than it
+         has to. */
+      padding-right: 3.5rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      padding-right: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1376px) {
+    main .container-kapizo,
+    footer .container-kapizo {
+      padding-right: 5.5rem;
+    }
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-kapizo-green;
+  }
+
+  .h-section {
+    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold leading-[1.1] text-kapizo-navy;
+  }
+
+  .lede {
+    @apply text-base sm:text-lg leading-relaxed text-slate-600;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-card transition-shadow duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:border-slate-300;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold
+           transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  /* Uses orange-deep so white button text clears WCAG AA (5.05:1). */
+  .btn-primary {
+    @apply btn bg-kapizo-orange-deep text-white hover:bg-kapizo-orange-deep-hover
+           shadow-[0_2px_8px_rgba(179,83,9,0.28)] hover:shadow-[0_4px_16px_rgba(179,83,9,0.36)];
+  }
+
+  /*
+   * The hero and navigation calls to action only. Everything else stays on
+   * .btn-primary; this exists so the CTA colour can differ without moving the
+   * shared orange-deep token that the rest of the UI depends on.
+   */
+  .btn-cta {
+    @apply btn bg-kapizo-cta text-white hover:bg-kapizo-cta-hover
+           shadow-[0_4px_14px_rgba(194,65,12,0.32)] hover:shadow-[0_6px_20px_rgba(194,65,12,0.40)];
+  }
+
+  .btn-navy {
+    @apply btn bg-kapizo-navy text-white hover:bg-kapizo-navy-light;
+  }
+
+  .btn-green {
+    @apply btn bg-kapizo-green text-white hover:bg-kapizo-green-dark;
+  }
+
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-kapizo-navy hover:border-kapizo-navy hover:bg-slate-50;
+  }
+
+  .btn-ghost-light {
+    @apply btn border border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20;
+  }
+
+  .field-label {
+    @apply block text-sm font-semibold text-kapizo-navy mb-1.5;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-kapizo-navy
+           placeholder:text-slate-400 transition-colors
+           focus:border-kapizo-green focus:outline-none focus:ring-2 focus:ring-kapizo-green/20;
+  }
+
+  .disclaimer {
+    @apply rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900;
+  }
+
+  .prose-kapizo {
+    @apply text-slate-600 leading-relaxed;
+  }
+
+  .prose-kapizo h2 {
+    @apply text-2xl font-bold text-kapizo-navy mt-10 mb-3;
+  }
+
+  .prose-kapizo h3 {
+    @apply text-lg font-bold text-kapizo-navy mt-7 mb-2;
+  }
+
+  .prose-kapizo p {
+    @apply mb-4;
+  }
+
+  .prose-kapizo ul {
+    @apply mb-4 space-y-2 pl-5 list-disc marker:text-kapizo-green;
+  }
+
+  .prose-kapizo a {
+    @apply text-kapizo-green font-semibold underline underline-offset-2 hover:text-kapizo-green-dark;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
