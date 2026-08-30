@@ -75,21 +75,53 @@ export default function Home() {
                 detail: 'Estimate your monthly solar loan EMI.',
               },
             ].map((c) => (
+              /*
+                Hover fills the whole card with the accessible brand orange
+                (5.05:1 under white text; the lighter brand orange is 2.6:1 and
+                could not carry white type). The hover variant is gated behind
+                @media (hover:hover) so it does not stick after a tap on a
+                phone, where `active:` gives the press feedback instead.
+                Dimensions, spacing and the link target are untouched.
+              */
               <Link
                 key={c.to}
                 to={c.to}
-                className="card card-hover flex items-center gap-4 p-5"
+                className="card card-hover group flex items-center gap-4 p-5 transition-colors
+                           [@media(hover:hover)]:hover:border-kapizo-orange-deep
+                           [@media(hover:hover)]:hover:bg-kapizo-orange-deep
+                           active:border-kapizo-orange-deep active:bg-kapizo-orange-deep
+                           focus-visible:border-kapizo-orange-deep focus-visible:bg-kapizo-orange-deep
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-kapizo-orange-deep/40"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange-deep">
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-kapizo-orange/10 text-kapizo-orange-deep transition-colors
+                             [@media(hover:hover)]:group-hover:bg-white/20 [@media(hover:hover)]:group-hover:text-white
+                             group-active:bg-white/20 group-active:text-white
+                             group-focus-visible:bg-white/20 group-focus-visible:text-white"
+                >
                   <CalculatorIcon className="h-5 w-5" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block font-display text-base font-extrabold text-kapizo-navy">
+                  <span
+                    className="block font-display text-base font-extrabold text-kapizo-navy transition-colors
+                               [@media(hover:hover)]:group-hover:text-white group-active:text-white
+                               group-focus-visible:text-white"
+                  >
                     {c.title}
                   </span>
-                  <span className="mt-0.5 block text-sm text-slate-600">{c.detail}</span>
+                  <span
+                    className="mt-0.5 block text-sm text-slate-600 transition-colors
+                               [@media(hover:hover)]:group-hover:text-white group-active:text-white
+                               group-focus-visible:text-white"
+                  >
+                    {c.detail}
+                  </span>
                 </span>
-                <ArrowRightIcon className="ml-auto h-4 w-4 shrink-0 text-slate-400" />
+                <ArrowRightIcon
+                  className="ml-auto h-4 w-4 shrink-0 text-slate-400 transition-colors
+                             [@media(hover:hover)]:group-hover:text-white group-active:text-white
+                             group-focus-visible:text-white"
+                />
               </Link>
             ))}
           </div>

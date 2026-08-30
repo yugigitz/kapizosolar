@@ -361,6 +361,226 @@ export const articles: Article[] = [
         'What rooftop solar maintenance actually involves: cleaning frequency, what to inspect, how to use monitoring data, and which components fail first.',
     },
   },
+  {
+    slug: 'solar-panel-installation-mancherial',
+    title: 'Solar Panel Installation in Mancherial, Telangana',
+    summary:
+      'What installing rooftop solar in Mancherial actually involves: generation you can expect, roof and shading realities, the DISCOM process, and how the local picture differs from the rest of Telangana.',
+    directAnswer:
+      'Rooftop solar performs well in Mancherial for the same reason it does across Telangana: strong year-round irradiance, commonly around 4 to 4.5 units per kW per day averaged over a year. What varies locally is roof construction, shading from adjacent buildings and water tanks, and which DISCOM office handles your net metering application. Capacity should be sized from your electricity consumption rather than from available roof area.',
+    publishedISO: '2026-08-30',
+    updatedISO: '2026-08-30',
+    readMinutes: 7,
+    sections: [
+      {
+        heading: 'What generation to expect in Mancherial',
+        paragraphs: [
+          'Mancherial sits within the same strong irradiance band as most of Telangana. A well-installed, unshaded system commonly averages in the region of 4 to 4.5 units per kW per day across a full year, peaking through the pre-summer months and dipping through the monsoon.',
+          'Plan against the annual average rather than a good day in March. Sizing on peak output produces a system that disappoints for most of the year, and it is the single most common cause of a customer feeling misled after installation.',
+        ],
+      },
+      {
+        heading: 'Roof realities on local buildings',
+        paragraphs: [
+          'Most residential roofs we assess locally are flat RCC slabs, which suit ballasted or bolted mounting structures and give reasonable freedom over module orientation. That is an advantage over pitched roofs, where orientation is fixed by the building.',
+          'The constraints that actually bite are parapet walls, overhead water tanks, staircase headrooms and the proximity of neighbouring buildings. Each casts a shadow that moves through the day, and shading is not proportional: a small shadow across the wrong part of a string can cut output well beyond the area it covers.',
+        ],
+      },
+      {
+        heading: 'Sizing from consumption, not from the terrace',
+        paragraphs: [
+          'Bring two or three recent electricity bills. Average monthly units, divided by 30, divided by the daily generation per kW, gives the capacity that matches your usage. Roof area then tells you whether that capacity physically fits, at roughly 90 sq ft of shadow-free space per kW.',
+          'If the roof cannot hold what your consumption justifies, an elevated structure is sometimes worth costing out. If your consumption is modest, resist the temptation to fill the slab: surplus exported at a settlement rate lower than your tariff is worth less than a unit you consume yourself.',
+        ],
+      },
+      {
+        heading: 'The approval and metering process',
+        paragraphs: [
+          'A grid-connected system needs DISCOM approval and a suitable meter for export. The application, inspection and meter change run on the DISCOM\u2019s timelines, not the installer\u2019s, and that is worth knowing before you plan around a date.',
+          'An installer can prepare the documentation, submit correctly the first time and follow it through, which usually matters more than any promise about speed. Ask who handles the paperwork and what happens if the inspection raises an objection.',
+        ],
+      },
+      {
+        heading: 'Being local, and what it is worth',
+        paragraphs: [
+          'We are based in Mancherial and work across Mancherial and other locations in Telangana. The physics of generation does not change across the state; what changes is how quickly someone can be on your roof for the site visit, and whether they come back when something needs attention in year three.',
+          'That is the practical argument for a local installer, and it is a fair one to test: ask where the team is based and who attends a service call.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Can I install rooftop solar in Mancherial?',
+        a: 'Yes. Mancherial receives strong irradiance year-round and the approval and net metering process runs through the local DISCOM in the normal way for Telangana.',
+      },
+      {
+        q: 'How much roof do I need for a 3 kW system?',
+        a: 'Roughly 270 sq ft of genuinely shadow-free area, at about 90 sq ft per kW. Usable area is what matters: parapet setbacks, tank shadows and walkways all reduce it.',
+      },
+      {
+        q: 'Does Kapizo Solar work only in Mancherial?',
+        a: 'No. We are based in Mancherial and take on work across Mancherial and other locations in Telangana.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Solar Savings Calculator', to: '/solar-calculator' },
+      { label: 'Rooftop Solar Guide for Telangana', to: '/solar-knowledge/rooftop-solar-guide-telangana' },
+      { label: 'Get a Solar Quote', to: '/contact' },
+    ],
+    seo: {
+      title: 'Solar Panel Installation in Mancherial, Telangana | Kapizo Solar',
+      description:
+        'What rooftop solar installation in Mancherial involves: expected generation, roof and shading constraints, sizing from your electricity bill, and the DISCOM approval and net metering process in Telangana.',
+    },
+  },
+  {
+    slug: 'solar-payback-period-telangana',
+    title: 'Solar Payback Period in Telangana',
+    summary:
+      'How to work out when a rooftop solar system pays for itself, which variables move the answer most, and why a published payback figure is usually worth ignoring.',
+    directAnswer:
+      'Payback period is the installed cost divided by the annual saving. The saving side can be estimated reliably from your consumption, tariff and expected generation. The cost side depends on capacity, roof type, structure and components, so it comes from a written quotation for your property rather than from a published rate. A higher tariff, higher daytime self-consumption and an unshaded roof all shorten payback.',
+    publishedISO: '2026-08-30',
+    updatedISO: '2026-08-30',
+    readMinutes: 6,
+    sections: [
+      {
+        heading: 'The calculation, and why half of it is easy',
+        paragraphs: [
+          'Payback is installed cost divided by annual saving. The annual saving is estimable to a useful degree of accuracy: take expected generation, work out how much of it replaces units you would otherwise buy, and value those at your tariff.',
+          'The cost side is the harder half, and it is site-specific. Capacity, roof type, structure height, cable runs and component selection all move it. This is why we do not publish a price per kW: a single figure would be wrong for most roofs, and a payback period built on a wrong figure is worse than no figure at all.',
+        ],
+      },
+      {
+        heading: 'What shortens payback',
+        paragraphs: [
+          'Three things dominate, and only one of them is about the hardware.',
+        ],
+        bullets: [
+          'A higher tariff: every unit avoided is worth exactly what you would have paid for it',
+          'Higher self-consumption: units used as they are generated carry full retail value, while exported surplus is settled on DISCOM terms',
+          'An unshaded, well-oriented roof: shading reduces generation disproportionately',
+        ],
+      },
+      {
+        heading: 'Why commercial payback is often shorter',
+        paragraphs: [
+          'Commercial and industrial consumers usually pay a higher tariff and consume more during daylight hours, when a rooftop system is generating. Both factors raise the value of each generated unit, so the same capacity pays back faster than it would on a home with a low tariff and mostly evening consumption.',
+          'For a household, the equivalent lever is shifting flexible loads into daylight: pumping, washing, and anything else that can run at noon rather than at nine in the evening.',
+        ],
+      },
+      {
+        heading: 'What payback does not capture',
+        paragraphs: [
+          'Payback is a single number and it hides things. It says nothing about the years after payback, when the system continues generating with no capital left to recover. It says nothing about component life, degradation or maintenance, and it says nothing about the value of insulation from future tariff increases.',
+          'Treat it as one input among several rather than the decision itself.',
+        ],
+      },
+      {
+        heading: 'Subsidy and the payback figure',
+        paragraphs: [
+          'Central financial assistance under PM Surya Ghar, where an applicant is eligible, reduces the net cost and therefore shortens payback. It is decided by the government and your DISCOM under the prevailing scheme rules, and it is not something an installer can promise.',
+          'Work out payback both ways: on the full cost, and on the cost net of assistance you have actually been sanctioned. The first is the figure you can rely on.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'How do I calculate solar payback period?',
+        a: 'Divide the installed cost from your written quotation by the estimated annual saving. Estimate the saving from your consumption, tariff and expected generation — the Solar Savings Calculator does that part from your monthly bill.',
+      },
+      {
+        q: 'Why does this site not publish a payback figure?',
+        a: 'Because publishing one requires assuming a price per kW, and a single assumed rate would be wrong for most roofs. We show the savings side and leave the cost side to a quotation for your actual property.',
+      },
+      {
+        q: 'Does a bigger system pay back faster?',
+        a: 'Not automatically. A system larger than your consumption exports more surplus, and exported units are settled on DISCOM terms rather than at your retail tariff, so the marginal capacity can pay back more slowly than the first few kilowatts.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Solar Savings Calculator', to: '/solar-calculator' },
+      { label: 'Solar Loan EMI Calculator', to: '/solar-loan-emi' },
+      { label: 'PM Surya Ghar', to: '/pm-surya-ghar' },
+    ],
+    seo: {
+      title: 'Solar Payback Period in Telangana: How to Calculate It | Kapizo Solar',
+      description:
+        'How to work out the payback period for rooftop solar in Telangana, which factors shorten it, why published payback figures mislead, and how subsidy and self-consumption change the answer.',
+    },
+  },
+  {
+    slug: 'solar-loan-vs-upfront-payment',
+    title: 'Solar Loan or Paying Upfront: How to Decide',
+    summary:
+      'A straightforward comparison of financing a rooftop solar system against paying for it outright, including what an EMI actually costs you and what to check with a lender.',
+    directAnswer:
+      'Paying upfront costs nothing in interest and is cheaper in absolute terms. A loan spreads the cost so the system can be installed sooner and the bill reduction starts sooner, at the price of the interest. The comparison worth making is total interest against the value of installing earlier, plus whatever else the capital would have done. Kapizo Solar is not a lender and the terms come from your bank.',
+    publishedISO: '2026-08-30',
+    updatedISO: '2026-08-30',
+    readMinutes: 6,
+    sections: [
+      {
+        heading: 'What financing actually costs',
+        paragraphs: [
+          'A solar loan is an ordinary reducing-balance retail loan. The instalment is fixed; the interest share of it falls over the term as the outstanding balance drops. Total interest is the total repaid minus the amount borrowed, and it rises with both the rate and the tenure.',
+          'Model it before you decide. A longer tenure makes the monthly figure comfortable and the loan more expensive overall, and the difference between a five-year and a ten-year term at the same rate is usually larger than people expect.',
+        ],
+      },
+      {
+        heading: 'The comparison that matters',
+        paragraphs: [
+          'Set the monthly instalment against the monthly bill reduction the system is expected to deliver. If the saving covers a meaningful share of the instalment, the system is partly financing itself while you repay, and the full saving continues once the loan closes.',
+          'Estimate the saving side first, from your consumption and tariff, then bring that figure to the EMI calculation. Compare monthly against monthly, and do it before any subsidy, since assistance is decided separately and is not guaranteed.',
+        ],
+      },
+      {
+        heading: 'What to ask a lender',
+        paragraphs: [
+          'The interest rate is not the whole cost, and two offers with the same headline rate can differ materially once the rest is counted.',
+        ],
+        bullets: [
+          'Processing fee, and whether it is deducted from the disbursed amount',
+          'Fixed or floating rate, and what a floating rate is benchmarked to',
+          'Whether any insurance is bundled, and whether it is optional',
+          'Prepayment and foreclosure terms, and any charge for closing early',
+          'Documentation, inspection or legal fees charged separately',
+          'Whether disbursement is staged against installation milestones',
+        ],
+      },
+      {
+        heading: 'A note on what an installer can and cannot tell you',
+        paragraphs: [
+          'Kapizo Solar does not lend, does not broker finance and has no tie-up with any lender. We can size the system and estimate the saving; approval, rates, fees and eligibility are entirely between you and your bank.',
+          'Be cautious of any installer who quotes you a guaranteed rate or promises approval. Those are the lender\u2019s to give, and an installer who offers them is describing something they do not control.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Is a solar loan worth it?',
+        a: 'It depends on whether installing sooner is worth the interest. Financing starts the bill reduction earlier; paying upfront avoids the interest entirely. Work out the total interest on the tenure you are considering and weigh it against a year or two of earlier savings.',
+      },
+      {
+        q: 'How much EMI will I pay on a solar loan?',
+        a: 'It follows from the amount, rate and tenure. The Solar Loan EMI Calculator returns the instalment, the total interest and the total repayment from those three inputs.',
+      },
+      {
+        q: 'Does PM Surya Ghar pay for a solar loan?',
+        a: 'No. PM Surya Ghar provides central financial assistance for eligible residential grid-connected systems; it is not a loan product. Assistance and financing are separate processes decided by different parties.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Solar Loan EMI Calculator', to: '/solar-loan-emi' },
+      { label: 'Solar Savings Calculator', to: '/solar-calculator' },
+      { label: 'Solar Payback Period in Telangana', to: '/solar-knowledge/solar-payback-period-telangana' },
+    ],
+    seo: {
+      title: 'Solar Loan or Upfront Payment: How to Decide | Kapizo Solar',
+      description:
+        'Comparing a rooftop solar loan against paying upfront: what the interest actually costs, how EMI compares with electricity bill savings, and the charges to check with a lender before committing.',
+    },
+  },
 ]
 
 export function getArticle(slug: string): Article | undefined {
